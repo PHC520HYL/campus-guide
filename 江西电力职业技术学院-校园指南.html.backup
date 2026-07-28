@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>2026校园指南 · 江西电力职业技术学院</title>
+<style>
+:root {
+  --primary: #165DFF;
+  --primary-dark: #0E42D2;
+  --primary-light: #E8F0FF;
+  --bg: #F5F6FA;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+  --border: #E5E7EB;
+  --yellow: #FFB800;
+  --red: #E74C3C;
+  --green: #27AE60;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --font-xl: clamp(22px, 5.5vw, 28px);
+  --font-lg: clamp(17px, 4.2vw, 20px);
+  --font-md: clamp(14px, 3.6vw, 16px);
+  --font-sm: clamp(12px, 3vw, 14px);
+  --font-xs: clamp(10px, 2.5vw, 12px);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  overflow-x: hidden;
+  padding-bottom: calc(70px + var(--safe-bottom));
+}
+
+/* ===== Loading Modal ===== */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+  z-index: 1000; display: flex; align-items: flex-end; justify-content: center;
+  animation: fadeIn .25s ease;
+}
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.modal-overlay.hidden { display: none; }
+
+.modal-sheet {
+  background: #fff; border-radius: 20px 20px 0 0; width: 100%;
+  max-width: 480px; padding: 28px 24px 36px;
+  position: relative; animation: slideUp .35s ease;
+}
+@keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
+
+.modal-close {
+  position: absolute; right: 18px; top: 18px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #F3F4F6; border: none; font-size: 18px;
+  color: var(--text-secondary); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.modal-icon { width: 56px; height: 56px; margin: 0 auto 16px; display: block; }
+
+.modal-title { text-align: center; font-size: var(--font-lg); font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.modal-desc { text-align: center; font-size: var(--font-sm); color: var(--text-secondary); margin-bottom: 6px; line-height: 1.5; }
+
+.wechat-id-box {
+  background: #F8FAFC; border: 1.5px dashed var(--border); border-radius: 10px;
+  padding: 12px 16px; text-align: center; font-size: var(--font-md); font-weight: 600;
+  color: var(--primary); margin: 16px 0 8px; letter-spacing: 1px;
+}
+
+.qq-id-box {
+  background: #F0F7FF; border: 1.5px dashed #91C8FF; border-radius: 10px;
+  padding: 8px 16px; text-align: center; font-size: var(--font-sm); font-weight: 600;
+  color: #0A7AFF; margin: 0 0 16px; letter-spacing: 1px;
+}
+
+.modal-btn-primary {
+  width: 100%; height: 48px; background: var(--primary); color: #fff;
+  border: none; border-radius: 24px; font-size: var(--font-md); font-weight: 600;
+  cursor: pointer; margin-bottom: 10px; transition: background .2s;
+}
+.modal-btn-primary:active { background: var(--primary-dark); }
+
+.modal-btn-qq {
+  width: 100%; height: 48px; background: #0A7AFF; color: #fff;
+  border: none; border-radius: 24px; font-size: var(--font-md); font-weight: 600;
+  cursor: pointer; margin-bottom: 10px; transition: background .2s;
+}
+.modal-btn-qq:active { background: #0860CC; }
+
+.modal-btn-secondary {
+  width: 100%; height: 48px; background: #fff; color: var(--text-secondary);
+  border: 1.5px solid var(--border); border-radius: 24px;
+  font-size: var(--font-md); font-weight: 500; cursor: pointer;
+}
+
+.modal-note { text-align: center; font-size: var(--font-xs); color: var(--text-light); margin-top: 12px; }
+
+/* ===== Banner ===== */
+.banner {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, #0A3DCC 0%, #165DFF 40%, #2B7FFF 100%);
+  padding: 32px 20px 24px; color: #fff;
+}
+.banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L35 15L45 10L40 20L50 25L40 30L45 40L35 35L30 45L25 35L15 40L20 30L10 25L20 20L15 10L25 15Z' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+.banner-tag {
+  display: inline-block; background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px); border-radius: 20px;
+  padding: 5px 14px; font-size: var(--font-xs); font-weight: 500;
+  margin-bottom: 14px; letter-spacing: 1px;
+}
+.banner-title { font-size: var(--font-xl); font-weight: 800; position: relative; z-index: 1; letter-spacing: 1px; }
+.banner-sub { font-size: var(--font-xs); opacity: 0.8; margin-top: 6px; position: relative; z-index: 1; letter-spacing: 0.5px; }
+
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  margin-top: 20px; position: relative; z-index: 1;
+}
+.stat-card {
+  background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+  border-radius: var(--radius-sm); padding: 10px 6px; text-align: center;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.stat-num { font-size: clamp(16px, 4vw, 22px); font-weight: 800; }
+.stat-label { font-size: clamp(9px, 2.3vw, 11px); opacity: 0.8; margin-top: 2px; }
+
+/* ===== Quick Nav ===== */
+.quick-nav {
+  display: flex; gap: 8px; padding: 14px 16px; overflow-x: auto;
+  background: #fff; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.quick-nav::-webkit-scrollbar { display: none; }
+.nav-tag {
+  flex-shrink: 0; padding: 8px 16px; border-radius: 20px;
+  font-size: var(--font-sm); font-weight: 500; cursor: pointer;
+  background: #F3F4F6; color: var(--text-secondary);
+  transition: all .2s; white-space: nowrap;
+}
+.nav-tag.active { background: var(--primary); color: #fff; }
+
+/* ===== Welcome ===== */
+.welcome {
+  padding: 20px 16px; text-align: center; background: #fff;
+  margin: 8px 12px; border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.welcome h2 { font-size: var(--font-lg); font-weight: 700; margin-bottom: 4px; }
+.welcome p { font-size: var(--font-sm); color: var(--text-secondary); margin-bottom: 14px; }
+.welcome .btn-search-jump {
+  display: inline-flex; align-items: center; gap: 6px; height: 40px;
+  padding: 0 24px; background: var(--primary-light); color: var(--primary);
+  border-radius: 20px; font-size: var(--font-sm); font-weight: 600;
+  cursor: pointer; border: none; transition: all .2s;
+}
+.welcome .btn-search-jump:active { background: #D4E3FF; }
+.welcome .contact-links {
+  display: flex; justify-content: center; gap: 12px; margin-top: 12px; flex-wrap: wrap;
+}
+.welcome .contact-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: var(--font-xs); color: var(--text-secondary); cursor: pointer;
+  background: #F8FAFC; padding: 5px 12px; border-radius: 14px;
+  border: 1px solid var(--border); transition: all .2s;
+}
+.welcome .contact-link:active { background: var(--primary-light); color: var(--primary); }
+
+/* ===== Section ===== */
+.section { padding: 0 12px; margin-bottom: 16px; }
+.section-header { display: flex; align-items: center; gap: 8px; padding: 12px 4px 10px; }
+.section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.section-title { font-size: var(--font-md); font-weight: 700; }
+
+/* ===== Grid ===== */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.grid-3 .grid-item {
+  background: #fff; border-radius: var(--radius-sm); padding: 14px 8px;
+  text-align: center; cursor: pointer; box-shadow: var(--shadow);
+  transition: transform .15s, box-shadow .15s; min-height: 90px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.grid-3 .grid-item:active { transform: scale(0.96); box-shadow: var(--shadow-lg); }
+
+.grid-icon { width: 40px; height: 40px; border-radius: 12px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
+.grid-icon svg { width: 22px; height: 22px; }
+.grid-label { font-size: var(--font-sm); font-weight: 600; color: var(--text); line-height: 1.3; }
+.grid-desc { font-size: var(--font-xs); color: var(--text-light); margin-top: 2px; line-height: 1.3; }
+
+/* Icon color themes */
+.icon-blue { background: #E8F0FF; color: #165DFF; }
+.icon-green { background: #E6F7EC; color: #27AE60; }
+.icon-orange { background: #FFF3E0; color: #F57C00; }
+.icon-purple { background: #F3E8FF; color: #7C3AED; }
+.icon-red { background: #FDE8E8; color: #E74C3C; }
+.icon-teal { background: #E0F7FA; color: #00897B; }
+.icon-pink { background: #FCE4EC; color: #E91E63; }
+.icon-indigo { background: #E8EAF6; color: #3F51B5; }
+.icon-cyan { background: #E0F7FA; color: #00ACC1; }
+
+/* ===== Search Card ===== */
+.search-card {
+  margin: 12px 12px 20px; background: var(--primary);
+  border-radius: var(--radius); padding: 20px 16px; box-shadow: var(--shadow-lg);
+}
+.search-card-title { color: #fff; font-size: var(--font-md); font-weight: 700; margin-bottom: 4px; }
+.search-card-desc { color: rgba(255,255,255,0.7); font-size: var(--font-xs); margin-bottom: 14px; }
+.search-row { display: flex; gap: 8px; }
+.search-input {
+  flex: 1; height: 44px; border-radius: 22px; border: none;
+  padding: 0 18px; font-size: var(--font-sm); outline: none;
+}
+.search-btn {
+  width: 80px; height: 44px; border-radius: 22px; border: none;
+  background: var(--yellow); color: #1A1A2E; font-size: var(--font-sm);
+  font-weight: 700; cursor: pointer; flex-shrink: 0;
+  transition: background .2s;
+}
+.search-btn:active { background: #E6A600; }
+.search-hints { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.search-hint {
+  font-size: var(--font-xs); color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.12); padding: 3px 10px;
+  border-radius: 12px; cursor: pointer;
+}
+.search-hint:active { background: rgba(255,255,255,0.25); }
+
+/* ===== Bottom Tab ===== */
+.bottom-tab {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; display: flex; justify-content: space-around;
+  padding: 8px 0 calc(8px + var(--safe-bottom));
+  border-top: 1px solid var(--border); z-index: 900;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+}
+.tab-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; cursor: pointer; padding: 4px 20px; color: var(--text-light);
+  font-size: 10px; font-weight: 500; transition: color .2s;
+}
+.tab-item svg { width: 22px; height: 22px; }
+.tab-item.active { color: var(--primary); }
+
+/* ===== Detail Page ===== */
+.detail-page {
+  position: fixed; inset: 0; background: #F5F6FA; z-index: 950;
+  overflow-y: auto; display: none; flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+.detail-page.active { display: flex; animation: slideInRight .3s ease; }
+@keyframes slideInRight { from { transform: translateX(30%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+.detail-header {
+  position: sticky; top: 0; background: #fff; z-index: 10;
+  padding: 12px 16px; display: flex; align-items: center;
+  gap: 12px; border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.btn-back {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #F3F4F6; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--text); flex-shrink: 0;
+}
+.detail-title { font-size: var(--font-md); font-weight: 700; }
+
+.detail-body { padding: 16px 14px; flex: 1; }
+.detail-body .content-card {
+  background: #fff; border-radius: var(--radius); padding: 18px 16px;
+  box-shadow: var(--shadow); margin-bottom: 12px;
+}
+.detail-body h3 { font-size: var(--font-md); font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.detail-body p { font-size: var(--font-sm); color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+.detail-body .info-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 0;
+  border-bottom: 1px solid #F3F4F6; font-size: var(--font-sm);
+}
+.detail-body .info-item:last-child { border-bottom: none; }
+.detail-body .highlight {
+  background: var(--primary-light); border-radius: 8px;
+  padding: 10px 14px; font-size: var(--font-sm); color: var(--primary);
+  margin: 10px 0; font-weight: 500; line-height: 1.6;
+}
+.checklist { display: flex; flex-direction: column; gap: 6px; }
+.check-item { display: flex; align-items: flex-start; gap: 8px; font-size: var(--font-sm); line-height: 1.6; }
+.check-icon { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.detail-body .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.detail-body .tag {
+  background: #F3F4F6; padding: 4px 12px; border-radius: 14px;
+  font-size: var(--font-xs); color: var(--text-secondary);
+}
+.detail-body table { width: 100%; border-collapse: collapse; font-size: var(--font-xs); margin: 10px 0; }
+.detail-body table th, .detail-body table td {
+  border: 1px solid var(--border); padding: 8px 6px; text-align: left;
+}
+.detail-body table th { background: #F8FAFC; font-weight: 600; color: var(--text); }
+.detail-body .copy-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--primary-light); color: var(--primary);
+  border: none; padding: 6px 14px; border-radius: 16px;
+  font-size: var(--font-xs); font-weight: 600; cursor: pointer;
+  margin-left: 8px;
+}
+.detail-body .copy-btn:active { background: #D4E3FF; }
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  background: rgba(0,0,0,0.8); color: #fff; padding: 12px 24px;
+  border-radius: 24px; font-size: var(--font-sm); z-index: 2000;
+  animation: toastIn .3s ease; pointer-events: none; opacity: 0;
+  transition: opacity .3s;
+}
+.toast.show { opacity: 1; }
+@keyframes toastIn { from { opacity: 0; transform: translate(-50%,-50%) scale(0.9); } to { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+
+/* ===== Image Placeholder ===== */
+.img-placeholder {
+  width: 100%; height: 160px; border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #E8F0FF 0%, #F3F4F6 100%);
+  display: flex; align-items: center; justify-content: center;
+  margin: 12px 0; color: var(--text-light); font-size: var(--font-xs);
+  overflow: hidden;
+}
+.img-placeholder svg { width: 60px; height: 60px; opacity: 0.4; }
+
+/* ===== Map Section ===== */
+.map-container {
+  width: 100%; border-radius: var(--radius-sm); overflow: hidden;
+  background: #F8FAFC; margin: 12px 0; border: 1px solid var(--border);
+}
+
+/* ===== Step List ===== */
+.step-list { counter-reset: step; list-style: none; padding: 0; }
+.step-list li {
+  counter-increment: step; padding: 12px 12px 12px 48px;
+  position: relative; font-size: var(--font-sm); color: var(--text-secondary);
+  border-left: 2px solid var(--border); margin-left: 16px; line-height: 1.7;
+}
+.step-list li::before {
+  content: counter(step);
+  position: absolute; left: -16px; top: 10px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--font-xs); font-weight: 700;
+}
+.step-list li:last-child { border-left-color: transparent; }
+
+/* Scroll padding for anchor */
+.anchor-section { scroll-margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- ===== Loading Modal ===== -->
+<div class="modal-overlay" id="loadingModal">
+  <div class="modal-sheet">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div style="width:56px;height:56px;margin:0 auto 16px;background:#E8F0FF;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#165DFF" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg>
+    </div>
+    <div class="modal-title">新生答疑</div>
+    <div class="modal-desc">添加电院新生答疑学长微信或QQ</div>
+    <div class="modal-desc" style="font-size:12px;color:#9CA3AF;">校园问题可以直接咨询</div>
+    <div class="wechat-id-box" id="wechatIdDisplay">微信：XMB2D888</div>
+    <div class="qq-id-box" id="qqIdDisplay">QQ：3289094177</div>
+    <button class="modal-btn-primary" onclick="copyWechat()">📋 复制微信号</button>
+    <button class="modal-btn-qq" onclick="copyQQ()">🐧 复制QQ号</button>
+    <button class="modal-btn-secondary" onclick="closeModal()">稍后再说</button>
+    <div class="modal-note">添加时请备注：26级新生</div>
+  </div>
+</div>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== Banner ===== -->
+<header class="banner" id="top">
+  <div class="banner-tag">🎓 2026 校园指南</div>
+  <div class="banner-title">江西电力职业技术学院</div>
+  <div class="banner-sub">JIANGXI ELECTRIC VOCATIONAL AND TECHNICAL COLLEGE</div>
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">主校区</div></div>
+    <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">二级学院</div></div>
+    <div class="stat-card"><div class="stat-num">公办</div><div class="stat-label">公办院校</div></div>
+    <div class="stat-card"><div class="stat-num">30+</div><div class="stat-label">资料入口</div></div>
+  </div>
+</header>
+
+<!-- ===== Quick Nav ===== -->
+<div class="quick-nav" id="quickNav">
+  <span class="nav-tag active" onclick="scrollToSection('xinbi')">新生</span>
+  <span class="nav-tag" onclick="scrollToSection('life')">生活</span>
+  <span class="nav-tag" onclick="scrollToSection('study')">学业</span>
+  <span class="nav-tag" onclick="scrollToSection('growth')">成长</span>
+  <span class="nav-tag" onclick="scrollToSection('campus')">校园</span>
+  <span class="nav-tag" onclick="scrollToSection('service')">服务</span>
+</div>
+
+<!-- Welcome -->
+<div class="welcome" id="welcome">
+  <h2>你好，新电院人 👋</h2>
+  <p>常用校园入口和校园信息集中在这里</p>
+  <button class="btn-search-jump" onclick="scrollToSearch()">🔍 搜校园</button>
+  <div class="contact-links">
+    <span class="contact-link" onclick="copyText('XMB2D888')">💬 微信 XMB2D888</span>
+    <span class="contact-link" onclick="copyText('3289094177')">🐧 QQ 3289094177</span>
+  </div>
+</div>
+
+<!-- ===== 新生必读 ===== -->
+<div class="section anchor-section" id="xinbi">
+  <div class="section-header"><div class="section-icon icon-blue">📖</div><span class="section-title">新生必读</span></div>
+  <div class="grid-3" id="grid-xinbi"></div>
+</div>
+
+<!-- ===== 校园生活 ===== -->
+<div class="section anchor-section" id="life">
+  <div class="section-header"><div class="section-icon icon-green">🏠</div><span class="section-title">校园生活</span></div>
+  <div class="grid-3" id="grid-life"></div>
+</div>
+
+<!-- ===== 学业发展 ===== -->
+<div class="section anchor-section" id="study">
+  <div class="section-header"><div class="section-icon icon-purple">📚</div><span class="section-title">学业发展</span></div>
+  <div class="grid-3" id="grid-study"></div>
+</div>
+
+<!-- ===== 成长发展 ===== -->
+<div class="section anchor-section" id="growth">
+  <div class="section-header"><div class="section-icon icon-orange">🚀</div><span class="section-title">成长发展</span></div>
+  <div class="grid-3" id="grid-growth"></div>
+</div>
+
+<!-- ===== 办事指南 ===== -->
+<div class="section anchor-section" id="service">
+  <div class="section-header"><div class="section-icon icon-red">📋</div><span class="section-title">办事指南</span></div>
+  <div class="grid-3" id="grid-service"></div>
+</div>
+
+<!-- ===== 校园资料搜索 ===== -->
+<div class="search-card" id="searchArea">
+  <div class="search-card-title">🔍 校园资料搜索</div>
+  <div class="search-card-desc">输入关键词，直接查找整理好的校园指南</div>
+  <div class="search-row">
+    <input class="search-input" id="searchInput" type="text" placeholder="快递、宿舍、学费、教务处…" onkeydown="if(event.key==='Enter')doSearch()">
+    <button class="search-btn" onclick="doSearch()">搜索</button>
+  </div>
+  <div class="search-hints">
+    <span class="search-hint" onclick="quickSearch('快递')">快递</span>
+    <span class="search-hint" onclick="quickSearch('宿舍')">宿舍</span>
+    <span class="search-hint" onclick="quickSearch('学费')">学费</span>
+    <span class="search-hint" onclick="quickSearch('教务处')">教务处</span>
+  </div>
+</div>
+
+<script>
+// ===== DATA: Grid Items =====
+const gridData = {
+  xinbi: [
+    { id:'baodao', icon:'icon-blue', label:'报到须知', desc:'时间地点与入校流程', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>' },
+    { id:'qingdan', icon:'icon-green', label:'必备清单', desc:'开学带齐不慌张', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' },
+    { id:'jiaotong', icon:'icon-orange', label:'到校交通', desc:'火车站/机场全路线', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>' },
+    { id:'junxun', icon:'icon-green', label:'军训贴士', desc:'作息防晒与注意事项', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>' },
+    { id:'xuefei', icon:'icon-purple', label:'学费标准', desc:'各专业收费明细', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+    { id:'bilei', icon:'icon-red', label:'新生避雷', desc:'防骗防推销指南', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>' },
+    { id:'lvtong', icon:'icon-teal', label:'绿色通道', desc:'困难生入学帮扶', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' },
+    { id:'card', icon:'icon-indigo', label:'校园卡', desc:'办理与使用说明', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>' },
+    { id:'app', icon:'icon-cyan', label:'常用应用', desc:'入学必备APP入口', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' },
+  ],
+  life: [
+    { id:'shitang', icon:'icon-orange', label:'食堂指南', desc:'菜品价格与营业时间', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' },
+    { id:'sushe', icon:'icon-blue', label:'宿舍介绍', desc:'房型配置与入住须知', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' },
+    { id:'kuaidi', icon:'icon-teal', label:'快递收发', desc:'校内外取件地址', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>' },
+    { id:'yishi', icon:'icon-red', label:'校医室', desc:'位置与医保报销说明', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>' },
+    { id:'map', icon:'icon-green', label:'校园地图', desc:'楼栋分布与地标指引', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>' },
+    { id:'chaoshi', icon:'icon-indigo', label:'校园超市', desc:'位置与营业时间', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>' },
+    { id:'yushi', icon:'icon-cyan', label:'浴室洗衣', desc:'洗浴与洗衣房指引', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>' },
+    { id:'yundong', icon:'icon-green', label:'运动场所', desc:'操场篮球场分布', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/><path d="M2 12h20"/></svg>' },
+    { id:'wanle', icon:'icon-pink', label:'周边玩乐', desc:'校门周边吃喝玩乐', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' },
+  ],
+  study: [
+    { id:'zhuanye', icon:'icon-blue', label:'专业介绍', desc:'5大二级学院专业', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>' },
+    { id:'jidian', icon:'icon-purple', label:'绩点学分', desc:'规则与计算方式', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
+    { id:'jiangzhu', icon:'icon-orange', label:'奖助学金', desc:'评选条件与流程', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'lib', icon:'icon-teal', label:'图书馆', desc:'借阅与自习指南', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="12" y1="6" x2="12" y2="14"/></svg>' },
+    { id:'jiaoxue', icon:'icon-indigo', label:'教学楼', desc:'楼栋分布与找教室', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>' },
+    { id:'xuanke', icon:'icon-cyan', label:'选课重修', desc:'选课补考与预警', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' },
+    { id:'zhuanben', icon:'icon-green', label:'专升本', desc:'政策与备考建议', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>' },
+    { id:'zhengshu', icon:'icon-blue', label:'技能证书', desc:'必考证书指南', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'jiaowu', icon:'icon-purple', label:'教务入口', desc:'官方系统跳转', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>' },
+  ],
+  growth: [
+    { id:'xueshenghui', icon:'icon-blue', label:'学生会', desc:'校学生会部门介绍', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>' },
+    { id:'shetuan', icon:'icon-green', label:'社团组织', desc:'全校社团名录', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' },
+    { id:'dierketang', icon:'icon-orange', label:'第二课堂', desc:'活动与志愿服务', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>' },
+    { id:'jingsai', icon:'icon-purple', label:'科研竞赛', desc:'电力类赛事汇总', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>' },
+    { id:'shixi', icon:'icon-teal', label:'实习就业', desc:'电网招聘与渠道', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>' },
+    { id:'dangtuan', icon:'icon-red', label:'党团组织', desc:'关系转接说明', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6 14.5 11 20 11 15.5 14 17.5 19 12 15.5 6.5 19 8.5 14 4 11 9.5 11"/></svg>' },
+    { id:'pingyou', icon:'icon-indigo', label:'评优评先', desc:'奖学金与荣誉评定', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'qingong', icon:'icon-cyan', label:'勤工助学', desc:'校内岗位介绍', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>' },
+    { id:'jineng', icon:'icon-blue', label:'技能提升', desc:'学习资源推荐', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>' },
+  ],
+  service: [
+    { id:'xueshengzheng', icon:'icon-blue', label:'学生证补办', desc:'流程与费用说明', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>' },
+    { id:'dianhua', icon:'icon-green', label:'常用电话', desc:'各部门办事号码', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>' },
+    { id:'qingjia', icon:'icon-orange', label:'请假流程', desc:'事假病假办理', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' },
+    { id:'yibao', icon:'icon-red', label:'医保报销', desc:'政策与办理方式', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' },
+    { id:'baoxiu', icon:'icon-teal', label:'宿舍报修', desc:'物业维修渠道', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
+    { id:'xueji', icon:'icon-purple', label:'学籍异动', desc:'休学转学流程', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>' },
+    { id:'caiwu', icon:'icon-indigo', label:'财务缴费', desc:'学费住宿费缴纳', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+    { id:'baowei', icon:'icon-red', label:'保卫处', desc:'门禁与安全事务', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' },
+    { id:'zizhu', icon:'icon-teal', label:'学生资助', desc:'助学金与助学贷款', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' },
+  ]
+};
+</script>

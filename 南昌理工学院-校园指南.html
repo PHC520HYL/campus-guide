@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>2026校园指南 · 南昌理工学院</title>
+<style>
+:root {
+  --primary: #0B3D91;
+  --primary-dark: #072A6B;
+  --primary-light: #E8F0FE;
+  --bg: #F5F6FA;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+  --border: #E5E7EB;
+  --gold: #F5A623;
+  --red: #E74C3C;
+  --green: #27AE60;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #F5F6FA; color: #1A1A2E; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden; padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+}
+
+.banner {
+  position:relative; overflow:hidden;
+  background: linear-gradient(160deg, #061A40 0%, #0B3D91 40%, #1565C0 100%);
+  padding: 32px 20px 24px; color: #fff;
+}
+.banner-tag {
+  display:inline-block; background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px); border-radius:20px; padding:5px 14px;
+  font-size:12px; font-weight:500; margin-bottom:14px; letter-spacing:1px;
+}
+.banner-title { font-size: clamp(22px, 5.5vw, 28px); font-weight:800; letter-spacing:1px; }
+.banner-sub { font-size:11px; opacity:0.75; margin-top:6px; }
+
+.stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:20px; }
+.stat-card {
+  background:rgba(255,255,255,0.12); backdrop-filter:blur(10px);
+  border-radius:10px; padding:10px 6px; text-align:center;
+  border:1px solid rgba(255,255,255,0.08);
+}
+.stat-num { font-size: clamp(16px, 4vw, 22px); font-weight:800; }
+.stat-label { font-size: clamp(9px, 2.3vw, 11px); opacity:0.75; margin-top:2px; }
+
+.quick-nav {
+  display:flex; gap:8px; padding:14px 16px; overflow-x:auto;
+  background:#fff; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.quick-nav::-webkit-scrollbar { display:none; }
+.nav-tag {
+  flex-shrink:0; padding:8px 16px; border-radius:20px;
+  font-size:14px; font-weight:500; cursor:pointer;
+  background:#F3F4F6; color:#6B7280; white-space:nowrap; transition:.2s;
+}
+.nav-tag.active { background:#0B3D91; color:#fff; }
+
+.welcome {
+  padding:20px 16px; text-align:center; background:#fff;
+  margin:8px 12px; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06);
+}
+.welcome h2 { font-size:clamp(17px,4.2vw,20px); font-weight:700; margin-bottom:4px; }
+.welcome p { font-size:13px; color:#6B7280; margin-bottom:14px; }
+
+.section { padding:0 12px; margin-bottom:16px; }
+.section-header { display:flex; align-items:center; gap:8px; padding:12px 4px 10px; }
+.section-icon { width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px; }
+.section-title { font-size:clamp(14px,3.6vw,16px); font-weight:700; }
+
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.grid-item {
+  background:#fff; border-radius:10px; padding:14px 8px;
+  text-align:center; cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,0.06);
+  transition:transform .15s; min-height:90px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.grid-item:active { transform:scale(0.96); }
+.grid-icon { width:40px;height:40px;border-radius:12px;margin-bottom:8px;display:flex;align-items:center;justify-content:center; }
+.grid-icon svg { width:22px;height:22px; }
+.grid-label { font-size:clamp(12px,3vw,14px); font-weight:600; line-height:1.3; }
+.grid-desc { font-size:11px; color:#9CA3AF; margin-top:2px; line-height:1.3; }
+
+.search-card {
+  margin:12px 12px 20px; background:#0B3D91;
+  border-radius:16px; padding:20px 16px; box-shadow:0 8px 32px rgba(0,0,0,0.10);
+}
+.search-card-title { color:#fff; font-size:clamp(14px,3.6vw,16px); font-weight:700; margin-bottom:4px; }
+.search-card-desc { color:rgba(255,255,255,0.65); font-size:11px; margin-bottom:14px; }
+.search-row { display:flex; gap:8px; }
+.search-input {
+  flex:1; height:44px; border-radius:22px; border:none;
+  padding:0 18px; font-size:14px; outline:none;
+}
+.search-btn {
+  width:80px; height:44px; border-radius:22px; border:none;
+  background:#F5A623; color:#1A1A2E; font-size:14px;
+  font-weight:700; cursor:pointer; flex-shrink:0;
+}
+.search-hints { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.search-hint {
+  font-size:11px; color:rgba(255,255,255,0.6);
+  background:rgba(255,255,255,0.1); padding:3px 10px;
+  border-radius:12px; cursor:pointer;
+}
+
+.bottom-tab {
+  position:fixed; bottom:0; left:0; right:0;
+  background:#fff; display:flex; justify-content:space-around;
+  padding:8px 0 calc(8px + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid #E5E7EB; z-index:900;
+  box-shadow:0 -2px 12px rgba(0,0,0,0.04);
+}
+.tab-item {
+  display:flex; flex-direction:column; align-items:center;
+  gap:2px; cursor:pointer; padding:4px 20px; color:#9CA3AF;
+  font-size:10px; font-weight:500; transition:color .2s;
+}
+.tab-item svg { width:22px;height:22px; }
+.tab-item.active { color:#0B3D91; }
+
+/* 详情页 */
+.detail-overlay {
+  position:fixed; inset:0; background:#F5F6FA; z-index:950;
+  overflow-y:auto; display:none;
+  -webkit-overflow-scrolling:touch;
+}
+.detail-overlay.active { display:block; }
+
+.detail-header {
+  position:sticky; top:0; background:#fff; z-index:10;
+  padding:12px 16px; display:flex; align-items:center;
+  gap:12px; border-bottom:1px solid #E5E7EB;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.btn-back {
+  width:36px;height:36px;border-radius:50%;
+  background:#F3F4F6; border:none; cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px; color:#1A1A2E; flex-shrink:0;
+}
+.detail-title { font-size:clamp(14px,3.6vw,16px); font-weight:700; flex:1; }
+.detail-body { padding:16px 14px; }
+.content-card {
+  background:#fff; border-radius:16px; padding:18px 16px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-bottom:12px;
+}
+.content-card h3 { font-size:clamp(14px,3.6vw,16px); font-weight:700; margin-bottom:10px; }
+.content-card h4 { font-size:clamp(12px,3vw,14px); font-weight:600; margin-bottom:8px; color:#1A1A2E; }
+.content-card p { font-size:13px; color:#6B7280; line-height:1.7; margin-bottom:8px; }
+.checklist { display:flex; flex-direction:column; gap:6px; }
+.check-item { display:flex; align-items:flex-start; gap:8px; font-size:13px; line-height:1.6; color:#6B7280; }
+.check-icon { color:#27AE60; font-weight:700; flex-shrink:0; margin-top:1px; }
+.tag-row { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+.tag { background:#F3F4F6; padding:4px 12px; border-radius:14px; font-size:11px; color:#6B7280; }
+table { width:100%; border-collapse:collapse; font-size:11px; margin:10px 0; }
+table th, table td { border:1px solid #E5E7EB; padding:8px 6px; text-align:left; }
+table th { background:#F8FAFC; font-weight:600; }
+.highlight {
+  background:#E8F0FE; border-radius:8px;
+  padding:10px 14px; font-size:13px; color:#0B3D91;
+  margin:10px 0; font-weight:500; line-height:1.6;
+}
+.notice-red {
+  background:#FFF5F5; border-left:3px solid #E74C3C;
+  padding:12px 14px; border-radius:6px; margin:10px 0;
+  font-size:13px; color:#C53030;
+}
+.notice-blue {
+  background:#E8F0FE; border-left:3px solid #0B3D91;
+  padding:12px 14px; border-radius:6px; margin:10px 0;
+  font-size:13px; color:#0B3D91;
+}
+.step-list { list-style:none; padding:0; }
+.step-list li {
+  padding:10px 10px 10px 40px; position:relative;
+  font-size:13px; color:#6B7280; border-left:2px solid #E5E7EB;
+  margin-left:12px; line-height:1.7; counter-increment:step;
+}
+.step-list li::before {
+  content:counter(step); position:absolute; left:-14px; top:10px;
+  width:26px;height:26px;border-radius:50%;
+  background:#0B3D91; color:#fff; display:flex;
+  align-items:center; justify-content:center; font-size:11px; font-weight:700;
+}
+.step-list li:last-child { border-left-color:transparent; }
+.copy-btn {
+  display:inline-flex;align-items:center;gap:4px;
+  background:#E8F0FE;color:#0B3D91;border:none;
+  padding:6px 14px;border-radius:16px;font-size:11px;
+  font-weight:600;cursor:pointer;margin-left:8px;
+}
+
+/* 弹窗 */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,0.55);
+  z-index:1100; display:flex; align-items:flex-end; justify-content:center;
+  animation:fadeIn .25s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal-overlay.hidden { display:none; }
+.modal-sheet {
+  background:#fff; border-radius:20px 20px 0 0; width:100%;
+  max-width:480px; padding:28px 24px 36px;
+  animation:slideUp .35s ease;
+}
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+.modal-close {
+  position:absolute; right:18px; top:18px;
+  width:32px;height:32px;border-radius:50%;
+  background:#F3F4F6; border:none; font-size:18px;
+  color:#6B7280; cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.modal-title { text-align:center; font-size:clamp(17px,4.2vw,20px); font-weight:700; margin:50px 0 8px; }
+.modal-desc { text-align:center; font-size:13px; color:#6B7280; margin-bottom:6px; line-height:1.5; }
+.id-box {
+  background:#F8FAFC; border:1.5px dashed #E5E7EB; border-radius:10px;
+  padding:12px 16px; text-align:center; font-size:15px; font-weight:600;
+  color:#0B3D91; margin:16px 0 8px; letter-spacing:1px;
+}
+.qq-box {
+  background:#F0F7FF; border:1.5px dashed #91C8FF; border-radius:10px;
+  padding:8px 16px; text-align:center; font-size:14px; font-weight:600;
+  color:#0A7AFF; margin:0 0 16px; letter-spacing:1px;
+}
+.modal-btn {
+  width:100%; height:48px; border:none; border-radius:24px;
+  font-size:15px; font-weight:600; cursor:pointer; margin-bottom:10px;
+}
+.btn-wechat { background:#0B3D91; color:#fff; }
+.btn-qq { background:#0A7AFF; color:#fff; }
+.btn-close { background:#fff; color:#6B7280; border:1px solid #E5E7EB; }
+.modal-note { text-align:center; font-size:11px; color:#9CA3AF; margin-top:12px; }
+
+/* Toast */
+.toast {
+  position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.8); color:#fff; padding:12px 24px;
+  border-radius:24px; font-size:14px; z-index:2000;
+  pointer-events:none; opacity:0; transition:opacity .3s;
+}
+.toast.show { opacity:1; }
+</style>
+</head>
+<body>
+
+<!-- ========== 新生答疑弹窗（默认隐藏，3秒后显示） ========== -->
+<div class="modal-overlay hidden" id="welcomeModal">
+  <div class="modal-sheet">
+    <button class="modal-close" id="modalCloseBtn">✕</button>
+    <div style="width:56px;height:56px;margin:0 auto;background:#E8F0FE;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg>
+    </div>
+    <div class="modal-title">南理新生答疑</div>
+    <div class="modal-desc">添加南理学长微信或QQ，校园问题直接问</div>
+    <div class="id-box">微信：XMB2D888</div>
+    <div class="qq-box">QQ：3289094177</div>
+    <button class="modal-btn btn-wechat" id="btnCopyWx">📋 复制微信号</button>
+    <button class="modal-btn btn-qq" id="btnCopyQQ">🐧 复制QQ号</button>
+    <button class="modal-btn btn-close" id="btnDismiss">稍后再说</button>
+    <div class="modal-note">添加时请备注：26级南理新生</div>
+  </div>
+</div>
+
+<!-- ========== 顶部 Banner ========== -->
+<header class="banner" id="top">
+  <div class="banner-tag">🚀 2026 校园指南</div>
+  <div class="banner-title">南昌理工学院</div>
+  <div class="banner-sub">Nanchang Institute of Technology · 航天科教 兴我中华</div>
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">1999</div><div class="stat-label">建校年份</div></div>
+    <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">校区</div></div>
+    <div class="stat-card"><div class="stat-num">民办</div><div class="stat-label">本科院校</div></div>
+    <div class="stat-card"><div class="stat-num">3万</div><div class="stat-label">在校生</div></div>
+  </div>
+</header>
+
+<!-- ========== 快速导航 ========== -->
+<div class="quick-nav" id="quickNav">
+  <span class="nav-tag active" data-section="xinbi">新生必读</span>
+  <span class="nav-tag" data-section="life">校园生活</span>
+  <span class="nav-tag" data-section="study">学业发展</span>
+  <span class="nav-tag" data-section="growth">成长发展</span>
+  <span class="nav-tag" data-section="service">办事指南</span>
+</div>
+
+<!-- ========== 欢迎区 ========== -->
+<div class="welcome" id="welcome">
+  <h2>你好，新南理人 👋</h2>
+  <p>航天科教 · 科学求实厚德创新 · 英雄城南昌</p>
+  <button class="search-btn" style="display:inline-flex;align-items:center;gap:6px;width:auto;padding:0 24px;" onclick="document.getElementById('searchArea').scrollIntoView({behavior:'smooth'})">🔍 搜校园</button>
+</div>
+
+<!-- ========== 分区模块 ========== -->
+<div class="section" id="xinbi">
+  <div class="section-header"><div class="section-icon" style="background:#FDE8E8;color:#E74C3C;">📖</div><span class="section-title">新生必读</span></div>
+  <div class="grid-3" id="grid-xinbi"></div>
+</div>
+
+<div class="section" id="life">
+  <div class="section-header"><div class="section-icon" style="background:#E6F7EC;color:#27AE60;">🏠</div><span class="section-title">校园生活</span></div>
+  <div class="grid-3" id="grid-life"></div>
+</div>
+
+<div class="section" id="study">
+  <div class="section-header"><div class="section-icon" style="background:#F3E8FF;color:#7C3AED;">📚</div><span class="section-title">学业发展</span></div>
+  <div class="grid-3" id="grid-study"></div>
+</div>
+
+<div class="section" id="growth">
+  <div class="section-header"><div class="section-icon" style="background:#FFF3E0;color:#F57C00;">🚀</div><span class="section-title">成长发展</span></div>
+  <div class="grid-3" id="grid-growth"></div>
+</div>
+
+<div class="section" id="service">
+  <div class="section-header"><div class="section-icon" style="background:#E8EAF6;color:#3F51B5;">📋</div><span class="section-title">办事指南</span></div>
+  <div class="grid-3" id="grid-service"></div>
+</div>
+
+<!-- ========== 搜索区 ========== -->
+<div class="search-card" id="searchArea">
+  <div class="search-card-title">🔍 校园资料搜索</div>
+  <div class="search-card-desc">输入关键词，直接查找南理校园指南</div>
+  <div class="search-row">
+    <input class="search-input" id="searchInput" type="text" placeholder="航天、英雄校区、5个食堂、校园网…" onkeydown="if(event.key==='Enter')doSearch()">
+    <button class="search-btn" onclick="doSearch()">搜索</button>
+  </div>
+  <div class="search-hints">
+    <span class="search-hint" onclick="quickSearch('英雄校区')">英雄校区</span>
+    <span class="search-hint" onclick="quickSearch('学费')">学费</span>
+    <span class="search-hint" onclick="quickSearch('校园网')">校园网</span>
+    <span class="search-hint" onclick="quickSearch('航天')">航天</span>
+  </div>
+</div>
+
+<!-- ========== Toast ========== -->
+<div class="toast" id="toast"></div>
+
+<!-- ========== 详情页 ========== -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-header">
+    <button class="btn-back" id="btnBack">‹</button>
+    <div class="detail-title" id="detailTitle">详情</div>
+    <div style="width:36px;"></div>
+  </div>
+  <div class="detail-body" id="detailBody"></div>
+</div>
+
+<!-- ========== 底部 Tab ========== -->
+<div class="bottom-tab">
+  <div class="tab-item active" data-section="xinbi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>新生必读</span>
+  </div>
+  <div class="tab-item" data-section="life">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>校园生活</span>
+  </div>
+  <div class="tab-item" data-section="study">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+    <span>学业发展</span>
+  </div>
+  <div class="tab-item" data-section="growth">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    <span>成长发展</span>
+  </div>
+  <div class="tab-item" data-section="service">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+    <span>办事指南</span>
+  </div>
+</div>
+
+<script>
+// ========== 数据 ==========
+var gridItems = {
+  xinbi: [
+    {id:"baodao",color:"#FDE8E8",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',label:"报到流程",desc:"英雄校区理工大厦"},
+    {id:"qingdan",color:"#E6F7EC",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',label:"必备清单",desc:"开学带齐不慌张"},
+    {id:"jiaotong",color:"#FFF3E0",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',label:"到校交通",desc:"火车站/机场接驳"},
+    {id:"xuefei",color:"#F3E8FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',label:"学费标准",desc:"民办本科收费明细"},
+    {id:"junxun",color:"#FFF8E1",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>',label:"军训贴士",desc:"航天报告厅动员"},
+    {id:"bilei",color:"#FDE8E8",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',label:"新生避雷",desc:"上门推销/培训诈骗"},
+    {id:"lvtong",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>',label:"绿色通道",desc:"助学贷款与资助"},
+    {id:"card",color:"#E8EAF6",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#3F51B5" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',label:"校园卡",desc:"一卡通办理使用"},
+    {id:"app",color:"#E8F0FE",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',label:"常用应用",desc:"迎新系统/教务"},
+  ],
+  life: [
+    {id:"shitang",color:"#FFF3E0",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>',label:"食堂指南",desc:"5大食堂+博林中心"},
+    {id:"sushe",color:"#E8F0FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#165DFF" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',label:"宿舍介绍",desc:"4人间上床下桌空调"},
+    {id:"kuaidi",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>',label:"快递收发",desc:"多个校内代收点"},
+    {id:"yibao",color:"#FDE8E8",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>',label:"医保报销",desc:"大学生医保指南"},
+    {id:"map",color:"#E6F7EC",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>',label:"校园地图",desc:"英雄+丰城校区"},
+    {id:"chaoshi",color:"#E8EAF6",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#3F51B5" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>',label:"商超购物",desc:"博林购物中心/商业街"},
+    {id:"yushi",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00ACC1" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>',label:"浴室洗衣",desc:"独卫热水+扫码洗衣"},
+    {id:"yundong",color:"#E8F0FE",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/><path d="M2 12h20"/></svg>',label:"运动场所",desc:"金鸟巢/操场/球场"},
+    {id:"wanle",color:"#FCE4EC",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>',label:"周边玩乐",desc:"南昌商圈景点推荐"},
+  ],
+  study: [
+    {id:"xueyuan",color:"#F3E8FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>',label:"学院一览",desc:"18个教学学院"},
+    {id:"jidian",color:"#E8F0FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#165DFF" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',label:"绩点学分",desc:"成绩计算规则"},
+    {id:"jiangzhu",color:"#FFF3E0",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>',label:"奖助学金",desc:"国家/学校/专项"},
+    {id:"xuanke",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00ACC1" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',label:"选课系统",desc:"教务系统公选课"},
+    {id:"lib",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>',label:"图书馆",desc:"图文信息中心"},
+    {id:"wangluo",color:"#E8F0FE",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg>',label:"校园网",desc:"WiFi+宽带全攻略"},
+    {id:"kaoyan",color:"#FFF8E1",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',label:"考研升学",desc:"备考与报考建议"},
+    {id:"zhengshu",color:"#E8EAF6",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#3F51B5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>',label:"证书考级",desc:"四六级/计算机/专业证"},
+    {id:"jiaowu",color:"#E8F0FE",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',label:"教务入口",desc:"教务系统/迎新平台"},
+  ],
+  growth: [
+    {id:"xueshenghui",color:"#E8F0FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#165DFF" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',label:"学生会",desc:"校/院学生会"},
+    {id:"shetuan",color:"#E6F7EC",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>',label:"社团组织",desc:"各类型社团一览"},
+    {id:"dierketang",color:"#FFF3E0",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>',label:"第二课堂",desc:"学分获取攻略"},
+    {id:"jingsai",color:"#F3E8FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>',label:"学科竞赛",desc:"大创/挑战杯/各类赛"},
+    {id:"shixi",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>',label:"实习就业",desc:"校企合作与校招"},
+    {id:"dangtuan",color:"#FDE8E8",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6 14.5 11 20 11 15.5 14 17.5 19 12 15.5 6.5 19 8.5 14 4 11 9.5 11"/></svg>',label:"党团组织",desc:"关系转接与入党"},
+    {id:"pingyou",color:"#FFF8E1",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>',label:"评优评先",desc:"三好学生/优干"},
+    {id:"qingong",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00ACC1" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>',label:"勤工助学",desc:"校内岗位申请"},
+    {id:"jineng",color:"#E8F0FE",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',label:"技能提升",desc:"学习资源与技能"},
+  ],
+  service: [
+    {id:"xueshengzheng",color:"#E8F0FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#165DFF" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>',label:"学生证办理",desc:"补办与火车优惠"},
+    {id:"dianhua",color:"#E6F7EC",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',label:"常用电话",desc:"各部门联系方式"},
+    {id:"qingjia",color:"#FFF3E0",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>',label:"请假流程",desc:"事假病假办理"},
+    {id:"baoxiu",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',label:"宿舍报修",desc:"物业维修渠道"},
+    {id:"xueji",color:"#F3E8FF",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/></svg>',label:"学籍异动",desc:"休学转专业流程"},
+    {id:"caiwu",color:"#E8EAF6",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#3F51B5" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',label:"财务缴费",desc:"学费住宿费缴纳"},
+    {id:"baowei",color:"#FDE8E8",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',label:"保卫处",desc:"校园安全与门禁"},
+    {id:"hukou",color:"#FFF8E1",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>',label:"户口迁移",desc:"自愿办理指南"},
+    {id:"zizhu",color:"#E0F7FA",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00897B" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>',label:"学生资助",desc:"助学贷/补助/减免"},
+  ]
+};
+
+// ========== 详情内容（纯字符串，不用模板字面量） ==========
+var detailContent = {};
+
+detailContent.baodao = '<div class="content-card"><h3>📋 报到流程总览</h3><div class="highlight">🏢 报到地点：英雄校区理工大厦一楼</div><p><strong>报到时间：</strong>8月底-9月初（以录取通知书为准）</p><ol class="step-list"><li><strong>网上预报到</strong>：登录迎新系统 yxxt.nut.edu.cn:8090，账号为身份证号，密码为身份证后6位，完成信息填写和网上缴费</li><li><strong>到校报到</strong>：南昌站/南昌西站有学校迎新大巴接送</li><li><strong>验审证件</strong>：理工大厦一楼招生信息服务中心，验录取通知书、身份证、准考证</li><li><strong>缴费</strong>：验审窗口对面，支持刷卡、微信、支付宝、现金</li><li><strong>领取材料</strong>：领取入学资料、学生手册等</li><li><strong>到二级学院报到</strong>：提交承诺书等材料，领取宿舍钥匙、学生卡</li></ol><p>💡 志愿者引导乘坐校园爱心服务迎新车（免费）至理工大厦</p></div><div class="content-card"><h3>⏰ 各批次报到时间</h3><table><thead><tr><th>批次</th><th>时间</th></tr></thead><tbody><tr><td>本科新生</td><td>8月25日-26日</td></tr><tr><td>专升本新生</td><td>8月27日-28日</td></tr><tr><td>专科新生</td><td>8月29日-30日</td></tr></tbody></table><p style="font-size:12px;color:#9CA3AF;margin-top:8px;">*以上为往年时间参考，具体以录取通知书为准</p></div>';
+
+detailContent.qingdan = '<div class="content-card"><h3>🎒 开学必备清单</h3><div class="highlight">🚀 航天南理 · 航空特色的新生装备</div><h4 style="margin-top:16px;">📄 证件材料（必须带齐！）</h4><div class="checklist"><div class="check-item"><span class="check-icon">✅</span><span><strong>录取通知书原件</strong> —— 报到注册的通行证</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>身份证原件 + 复印件2份</strong>（正反页复印，写上本人手机号）</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>高考准考证原件</strong>（需装入大学档案）</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>2寸免冠蓝底照片6张</strong> + 电子版存手机</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>高中纸质档案</strong> —— ⚠️千万不要拆封！到校后交班主任</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>团员证 + 组织关系介绍信</strong> —— 到校分班后统一转入</span></div><div class="check-item"><span class="check-icon">✅</span><span><strong>户口本本人页复印件</strong>（申请助学金可能用到）</span></div></div><h4 style="margin-top:18px;">🛏️ 床上用品</h4><p>学校统一购置卧具及生活用品（含被套、床单、枕套、盖絮、垫絮、蚊帐、枕芯、枕巾、草席、旅行包、军训服、军鞋、水桶、脸盆、热水瓶、饭盒勺子）—— 新生报到时不用带床上用品。建议自备一个舒服的枕头+空调被（南昌9月还很热）。</p><p style="font-size:12px;color:#9CA3AF;">床铺尺寸：宽0.9m × 长2m</p><h4 style="margin-top:18px;">🧴 生活用品</h4><div class="checklist"><div class="check-item"><span class="check-icon">✅</span><span>洗漱用品（牙刷、牙膏、毛巾、洗发水、沐浴露、洗面奶等）</span></div><div class="check-item"><span class="check-icon">✅</span><span>洗衣液、衣架、粘钩</span></div><div class="check-item"><span class="check-icon">✅</span><span>拖鞋 + 运动鞋（体育课要穿）</span></div><div class="check-item"><span class="check-icon">✅</span><span>水杯、碗筷</span></div><div class="check-item"><span class="check-icon">✅</span><span>雨伞（南昌天气多变）</span></div></div><h4 style="margin-top:18px;">💊 医疗用品</h4><div class="checklist"><div class="check-item"><span class="check-icon">✅</span><span>创可贴、碘伏棉签</span></div><div class="check-item"><span class="check-icon">✅</span><span>感冒药、退烧药、肠胃药</span></div><div class="check-item"><span class="check-icon">✅</span><span>花露水/驱蚊液（南昌蚊子猛）</span></div><div class="check-item"><span class="check-icon">✅</span><span>防晒霜（军训刚需！SPF50+）</span></div></div></div><div class="content-card"><div class="highlight">💡 <strong>开学物品代购服务</strong><br/>学长团队可代跑办理/代购开学用品<br/>咨询微信：XMB2D888 &nbsp; QQ：3289094177</div></div>';
+
+detailContent.jiaotong = '<div class="content-card"><h3>🚗 到校交通指南</h3><div class="highlight">📍 主校区地址：江西省南昌市经济技术开发区英雄大道901号</div><h4 style="margin-top:16px;">🚂 火车站</h4><p><strong>南昌站：</strong>学校有迎新大巴接送，直接到英雄校区</p><p><strong>南昌西站：</strong>同样有迎新大巴</p><h4 style="margin-top:16px;">🚌 公交</h4><p>南昌站出发：乘210/240路公交到"英雄开发区"站</p><p>南昌西站出发：乘地铁2号线转1号线至"双港站"，出站后打车或公交</p><h4 style="margin-top:16px;">✈️ 机场</h4><p><strong>南昌昌北国际机场：</strong>距学校约15公里，打车约30分钟</p><div class="notice-blue">💡 报到期间学校在南昌站、南昌西站均设迎新接站点，认准"南昌理工学院"接站牌</div><h4 style="margin-top:16px;">🎫 火车票优惠</h4><p>凭<strong>录取通知书</strong>到火车站窗口购买学生优惠火车票（硬座半价/动车二等座7.5折）</p></div>';
+
+detailContent.xuefei = '<div class="content-card"><h3>💰 南昌理工学院收费标准</h3><p style="font-size:12px;color:#9CA3AF;margin-bottom:12px;">民办本科院校，南昌航天科技集团出资创办</p><table><thead><tr><th>项目</th><th>费用（元/学年）</th></tr></thead><tbody><tr><td>本科普通文理专业</td><td><strong>23,500</strong></td></tr><tr><td>本科艺术类</td><td><strong>28,000</strong></td></tr><tr><td>本科飞行技术</td><td><strong>23,900</strong></td></tr><tr><td>本科中韩合作</td><td><strong>29,000</strong></td></tr><tr><td>专科文理</td><td><strong>15,000</strong></td></tr><tr><td>住宿（空调4人间）</td><td><strong>2,600</strong></td></tr><tr><td>住宿（空调6人间）</td><td><strong>2,200</strong></td></tr><tr><td>书本费</td><td>约800~1,000</td></tr></tbody></table><div class="highlight" style="margin-top:12px;">📊 <strong>新生第一年总预算参考</strong><br/>普通本科：23,500 + 2,600 + 1,000 = <strong>约27,100元/年</strong><br/>艺术类本科：28,000 + 2,600 + 1,000 = <strong>约31,600元/年</strong></div></div><div class="content-card"><h3>💳 缴费方式</h3><p>1. <strong>迎新系统网上缴费</strong>（推荐，避免排队）</p><p>2. <strong>报到现场缴费</strong>：理工大厦一楼，支持银联卡、微信、支付宝、现金</p><p>3. <strong>银行汇款</strong>：按录取通知书内银行卡信息转账</p></div>';
+
+detailContent.junxun = '<div class="content-card"><h3>🏋️ 南理军训帖士</h3><div class="highlight">🚀 航天报告厅动员 · 报到后约半个月军事训练</div><h4 style="margin-top:16px;">⏱️ 时间安排</h4><p>报到结束后开始军训，时长约<strong>14天</strong>，含消防应急演习</p><p>每天上午+下午训练，晚上可能有军事理论学习或拉歌活动</p><h4 style="margin-top:16px;">🎒 必备物品</h4><div class="checklist"><div class="check-item"><span class="check-icon">☀️</span><span><strong>防晒霜SPF50+</strong> —— 南昌9月太阳非常猛</span></div><div class="check-item"><span class="check-icon">💧</span><span><strong>大容量水壶</strong> —— 军训期间免费饮水补给</span></div><div class="check-item"><span class="check-icon">🧦</span><span><strong>棉袜+运动鞋垫</strong> —— 军鞋底硬，多备几双</span></div><div class="check-item"><span class="check-icon">💊</span><span><strong>藿香正气水/人丹</strong> —— 防中暑必备</span></div></div><h4 style="margin-top:16px;">⚠️ 免训/请假</h4><p>身体有特殊情况（如心脏病、骨折、过敏等）可以<strong>向辅导员和教官申请免训或观训</strong>。需提前准备<strong>医院开具的证明</strong>，报到后第一时间联系辅导员说明情况。</p><p style="font-size:12px;color:#9CA3AF;">有疑问可以咨询学长 微信：XMB2D888</p></div>';
+
+detailContent.bilei = '<div class="content-card"><h3>⚠️ 南理新生三大避雷</h3><div class="notice-red"><strong>🔴 骗局一：上门推销电话卡</strong><br/><br/>开学季常有自称学长/运营商的人到宿舍推销，话术："必须办这个卡才能上网/选课"<br/><br/>⚠️ <strong>真相：</strong>学校明确说明"校园网不绑定手机卡"，WiFi名Nclgxy，50M宽带独立账号。电话卡请根据自身情况自行选择，完全自愿办理。<br/><br/>🛡️ <strong>防范：</strong>可到校内各运营商官方营业厅自愿办理，学长可带你直接去营业厅办理最划算套餐。咨询微信：XMB2D888</div><div class="notice-red" style="margin-top:12px;"><strong>🔴 骗局二：培训/证书推销</strong><br/><br/>有人上门推销"计算机二级包过班""英语四六级保过班"，收取高额费用后跑路或教学质量极差。<br/><br/>⚠️ <strong>真相：</strong>正规培训学校会统一通知，不通过个人在宿舍推销。</div><div class="notice-red" style="margin-top:12px;"><strong>🔴 骗局三：兼职代理/刷单</strong><br/><br/>"轻松日入300""零门槛做代理"——让你先交押金/加盟费/代理费。<br/><br/>⚠️ <strong>真相：</strong>正规校园兼职不需要交钱。学校勤工助学通过官方渠道发布。</div></div>';
+
+detailContent.lvtong = '<div class="content-card"><h3>⚡ 绿色通道 · 不让一个学生因贫困失学</h3><div class="highlight">南理已开通新生入学"绿色通道"，家庭经济困难学生可先报到入学</div><h4 style="margin-top:16px;">📋 绿色通道是什么</h4><p>家庭经济困难的新生，经审核后可<strong>暂缓缴纳学费</strong>，先办理入学手续，待助学贷款或资助到位后再补交。</p><h4 style="margin-top:16px;">🧾 怎么申请</h4><ol class="step-list"><li>收到录取通知书后，填写通知书内的<strong>《家庭经济困难学生认定申请表》</strong></li><li>到当地民政部门或村/社区开具相关证明</li><li>报到时在理工大厦绿色通道窗口提交申请</li><li>审核通过后先入学，后续通过助学贷/补助等方式处理费用</li></ol><h4 style="margin-top:16px;">🏦 助学贷款</h4><p><strong>生源地信用助学贷款：</strong>在户籍所在地教育局/农商行办理，每年最高可贷<strong>12,000~16,000元</strong>，在校期间国家贴息。办理时间：暑假期间（7-9月），凭录取通知书到当地教育局申请</p><h4 style="margin-top:16px;">🎁 南昌人才10条福利</h4><p>落户南昌的大学新生，符合条件的<strong>每人发放1000元落户奖励</strong>。</p><div class="notice-blue">💡 有资助疑问？联系学长微信：XMB2D888</div></div>';
+
+detailContent.card = '<div class="content-card"><h3>💳 校园卡指南</h3><h4>🎫 校园一卡通</h4><p>报到时由学校统一发放，功能包括：</p><div class="checklist"><div class="check-item"><span class="check-icon">🍽️</span><span>食堂就餐刷卡/扫码消费</span></div><div class="check-item"><span class="check-icon">🛒</span><span>博林购物中心及校内超市消费</span></div><div class="check-item"><span class="check-icon">📚</span><span>图书馆入馆及借阅</span></div><div class="check-item"><span class="check-icon">🏠</span><span>宿舍门禁（部分楼栋）</span></div></div><p style="font-size:12px;color:#9CA3AF;margin-top:8px;">充值：食堂圈存机 / 线上微信公众号或小程序</p><h4 style="margin-top:18px;">📱 手机卡</h4><p>南理有三大运营商入驻（移动/联通/电信），办不办完全自愿。校园网WiFi不绑定手机卡。</p><div class="notice-blue">💡 学长可带你到校内营业厅办理最优惠套餐，咨询微信：XMB2D888</div></div>';
+
+detailContent.app = '<div class="content-card"><h3>📱 常用应用与系统</h3><h4>🔐 迎新系统（必用）</h4><p>yxxt.nut.edu.cn:8090 —— 报到前网上预报到、缴费、信息填写</p><p style="font-size:12px;color:#9CA3AF;">账号：身份证号 · 密码：身份证后6位</p><h4 style="margin-top:14px;">📋 教务系统（必用）</h4><p>jwc.nut.edu.cn —— 选课、查成绩、查课表</p><p style="font-size:12px;color:#9CA3AF;">账号：学号 · 初始密码：学号（首次登录后立即修改）</p><h4 style="margin-top:14px;">🌐 校园网自助服务</h4><p>wlzx.nut.edu.cn —— 校园网办理、实名认证、故障报修</p><h4 style="margin-top:14px;">🎓 其他常用</h4><div class="checklist"><div class="check-item"><span class="check-icon">📖</span><span><strong>学习通</strong> —— 公选课网课平台</span></div><div class="check-item"><span class="check-icon">🏛️</span><span><strong>学校官网</strong> —— nut.edu.cn</span></div></div></div>';
+
+detailContent.shitang = '<div class="content-card"><h3>🍜 南理食堂全攻略</h3><p>英雄校区共有<strong>5个食堂 + 博林购物中心</strong></p><table><thead><tr><th>食堂</th><th>特色/推荐</th><th>价格</th></tr></thead><tbody><tr><td>一食堂</td><td>基础饭菜窗口多、分量足</td><td>6~12元</td></tr><tr><td>二食堂</td><td>渔粉、浓汁烧（学长推荐！）二楼风味比一楼好</td><td>8~15元</td></tr><tr><td>三食堂</td><td>面食、麻辣烫窗口</td><td>6~12元</td></tr><tr><td>四食堂</td><td>小炒、盖浇饭</td><td>8~14元</td></tr><tr><td>五食堂</td><td>靠近部分宿舍区，各类快餐</td><td>6~12元</td></tr><tr><td>博林购物中心</td><td>各类小吃、奶茶、水果、超市一站式</td><td>丰俭由人</td></tr></tbody></table><div class="notice-blue" style="margin-top:12px;">💡 学长的建议：每个食堂的二楼通常比一楼好吃！二食堂的渔粉和浓汁烧是热门。</div></div>';
+
+detailContent.sushe = '<div class="content-card"><h3>🏠 南理宿舍介绍</h3><div class="highlight">学生宿舍20幢 · 上床下桌 · 独立卫浴 · 空调全覆盖</div><table><thead><tr><th>类型</th><th>配置</th><th>费用</th></tr></thead><tbody><tr><td><strong>空调4人间</strong></td><td>上床下桌、独卫、阳台、空调、热水器、一人一桌一柜</td><td>2,600元/年</td></tr><tr><td><strong>空调6人间</strong></td><td>独卫、阳台、空调、热水器</td><td>2,200元/年</td></tr></tbody></table><h4 style="margin-top:16px;">📐 宿舍详情</h4><p><strong>床铺尺寸：</strong>宽0.9m × 长2m</p><p><strong>设施：</strong>每间宿舍配空调、独立阳台和卫浴，一人一桌一柜</p><p><strong>楼内设施：</strong>自助打印机、自助洗衣机、充电宝租赁、吹风机</p><p><strong>热水：</strong>宿舍内有热水器，24小时可用</p><p><strong>网络：</strong>宿舍内有线宽带（50M），一人一号独立使用</p><div class="notice-blue">💡 宿舍由各学院统一安排，网上迎新系统可自行选择宿舍类型</div></div>';
+
+detailContent.kuaidi = '<div class="content-card"><h3>📦 快递收发</h3><div class="highlight">📍 快递地址：江西省南昌市经济技术开发区英雄大道901号</div><p>英雄校区内有<strong>多个快递代收点</strong>，包括菜鸟驿站、丰巢柜等。快递到后会收到短信通知具体取货点和取件码。</p><p style="font-size:12px;color:#9CA3AF;">大件行李可以提前寄快递到学校，地址写清楚"南昌理工学院英雄校区"即可</p><div class="notice-blue" style="margin-top:12px;">💡 寄大件行李/开学物品代收代取，可联系学长微信：XMB2D888</div></div>';
+
+detailContent.yibao = '<div class="content-card"><h3>🏥 大学生医保报销指南</h3><p>南理学生统一参加<strong>南昌市大学生基本医疗保险</strong>，每年随学费代收。</p><h4 style="margin-top:14px;">📋 报销流程</h4><ol class="step-list"><li><strong>就诊：</strong>校医院首诊（英雄校区内有校医室）</li><li><strong>转诊：</strong>需校外就诊的，由校医院开具转诊单</li><li><strong>报销材料：</strong>发票、病历、费用清单、转诊单</li><li><strong>提交：</strong>交至学校医保经办处</li></ol><p style="margin-top:12px;"><strong>⚠️ 注意：</strong>医保报销地点每年可能有变动，请关注辅导员通知或班级群消息。可使用<strong>电子医保凭证</strong> + 学号/姓名/班级进行查询。</p><div class="notice-blue">💡 有医保报销疑问？咨询学长微信：XMB2D888</div></div>';
+
+detailContent.chaoshi = '<div class="content-card"><h3>🛍️ 校内购物指南</h3><h4>🏬 博林购物中心</h4><p>校内最大的商业中心，集小吃、奶茶、水果店、超市、打印店于一体。靠近五食堂和部分宿舍区。</p><h4 style="margin-top:14px;">🛒 其他购物点</h4><p>各食堂附近有便利店、小超市，满足日常零食饮料需求。英雄大道校门外也有商业街区。</p><div class="notice-blue">💡 报到当天别在学校超市挤着买日用品，提前准备好或去校外便利店更划算。</div></div>';
+
+detailContent.yushi = '<div class="content-card"><h3>🚿 浴室洗衣</h3><p><strong>洗浴：</strong>每间宿舍均有<strong>独立卫生间+热水器</strong>，24小时可用，不用去公共澡堂。</p><p><strong>洗衣：</strong>每层楼设有自助洗衣机，扫码支付即可使用。</p><p><strong>饮水：</strong>宿舍楼内有直饮水机，可用校园卡或扫码取水。</p><h4 style="margin-top:14px;">🔧 公共设施</h4><div class="checklist"><div class="check-item"><span class="check-icon">🖨️</span><span><strong>自助打印机</strong> —— 扫码打印</span></div><div class="check-item"><span class="check-icon">🔋</span><span><strong>充电宝租赁</strong></span></div><div class="check-item"><span class="check-icon">💨</span><span><strong>电吹风</strong> —— 公共区域可用</span></div></div></div>';
+
+detailContent.yundong = '<div class="content-card"><h3>🏟️ 运动健身设施</h3><h4>🏋️ 金鸟巢健身</h4><p>南理招牌健身房，校内最大的健身中心，有各类器械、跑步机、力量训练区。学生办卡优惠。</p><h4 style="margin-top:14px;">⚽ 操场与球场</h4><div class="checklist"><div class="check-item"><span class="check-icon">🏃</span><span><strong>两个标准田径场</strong> —— 跑步、体训</span></div><div class="check-item"><span class="check-icon">🏀</span><span><strong>篮球场</strong> —— 多个室外灯光球场</span></div><div class="check-item"><span class="check-icon">⚽</span><span><strong>足球场</strong></span></div><div class="check-item"><span class="check-icon">🏐</span><span><strong>排球场</strong></span></div><div class="check-item"><span class="check-icon">🏓</span><span><strong>乒乓球台</strong> —— 各宿舍楼下/公共区域</span></div></div><div class="notice-blue">💡 南理每年举办秋季运动会，航天广场彩烟开幕，氛围极佳！</div></div>';
+
+detailContent.wanle = '<div class="content-card"><h3>🎡 周边玩乐推荐</h3><h4>🏙️ 南昌市区</h4><div class="checklist"><div class="check-item"><span>🏯</span><span><strong>滕王阁</strong> —— 南昌地标，江南三大名楼</span></div><div class="check-item"><span>🎡</span><span><strong>南昌之星摩天轮</strong> —— 世界第三高摩天轮，红谷滩</span></div><div class="check-item"><span>🏛️</span><span><strong>八一广场 + 八一起义纪念馆</strong> —— 红色打卡地</span></div><div class="check-item"><span>🛍️</span><span><strong>万达广场/铜锣湾</strong> —— 购物+美食</span></div></div><h4 style="margin-top:14px;">🎓 高校圈</h4><p>英雄校区位于昌北大学城，周边有江西财大、华东交大、江西理工等高校</p><h4 style="margin-top:14px;">🏞️ 南昌周边</h4><div class="checklist"><div class="check-item"><span>⛰️</span><span><strong>梅岭风景区</strong> —— 登山徒步</span></div><div class="check-item"><span>🏖️</span><span><strong>瑶湖</strong> —— 野餐/自行车/拍照</span></div></div></div>';
+
+detailContent.xueyuan = '<div class="content-card"><h3>🏫 南理18个二级学院一览</h3><p>南昌理工学院设有18个教学学院，覆盖9大学科门类，63个本科专业。</p><div class="tag-row"><span class="tag">计算机与信息工程学院</span><span class="tag">电子与信息工程学院</span><span class="tag">机电工程学院</span><span class="tag">建筑工程学院</span><span class="tag">航天航空学院</span><span class="tag">新能源与环境工程学院</span><span class="tag">工商管理学院</span><span class="tag">财经学院</span><span class="tag">人文教育学院</span><span class="tag">外国语学院</span><span class="tag">法学院</span><span class="tag">传媒学院</span><span class="tag">音乐学院</span><span class="tag">美术与设计学院</span><span class="tag">医学院</span><span class="tag">体育学院</span><span class="tag">国际交流学院</span><span class="tag">继续教育学院</span></div><p style="font-size:12px;color:#9CA3AF;margin-top:12px;">🚀 航天航空学院为南理特色学院，依托南昌航天科技集团产业背景</p></div><div class="content-card"><h3>🎓 学科特色</h3><p>南理以<strong>工科为主</strong>，航天航空为特色方向。2026年诺贝尔物理学奖得主康斯坦丁·诺沃肖洛夫受聘为南理首席科学家，并设立诺奖工作站。</p></div>';
+
+detailContent.jidian = '<div class="content-card"><h3>📊 绩点与学分制度</h3><table><thead><tr><th>分数</th><th>绩点(GPA)</th><th>等级</th></tr></thead><tbody><tr><td>90~100</td><td>4.0~5.0</td><td>优秀</td></tr><tr><td>80~89</td><td>3.0~3.9</td><td>良好</td></tr><tr><td>70~79</td><td>2.0~2.9</td><td>中等</td></tr><tr><td>60~69</td><td>1.0~1.9</td><td>及格</td></tr><tr><td>＜60</td><td>0</td><td>不及格（挂科）</td></tr></tbody></table><h4 style="margin-top:14px;">⚠️ 学分提醒</h4><p>每门课程有对应学分，修满专业培养方案规定的总学分才能毕业。挂科后可在下学期初补考，补考不过需重修。</p><div class="notice-red">挂科会影响评奖评优和入党，务必重视每一门课！</div></div>';
+
+detailContent.jiangzhu = '<div class="content-card"><h3>🏆 奖助学金体系</h3><table><thead><tr><th>名称</th><th>金额</th><th>说明</th></tr></thead><tbody><tr><td>国家奖学金</td><td>8,000元/年</td><td>成绩特别优异者</td></tr><tr><td>国家励志奖学金</td><td>5,000元/年</td><td>品学兼优+家庭困难</td></tr><tr><td>国家助学金</td><td>2,200~4,400元/年</td><td>家庭经济困难</td></tr><tr><td>学校奖学金</td><td>不等</td><td>校级一/二/三等奖</td></tr><tr><td>生源地助学贷款</td><td>≤16,000元/年</td><td>在校期间国家贴息</td></tr></tbody></table><div class="notice-blue">💡 南理2026年启动"润心励志"助学行动</div></div>';
+
+detailContent.xuanke = '<div class="content-card"><h3>💻 选课系统操作指南</h3><h4>🔗 系统入口</h4><p><strong>教务系统：</strong>jwc.nut.edu.cn</p><p><strong>公选课登录：</strong>学号登录，初始密码为学号（首次登录后务必修改）</p><h4 style="margin-top:14px;">📝 选课步骤</h4><ol class="step-list"><li>登录教务系统 → 选择"学生"身份</li><li>点击"学生选课" → 课程范围选"主修（公共任选）"</li><li>检索本学期可选课程 → 勾选目标课程</li><li>点击"选定课程"完成选课</li></ol><h4 style="margin-top:14px;">🔑 密码找回</h4><p>登录窗口右下角"学生找回密码"按钮，或联系所在学院教务科。</p><div class="notice-red">⚠️ 公选课名额有限，开放选课后尽快选课！热门课几分钟就满。</div></div>';
+
+detailContent.lib = '<div class="content-card"><h3>📚 图书馆 · 图文信息中心</h3><p>英雄校区设有<strong>图文信息中心</strong>，集图书馆、自习室、电子阅览室于一体。</p><h4 style="margin-top:14px;">📖 入馆与借阅</h4><div class="checklist"><div class="check-item"><span class="check-icon">🚪</span><span><strong>入馆：</strong>开放时间入馆，无需刷卡，自由进出阅览区</span></div><div class="check-item"><span class="check-icon">📚</span><span><strong>借书：</strong>可使用馆内<strong>自助借还机</strong>或找<strong>图书馆老师</strong>办理借阅</span></div></div><h4 style="margin-top:14px;">⏰ 开放时间</h4><p>周一至周日 8:00-22:00（考试周可能延长）</p><div class="notice-blue">💡 图书馆自习位考试周紧张，建议早上占位</div></div>';
+
+detailContent.wangluo = '<div class="content-card"><h3>🌐 校园网全攻略</h3><div class="highlight">⚠️ 官方：校园网不绑定手机卡！手机卡请自愿选择</div><h4 style="margin-top:14px;">📡 校园网包含</h4><div class="checklist"><div class="check-item"><span class="check-icon">🔌</span><span><strong>宿舍有线宽带</strong> —— 50M/人，一人一号，禁止共享</span></div><div class="check-item"><span class="check-icon">📶</span><span><strong>校园WiFi</strong> —— 名称 Nclgxy（注意大小写），不限流量</span></div></div><h4 style="margin-top:14px;">📝 怎么办理</h4><p>学校在9月份统一为大家开通校园网（自愿办理）。如需实名认证，带上身份证原件+复印件（写上姓名、院系、寝室号、联系电话、本科/专科）到指定营业厅办理。</p><h4 style="margin-top:14px;">📞 网络故障</h4><p>校园网报修联系网络信息管理中心（wlzx.nut.edu.cn）</p></div>';
+
+detailContent.kaoyan = '<div class="content-card"><h3>🎓 考研升学</h3><p>南理作为本科院校，大四学生可报考全国硕士研究生。</p><h4 style="margin-top:14px;">📅 考研时间线</h4><ol class="step-list"><li><strong>大三暑假：</strong>确定目标院校和专业，开始第一轮复习</li><li><strong>大四上学期：</strong>10月报名，12月底初试</li><li><strong>次年2月：</strong>初试成绩公布</li><li><strong>次年3-4月：</strong>复试/调剂</li></ol><div class="notice-blue">💡 考研辅导班选择、备考规划，可咨询学长微信：XMB2D888</div></div>';
+
+detailContent.zhengshu = '<div class="content-card"><h3>📜 必考证书一览</h3><table><thead><tr><th>证书</th><th>建议时间</th><th>说明</th></tr></thead><tbody><tr><td>英语四级 CET-4</td><td>大一下/大二上</td><td>尽早考，多数专业要求过四级</td></tr><tr><td>英语六级 CET-6</td><td>过四级后</td><td>考研/就业加分项</td></tr><tr><td>计算机二级</td><td>大一/大二</td><td>MS Office或C语言</td></tr><tr><td>普通话等级</td><td>大二/大三</td><td>教师/播音类专业必需</td></tr><tr><td>相关专业证书</td><td>大二~大四</td><td>会计初级/教资/软考等</td></tr><tr><td>驾驶证 C1/C2</td><td>寒暑假</td><td>大学期间考最划算</td></tr></tbody></table><div class="notice-red">⚠️ 四六级报名名额有限，开放后尽快报名！</div></div>';
+
+detailContent.jiaowu = '<div class="content-card"><h3>🔗 教务系统入口汇总</h3><table><thead><tr><th>系统</th><th>地址</th><th>用途</th></tr></thead><tbody><tr><td>迎新系统</td><td>yxxt.nut.edu.cn:8090</td><td>新生网上报到、缴费</td></tr><tr><td>教务系统</td><td>jwc.nut.edu.cn</td><td>选课、查成绩、查课表</td></tr><tr><td>学校官网</td><td>nut.edu.cn</td><td>通知公告、学校动态</td></tr><tr><td>网信中心</td><td>wlzx.nut.edu.cn</td><td>校园网办理、故障报修</td></tr><tr><td>录取查询</td><td>cx.nut.edu.cn</td><td>录取信息、通知书物流</td></tr></tbody></table></div>';
+
+detailContent.xueshenghui = '<div class="content-card"><h3>🏛️ 学生会组织</h3><h4>校级学生会</h4><p>南昌理工学院校学生会，下设多个部门。每年开学后招新（9-10月），通过面试入会。</p><h4 style="margin-top:14px;">院级学生会</h4><p>各二级学院均有独立学生会，规模较小但更贴近本院同学。</p><div class="notice-blue">💡 加入学生会可锻炼组织协调能力，也是评优加分项。建议大一时积极参加。</div></div>';
+
+detailContent.shetuan = '<div class="content-card"><h3>🎭 社团组织</h3><p>南理有各类社团数十个，开学后有"百团大战"招新活动：</p><div class="tag-row"><span class="tag">航模社</span><span class="tag">机器人社</span><span class="tag">摄影社</span><span class="tag">街舞社</span><span class="tag">吉他社</span><span class="tag">辩论社</span><span class="tag">志愿者协会</span><span class="tag">计算机协会</span><span class="tag">创业协会</span><span class="tag">跆拳道社</span></div><p style="margin-top:10px;font-size:12px;color:#9CA3AF;">🚀 航天类社团为南理一大特色，航模社在校内外比赛中屡获佳绩</p><div class="notice-blue">💡 建议加入1~2个感兴趣的社团，太多反而分散精力</div></div>';
+
+detailContent.dierketang = '<div class="content-card"><h3>📋 第二课堂学分</h3><p>南理实行"第一课堂+第二课堂"培养模式，第二课堂学分涉及社团活动、志愿服务、社会实践等。</p><h4 style="margin-top:12px;">获取方式</h4><div class="checklist"><div class="check-item"><span class="check-icon">📌</span><span>参加社团活动（需有记录）</span></div><div class="check-item"><span class="check-icon">📌</span><span>志愿者服务时长</span></div><div class="check-item"><span class="check-icon">📌</span><span>社会实践/实习报告</span></div><div class="check-item"><span class="check-icon">📌</span><span>参加学术讲座/报告</span></div><div class="check-item"><span class="check-icon">📌</span><span>参加竞赛获奖</span></div></div><div class="notice-red">⚠️ 第二课堂学分修不满影响毕业，务必从大一开始积累！</div></div>';
+
+detailContent.jingsai = '<div class="content-card"><h3>🏅 学科竞赛</h3><table><thead><tr><th>竞赛</th><th>级别</th><th>参赛时间</th></tr></thead><tbody><tr><td>"挑战杯"课外学术科技作品竞赛</td><td>国家级</td><td>春季</td></tr><tr><td>中国"互联网+"创新创业大赛</td><td>国家级</td><td>春季</td></tr><tr><td>全国大学生电子设计竞赛</td><td>国家级</td><td>暑假</td></tr><tr><td>全国大学生数学建模竞赛</td><td>国家级</td><td>9月</td></tr><tr><td>蓝桥杯程序设计竞赛</td><td>国家级</td><td>春季</td></tr><tr><td>全国大学生英语竞赛</td><td>国家级</td><td>4月</td></tr></tbody></table><div class="notice-blue">💡 学科竞赛获奖对考研复试和就业简历加分很大</div></div>';
+
+detailContent.shixi = '<div class="content-card"><h3>💼 实习与就业</h3><p>南理依托<strong>南昌航天科技集团</strong>的产业背景，在航天航空、机械制造、电子信息等领域有校企合作优势。</p><h4 style="margin-top:12px;">📅 实习安排</h4><p>大三/大四安排专业实习，部分专业有统一实习基地，也可自行联系。</p><h4 style="margin-top:12px;">🎯 校园招聘</h4><p>学校每年举办多场招聘会，企业涵盖南昌本地及全国范围。</p></div>';
+
+detailContent.dangtuan = '<div class="content-card"><h3>🚩 党团组织关系转接</h3><h4>共青团组织关系</h4><p>持<strong>团员证</strong>和<strong>入团志愿书（密封）</strong>到原毕业中学办理转出，到校分班后统一交班主任办理转入学校团委。</p><h4 style="margin-top:14px;">党组织关系</h4><p>党员持<strong>介绍信</strong>和<strong>党员档案</strong>到原单位办理转出。介绍信抬头：<strong>中共南昌理工学院委员会组织部</strong></p><h4 style="margin-top:14px;">⭐ 大学入党</h4><p>大一开始递交入党申请书 → 入党积极分子 → 发展对象 → 预备党员 → 正式党员，一般需要<strong>2~3年</strong>。</p><div class="notice-red">⚠️ 挂科会严重影响入党资格，想入党的同学务必保证学业成绩！</div></div>';
+
+detailContent.pingyou = '<div class="content-card"><h3>🌟 评优评先</h3><table><thead><tr><th>荣誉</th><th>时间</th><th>基本要求</th></tr></thead><tbody><tr><td>三好学生</td><td>每学年末</td><td>成绩排名前列+无挂科+品德优良</td></tr><tr><td>优秀学生干部</td><td>每学年末</td><td>担任班/院/校干部+工作表现好</td></tr><tr><td>优秀毕业生</td><td>毕业当年</td><td>综合表现突出</td></tr><tr><td>优秀团员/团干</td><td>五四前后</td><td>团内表现积极</td></tr></tbody></table></div>';
+
+detailContent.qingong = '<div class="content-card"><h3>💪 勤工助学</h3><p>学校设有校内勤工助学岗位：</p><div class="checklist"><div class="check-item"><span>📚</span><span>图书馆助理</span></div><div class="check-item"><span>🏢</span><span>行政办公室助理</span></div><div class="check-item"><span>🧹</span><span>教学楼/实验室管理</span></div><div class="check-item"><span>📞</span><span>招生/迎新临时岗位</span></div></div><p>申请渠道：关注学校学生发展与服务处通知</p><div class="notice-red">⚠️ 再次提醒：任何需要先交钱的"兼职"都是骗局！</div></div>';
+
+detailContent.jineng = '<div class="content-card"><h3>🛠️ 技能提升资源</h3><h4>💻 编程/软件开发</h4><p>计算机相关专业建议自学 GitHub、LeetCode刷题、开源项目参与。</p><h4 style="margin-top:12px;">🎨 设计/影视</h4><p>传媒学院/美术设计学院的设备资源可充分利用。</p><h4 style="margin-top:12px;">📊 办公技能</h4><p>Word/Excel/PPT精进（国企/公务员刚需）</p><h4 style="margin-top:12px;">🌐 免费学习平台</h4><div class="tag-row"><span class="tag">B站</span><span class="tag">中国大学MOOC</span><span class="tag">学习通</span><span class="tag">知乎</span></div></div>';
+
+detailContent.xueshengzheng = '<div class="content-card"><h3>📇 学生证办理与补办</h3><h4>发放</h4><p>报到入学后由学校统一制作发放，一般<strong>开学后1~2个月</strong>拿到。</p><h4 style="margin-top:12px;">补办</h4><p>遗失后到学生处申请补办，需登报挂失或提交遗失声明。</p><h4 style="margin-top:12px;">🚂 火车票优惠磁条</h4><p>每年11月左右统一充值（每年4次优惠），硬座半价/二等座7.5折。</p></div>';
+
+detailContent.dianhua = '<div class="content-card"><h3>📞 常用校内电话</h3><table><thead><tr><th>部门</th><th>用途</th></tr></thead><tbody><tr><td>招生信息服务中心</td><td>理工大厦一楼，报到验审/咨询</td></tr><tr><td>网络信息管理中心</td><td>校园网办理/故障报修</td></tr><tr><td>学生发展与服务处</td><td>学生事务/资助/学籍</td></tr><tr><td>校医院</td><td>医疗服务，英雄校区内</td></tr><tr><td>保卫处</td><td>校园安全/门禁/报案 83830110</td></tr><tr><td>档案馆</td><td>档案查询</td></tr></tbody></table><p style="font-size:12px;color:#9CA3AF;margin-top:8px;">*具体电话以学校官网 nut.edu.cn 公布为准</p></div>';
+
+detailContent.qingjia = '<div class="content-card"><h3>📝 请假流程</h3><ol class="step-list"><li>向辅导员说明请假事由</li><li>填写请假条（辅导员处领取或班级群下载模板）</li><li>辅导员审批签字</li><li>3天以内由辅导员直接批准，超过3天需学院审批</li><li>请假单交班委备案</li></ol><div class="notice-red">⚠️ 未请假缺课按旷课处理，累计旷课过多可能影响评优</div></div>';
+
+detailContent.baoxiu = '<div class="content-card"><h3>🔧 宿舍报修</h3><p>宿舍设施故障（水管、电路、门窗等）可通过以下渠道报修：</p><div class="checklist"><div class="check-item"><span>🔧</span><span><strong>宿管阿姨处登记</strong> —— 最快，日常小问题</span></div><div class="check-item"><span>📱</span><span><strong>后勤报修系统</strong> —— 关注学校后勤公众号或APP</span></div><div class="check-item"><span>📞</span><span><strong>物业维修电话</strong> —— 紧急情况直接打电话</span></div></div></div>';
+
+detailContent.xueji = '<div class="content-card"><h3>📋 学籍异动</h3><h4>🔄 转专业</h4><p>一般在大一上学期末或下学期初申请，需满足：成绩达到一定要求（不能挂科）、转入学院有名额、通过转入考核。具体流程咨询辅导员和学院教务科。</p><h4 style="margin-top:12px;">⏸️ 休学/复学</h4><p>因病或特殊情况可申请休学（需医院证明/家长同意），休学期满后办理复学手续。</p></div>';
+
+detailContent.caiwu = '<div class="content-card"><h3>🏦 财务缴费</h3><h4>缴费渠道</h4><div class="checklist"><div class="check-item"><span>🖥️</span><span><strong>迎新系统网上缴费</strong> —— 推荐使用</span></div><div class="check-item"><span>🏢</span><span><strong>理工大厦一楼现场缴费</strong> —— 银联卡、微信、支付宝、现金</span></div></div><h4 style="margin-top:12px;">📄 发票</h4><p>学费和住宿费为税控电子发票，教材费为增值税发票。</p></div>';
+
+detailContent.baowei = '<div class="content-card"><h3>🛡️ 保卫处</h3><p><strong>24小时值班电话：83830110</strong></p><h4 style="margin-top:12px;">主要职责</h4><div class="checklist"><div class="check-item"><span>🚨</span><span>校园安全巡逻与应急处理</span></div><div class="check-item"><span>🚗</span><span>校内交通秩序管理</span></div><div class="check-item"><span>📷</span><span>监控调取（失物等）</span></div><div class="check-item"><span>🪪</span><span>校园出入证件管理</span></div></div><div class="notice-red">⚠️ 遇到紧急情况第一时间拨打 83830110 或 110</div></div>';
+
+detailContent.hukou = '<div class="content-card"><h3>📋 户口迁移（自愿）</h3><div class="highlight">户口迁移完全自愿，不做强制要求</div><h4 style="margin-top:12px;">如需迁移：</h4><ol class="step-list"><li>凭录取通知书到户籍所在地派出所开具<strong>户口迁移证</strong></li><li>迁移证上须标注本人身份证号</li><li>到校后以班级为单位统一交学校保卫处</li></ol><p><strong>迁入地址：</strong>南昌市昌北经济技术开发区南昌理工学院</p><div class="notice-blue" style="margin-top:12px;">🎁 <strong>南昌人才10条：</strong>落户南昌的大学新生，符合条件的<strong>每人发放1,000元落户奖励</strong></div></div>';
+
+detailContent.zizhu = '<div class="content-card"><h3>🎓 学生资助体系</h3><table><thead><tr><th>项目</th><th>金额/内容</th><th>申请方式</th></tr></thead><tbody><tr><td>绿色通道</td><td>暂缓缴费、先入学</td><td>报到现场窗口申请</td></tr><tr><td>生源地助学贷款</td><td>≤16,000元/年</td><td>户籍所在地教育局</td></tr><tr><td>国家助学金</td><td>2,200~4,400元/年</td><td>入学后申请</td></tr><tr><td>国家励志奖学金</td><td>5,000元/年</td><td>大二开始申请</td></tr><tr><td>勤工助学</td><td>按岗位计酬</td><td>关注学生处通知</td></tr><tr><td>临时困难补助</td><td>按实际需要</td><td>突发情况申请</td></tr><tr><td>南昌落户奖励</td><td>1,000元</td><td>落户后申请</td></tr></tbody></table><div class="notice-blue">💡 家庭经济困难的新生不要因为费用问题放弃入学！</div></div>';
+
+detailContent.map = '<div class="content-card"><h3>🗺️ 南昌理工学院校园分布</h3><div class="highlight">主校区：英雄校区 · 南昌经济技术开发区英雄大道901号</div><p>英雄校区占地约3800亩，主要建筑：</p><div style="background:#F8FAFC;border-radius:12px;padding:16px;margin:10px 0;"><svg width="100%" height="280" viewBox="0 0 400 280" style="max-width:380px;"><rect x="5" y="5" width="390" height="270" rx="8" fill="#F0F4FF" stroke="#0B3D91" stroke-width="1.5"/><text x="200" y="30" text-anchor="middle" font-size="12" fill="#0B3D91" font-weight="bold">英雄校区（英雄大道901号）</text><rect x="175" y="240" width="50" height="20" rx="3" fill="#27AE60"/><text x="200" y="254" text-anchor="middle" font-size="8" fill="#fff">南门</text><rect x="5" y="120" width="20" height="50" rx="3" fill="#27AE60"/><text x="8" y="148" font-size="7" fill="#fff">东门</text><rect x="130" y="190" width="80" height="40" rx="6" fill="#0B3D91"/><text x="170" y="214" text-anchor="middle" font-size="8" fill="#fff">理工大厦</text><text x="170" y="226" text-anchor="middle" font-size="6" fill="#fff">(报到大厅)</text><rect x="230" y="60" width="70" height="35" rx="6" fill="#1565C0"/><text x="265" y="80" text-anchor="middle" font-size="8" fill="#fff">图文信息中心</text><rect x="80" y="80" width="50" height="25" rx="5" fill="#F57C00"/><text x="105" y="95" text-anchor="middle" font-size="7" fill="#fff">一~五食堂</text><rect x="280" y="150" width="60" height="25" rx="5" fill="#E91E63"/><text x="310" y="165" text-anchor="middle" font-size="7" fill="#fff">博林购物中心</text><rect x="30" y="140" width="60" height="40" rx="4" fill="#8BC34A" opacity="0.7"/><text x="60" y="163" text-anchor="middle" font-size="7" fill="#fff">宿舍区</text><rect x="300" y="200" width="55" height="25" rx="5" fill="#FF5722"/><text x="327" y="215" text-anchor="middle" font-size="7" fill="#fff">金鸟巢健身</text><rect x="250" y="240" width="70" height="22" rx="5" fill="#9C27B0"/><text x="285" y="254" text-anchor="middle" font-size="7" fill="#fff">航天报告厅</text><ellipse cx="340" cy="100" rx="40" ry="22" fill="#E0E0E0" stroke="#BDBDBD" stroke-width="1"/><text x="340" y="103" text-anchor="middle" font-size="6" fill="#666">田径场</text><rect x="5" y="35" width="65" height="18" rx="4" fill="#78909C"/><text x="37" y="47" text-anchor="middle" font-size="6" fill="#fff">→ 丰城校区</text></svg><p style="font-size:11px;color:#9CA3AF;margin-top:8px;">示意图，具体位置以实际校园布局为准</p></div></div>';
+
+// ========== 渲染网格 ==========
+function renderGrids() {
+  var sections = ['xinbi','life','study','growth','service'];
+  for (var s = 0; s < sections.length; s++) {
+    var sec = sections[s];
+    var grid = document.getElementById('grid-' + sec);
+    if (!grid) continue;
+    var items = gridItems[sec];
+    var html = '';
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      html += '<div class="grid-item" data-id="' + item.id + '">' +
+        '<div class="grid-icon" style="background:' + item.color + '">' + item.icon + '</div>' +
+        '<div class="grid-label">' + item.label + '</div>' +
+        '<div class="grid-desc">' + item.desc + '</div>' +
+        '</div>';
+    }
+    grid.innerHTML = html;
+  }
+}
+
+// ========== 事件绑定 ==========
+renderGrids();
+
+// 详情页
+var detailOverlay = document.getElementById('detailOverlay');
+var detailTitle = document.getElementById('detailTitle');
+var detailBody = document.getElementById('detailBody');
+
+function openDetail(id) {
+  var found = null;
+  var sections = ['xinbi','life','study','growth','service'];
+  for (var s = 0; s < sections.length; s++) {
+    var items = gridItems[sections[s]];
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].id === id) { found = items[i]; break; }
+    }
+  }
+  detailTitle.textContent = found ? found.label : '详情';
+  detailBody.innerHTML = detailContent[id] || '<p>内容加载中…</p>';
+  detailOverlay.classList.add('active');
+  detailOverlay.scrollTop = 0;
+}
+
+function closeDetail() {
+  detailOverlay.classList.remove('active');
+}
+
+document.getElementById('btnBack').addEventListener('click', closeDetail);
+
+// 网格点击（事件委托）
+var grids = document.querySelectorAll('.grid-3');
+for (var g = 0; g < grids.length; g++) {
+  grids[g].addEventListener('click', function(e) {
+    var item = e.target.closest('.grid-item');
+    if (item) {
+      var id = item.getAttribute('data-id');
+      if (id) openDetail(id);
+    }
+  });
+}
+
+// 快速导航标签
+var navTags = document.querySelectorAll('.nav-tag');
+for (var n = 0; n < navTags.length; n++) {
+  navTags[n].addEventListener('click', function() {
+    var section = this.getAttribute('data-section');
+    var el = document.getElementById(section);
+    if (el) el.scrollIntoView({behavior: 'smooth'});
+    for (var k = 0; k < navTags.length; k++) navTags[k].classList.remove('active');
+    this.classList.add('active');
+  });
+}
+
+// 底部Tab
+var tabItems = document.querySelectorAll('.tab-item');
+for (var t = 0; t < tabItems.length; t++) {
+  tabItems[t].addEventListener('click', function() {
+    var section = this.getAttribute('data-section');
+    var el = document.getElementById(section);
+    if (el) el.scrollIntoView({behavior: 'smooth'});
+    for (var k = 0; k < tabItems.length; k++) tabItems[k].classList.remove('active');
+    this.classList.add('active');
+  });
+}
+
+// 搜索
+function doSearch() {
+  var input = document.getElementById('searchInput').value.trim();
+  if (!input) { showToast('请输入搜索关键词'); return; }
+  var allItems = [];
+  var sections = ['xinbi','life','study','growth','service'];
+  for (var s = 0; s < sections.length; s++) {
+    allItems = allItems.concat(gridItems[sections[s]]);
+  }
+  var results = [];
+  var kw = input.toLowerCase();
+  for (var i = 0; i < allItems.length; i++) {
+    var item = allItems[i];
+    var detail = detailContent[item.id] || '';
+    if (item.label.toLowerCase().indexOf(kw) > -1 || item.desc.toLowerCase().indexOf(kw) > -1 || detail.toLowerCase().indexOf(kw) > -1) {
+      results.push(item);
+    }
+  }
+  if (results.length === 1) {
+    openDetail(results[0].id);
+  } else if (results.length > 1) {
+    var html = '<div class="content-card"><h3>🔍 搜索结果：' + input + '</h3><p style="margin-bottom:12px;font-size:13px;color:#6B7280;">找到 ' + results.length + ' 个相关模块</p>';
+    for (var j = 0; j < results.length; j++) {
+      html += '<div style="background:#F8FAFC;border-radius:10px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="closeDetail();openDetail(\'' + results[j].id + '\')"><div style="font-weight:600;color:#1A1A2E;">' + results[j].label + '</div><div style="font-size:12px;color:#9CA3AF;">' + results[j].desc + '</div></div>';
+    }
+    html += '</div>';
+    detailTitle.textContent = '搜索结果';
+    detailBody.innerHTML = html;
+    detailOverlay.classList.add('active');
+    detailOverlay.scrollTop = 0;
+  } else {
+    showToast('未找到相关内容，请尝试其他关键词');
+  }
+}
+
+function quickSearch(kw) {
+  document.getElementById('searchInput').value = kw;
+  doSearch();
+}
+
+// 复制
+function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() { showToast('已复制：' + text); }).catch(function() { fallbackCopy(text); });
+  } else { fallbackCopy(text); }
+  function fallbackCopy(t) {
+    var ta = document.createElement('textarea');
+    ta.value = t;
+    ta.style.position = 'fixed'; ta.style.left = '-9999px'; ta.style.top = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try {
+      var ok = document.execCommand('copy');
+      if (ok) { showToast('已复制：' + t + '（如未成功请长按手动复制）'); }
+      else { showToast('复制失败，请长按手动复制：' + t); }
+    } catch(e) { showToast('复制失败，请长按手动复制：' + t); }
+    document.body.removeChild(ta);
+  }
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timeout);
+  t._timeout = setTimeout(function() { t.classList.remove('show'); }, 2000);
+}
+
+// ========== 弹窗控制 ==========
+var welcomeModal = document.getElementById('welcomeModal');
+
+// 关闭弹窗
+function closeModal() {
+  welcomeModal.classList.add('hidden');
+}
+
+// X 按钮
+document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+// 稍后再说按钮
+document.getElementById('btnDismiss').addEventListener('click', closeModal);
+// 点击遮罩关闭
+welcomeModal.addEventListener('click', function(e) {
+  if (e.target === welcomeModal) closeModal();
+});
+
+// 复制微信
+document.getElementById('btnCopyWx').addEventListener('click', function() {
+  copyText('XMB2D888');
+});
+// 复制QQ
+document.getElementById('btnCopyQQ').addEventListener('click', function() {
+  copyText('3289094177');
+});
+
+// 3秒后显示欢迎弹窗
+setTimeout(function() {
+  welcomeModal.classList.remove('hidden');
+}, 3000);
+
+// ========== 滚动时更新导航高亮 ==========
+var sections = ['xinbi','life','study','growth','service'];
+window.addEventListener('scroll', function() {
+  var active = 'xinbi';
+  for (var i = 0; i < sections.length; i++) {
+    var el = document.getElementById(sections[i]);
+    if (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight / 2) active = sections[i];
+    }
+  }
+  for (var j = 0; j < navTags.length; j++) {
+    navTags[j].classList.remove('active');
+    if (navTags[j].getAttribute('data-section') === active) navTags[j].classList.add('active');
+  }
+});
+</script>
+
+<div style="text-align:center;padding:20px 16px 100px;font-size:11px;color:#9CA3AF;line-height:1.8;">南理校园指南 · 由学长团队整理维护<br/>💬 微信：XMB2D888 · QQ：3289094177<br/>信息仅供参考，以学校官方通知为准</div>
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="江西电力职业技术学院2026新生入学指南——场景化时间线引导式校园攻略，从出发前到报到日、开学后到校园日常，由学长整理维护。">
+<title>2026校园指南 · 江西电力职业技术学院</title>
+<style>
+/* ============ DESIGN SYSTEM ============ */
+:root {
+  --blue-900:#0F1D4C; --blue-800:#102A6E; --blue-700:#1A3F9E; --blue-600:#1E4FD4; --blue-500:#2563EB; --blue-400:#4F82F5; --blue-300:#8FADFA; --blue-100:#E0E8FD; --blue-50:#F2F5FD;
+  --amber:#F59E0B; --amber-light:#FFF7E0;
+  --emerald:#10B981; --emerald-light:#ECFDF5;
+  --red:#EF4444; --red-light:#FEF2F2;
+  --purple:#8B5CF6; --purple-light:#F5F3FF;
+  --orange:#F97316; --orange-light:#FFF7ED;
+  --teal:#14B8A6; --teal-light:#F0FDFA;
+  --pink:#EC4899; --pink-light:#FDF2F8;
+  --bg:#F1F5F9; --card:#FFFFFF; --card-hover:#FAFBFC;
+  --text:#0F172A; --text-2:#475569; --text-3:#94A3B8;
+  --border:#E2E8F0; --border-light:#F1F5F9;
+  --radius:14px; --radius-sm:10px; --radius-xs:8px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03);
+  --shadow:0 4px 12px rgba(0,0,0,0.06),0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg:0 12px 32px rgba(0,0,0,0.10),0 4px 8px rgba(0,0,0,0.04);
+  --safe-b:env(safe-area-inset-bottom,0px);
+  --font-h1:clamp(26px,6vw,30px); --font-h2:clamp(18px,4.2vw,21px);
+  --font-body:clamp(13px,3.5vw,15px); --font-sm:clamp(11px,3vw,13px);
+  --font-xs:clamp(10px,2.5vw,12px);
+}
+
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;
+  overflow-x:hidden;padding-bottom:calc(72px + var(--safe-b));
+}
+body.noscroll{overflow:hidden}
+:focus-visible{outline:2px solid var(--blue-500);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* ============ HERO SECTION ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(165deg,var(--blue-900) 0%,#132C6B 25%,#1A439E 55%,var(--blue-500) 100%);
+  padding:44px 20px 32px;color:#fff;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 600px 300px at 20% -20%,rgba(79,130,245,0.18) 0%,transparent 70%),
+    radial-gradient(ellipse 400px 400px at 85% 80%,rgba(139,92,246,0.12) 0%,transparent 70%),
+    radial-gradient(circle at 50% 40%,transparent 60%,rgba(15,29,76,0.3) 100%);
+}
+.particles{position:absolute;inset:0;pointer-events:none;opacity:0.35}
+.particle{position:absolute;width:3px;height:3px;background:rgba(255,255,255,0.5);border-radius:50%;animation:pFloat 8s infinite ease-in-out}
+.particle:nth-child(1){left:10%;top:20%;animation-delay:0s;width:2px;height:2px}
+.particle:nth-child(2){left:25%;top:45%;animation-delay:1.5s;width:4px;height:4px}
+.particle:nth-child(3){left:45%;top:15%;animation-delay:3s}
+.particle:nth-child(4){left:60%;top:55%;animation-delay:4.5s;width:2px;height:2px}
+.particle:nth-child(5){left:75%;top:30%;animation-delay:2s}
+.particle:nth-child(6){left:88%;top:65%;animation-delay:5s;width:4px;height:4px}
+.particle:nth-child(7){left:15%;top:70%;animation-delay:6s;width:2px;height:2px}
+.particle:nth-child(8){left:55%;top:75%;animation-delay:3.5s}
+.particle:nth-child(9){left:35%;top:35%;animation-delay:1s;width:2px;height:2px}
+@keyframes pFloat{0%,100%{transform:translateY(0) scale(1);opacity:0.4}25%{transform:translateY(-12px) scale(1.3);opacity:0.8}50%{transform:translateY(-6px) scale(0.9);opacity:0.5}75%{transform:translateY(-18px) scale(1.1);opacity:0.7}}
+.hero-badge{
+  display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);
+  padding:5px 14px;border-radius:20px;font-size:var(--font-xs);
+  font-weight:600;letter-spacing:0.5px;margin-bottom:14px;position:relative;z-index:1;
+}
+.hero-title{
+  font-size:var(--font-h1);font-weight:800;position:relative;z-index:1;
+  letter-spacing:1px;line-height:1.25;margin-bottom:4px;
+}
+.hero-title .accent{color:var(--amber);}
+.hero-sub{
+  font-size:clamp(9px,2.2vw,11px);opacity:0.6;position:relative;z-index:1;
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;
+}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative;z-index:1}
+.stat-card{
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-radius:var(--radius-sm);padding:14px 6px 12px;text-align:center;
+  border:1px solid rgba(255,255,255,0.10);transition:transform .2s,background .2s;
+}
+.stat-card:active{transform:scale(0.96);background:rgba(255,255,255,0.14)}
+.stat-icon{font-size:22px;margin-bottom:4px;display:block}
+.stat-num{font-size:clamp(15px,3.8vw,20px);font-weight:800;line-height:1.2}
+.stat-label{font-size:clamp(9px,2.2vw,11px);opacity:0.72;margin-top:2px}
+
+/* ============ TIMELINE NAVIGATION ============ */
+.timeline-wrap{
+  position:sticky;top:0;z-index:100;background:var(--card);
+  box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:0;
+}
+.timeline-bar{
+  display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  padding:10px 10px 0;gap:6px;
+}
+.timeline-bar::-webkit-scrollbar{display:none}
+.timeline-item{
+  flex:1 0 auto;min-width:70px;padding:10px 12px 8px;text-align:center;
+  cursor:pointer;font-size:var(--font-xs);font-weight:600;color:var(--text-3);
+  border:none;background:transparent;position:relative;transition:all .25s ease;
+  border-radius:var(--radius-xs) var(--radius-xs) 0 0;
+}
+.timeline-item .t-icon{display:block;font-size:20px;margin-bottom:3px;transition:transform .25s}
+.timeline-item.active{color:var(--blue-600);background:var(--blue-50)}
+.timeline-item.active .t-icon{transform:scale(1.15)}
+.timeline-item::after{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:0;height:3px;border-radius:3px 3px 0 0;background:var(--blue-500);transition:width .3s ease;
+}
+.timeline-item.active::after{width:70%}
+
+/* ============ STAGE HEADER ============ */
+.stage-header{
+  padding:20px 18px 4px;text-align:left;
+}
+.stage-header-emoji{
+  display:inline-block;width:44px;height:44px;line-height:44px;text-align:center;
+  background:var(--blue-50);border-radius:14px;font-size:22px;margin-bottom:10px;
+}
+.stage-header h2{font-size:var(--font-h2);font-weight:800;color:var(--text)}
+.stage-header .stage-chip{
+  display:inline-block;font-size:var(--font-xs);color:var(--blue-600);
+  background:var(--blue-50);padding:3px 10px;border-radius:12px;margin-bottom:6px;font-weight:600;
+}
+
+/* ============ CARD GRID ============ */
+.grid-section{padding:0 14px 20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid-item{
+  background:var(--card);border-radius:var(--radius);padding:18px 10px 14px;
+  text-align:center;cursor:pointer;box-shadow:var(--shadow-sm);
+  transition:transform .2s ease,box-shadow .2s ease;position:relative;overflow:hidden;
+  border:1px solid var(--border-light);
+}
+.grid-item::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  transition:height .2s ease,opacity .2s ease;opacity:0;
+}
+.grid-item:active{transform:translateY(-2px);box-shadow:var(--shadow)}
+.grid-item:active::before{height:4px;opacity:1}
+.grid-item[data-accent="blue"]::before{background:var(--blue-500)}
+.grid-item[data-accent="green"]::before{background:var(--emerald)}
+.grid-item[data-accent="orange"]::before{background:var(--orange)}
+.grid-item[data-accent="purple"]::before{background:var(--purple)}
+.grid-item[data-accent="red"]::before{background:var(--red)}
+.grid-item[data-accent="teal"]::before{background:var(--teal)}
+.grid-item[data-accent="pink"]::before{background:var(--pink)}
+.grid-icon{
+  width:46px;height:46px;border-radius:14px;margin:0 auto 8px;
+  display:flex;align-items:center;justify-content:center;transition:transform .2s;
+}
+.grid-item:active .grid-icon{transform:scale(1.08)}
+.grid-icon svg{width:24px;height:24px}
+.grid-label{font-size:var(--font-body);font-weight:700;color:var(--text);line-height:1.3;margin-bottom:1px}
+.grid-tag{font-size:var(--font-xs);color:var(--text-3);line-height:1.3}
+
+/* Icon color variants */
+.bg-blue{background:var(--blue-50);color:var(--blue-600)}
+.bg-green{background:var(--emerald-light);color:var(--emerald)}
+.bg-orange{background:var(--orange-light);color:var(--orange)}
+.bg-purple{background:var(--purple-light);color:var(--purple)}
+.bg-red{background:var(--red-light);color:var(--red)}
+.bg-teal{background:var(--teal-light);color:var(--teal)}
+.bg-pink{background:var(--pink-light);color:var(--pink)}
+
+/* ============ SEARCH MODULE (daily stage) ============ */
+.search-module{
+  margin:4px 14px 14px;background:linear-gradient(135deg,var(--blue-700) 0%,var(--blue-500) 50%,var(--blue-400) 100%);
+  border-radius:var(--radius);padding:22px 18px;color:#fff;box-shadow:0 8px 24px rgba(37,99,235,0.18);
+  position:relative;overflow:hidden;
+}
+.search-module::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 50%);
+  pointer-events:none;
+}
+.search-module-title{font-size:16px;font-weight:700;margin-bottom:2px;position:relative}
+.search-module-desc{font-size:var(--font-xs);opacity:0.7;margin-bottom:14px;position:relative}
+.search-row{display:flex;gap:8px;position:relative}
+.search-input{
+  flex:1;height:46px;border-radius:23px;border:none;padding:0 18px;
+  font-size:var(--font-body);outline:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  background:#fff;color:var(--text);
+}
+.search-input::placeholder{color:var(--text-3)}
+.search-btn{
+  width:72px;height:46px;border-radius:23px;border:none;background:var(--amber);
+  color:#1A1A2E;font-size:var(--font-body);font-weight:800;cursor:pointer;flex-shrink:0;
+  box-shadow:0 4px 12px rgba(245,158,11,0.35);transition:all .2s;
+}
+.search-btn:active{background:#E8960A;transform:scale(0.95)}
+.search-hints{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;position:relative}
+.search-hint{
+  font-size:var(--font-xs);color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.12);
+  padding:5px 13px;border-radius:16px;cursor:pointer;font-weight:500;
+  border:1px solid rgba(255,255,255,0.12);transition:background .2s;
+}
+.search-hint:active{background:rgba(255,255,255,0.22)}
+/* Category chips */
+.cat-bar{padding:4px 14px 10px;display:flex;flex-wrap:wrap;gap:6px}
+.cat-chip{
+  padding:7px 15px;border-radius:18px;font-size:var(--font-xs);font-weight:600;
+  cursor:pointer;background:var(--card);color:var(--text-2);border:1.5px solid var(--border);
+  transition:all .2s;white-space:nowrap;
+}
+.cat-chip.active,.cat-chip:active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);box-shadow:0 4px 12px rgba(37,99,235,0.2)}
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:flex;justify-content:space-around;padding:8px 0 calc(8px + var(--safe-b));
+  border-top:1px solid rgba(0,0,0,0.05);z-index:900;box-shadow:0 -4px 16px rgba(0,0,0,0.04);
+}
+.nav-item{
+  display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;
+  padding:4px 20px;color:var(--text-3);font-size:10px;font-weight:600;
+  transition:color .2s;background:none;border:none;position:relative;
+}
+.nav-item svg{width:24px;height:24px;transition:transform .2s}
+.nav-item.active{color:var(--blue-600)}.nav-item.active svg{transform:scale(1.08)}
+.nav-dot{position:absolute;top:-4px;width:5px;height:5px;border-radius:50%;background:var(--blue-500);opacity:0;transition:opacity .2s}
+.nav-item.active .nav-dot{opacity:1}
+
+/* ============ DETAIL PAGE ============ */
+.detail-overlay{
+  position:fixed;inset:0;background:var(--bg);z-index:950;overflow-y:auto;
+  display:none;flex-direction:column;-webkit-overflow-scrolling:touch;
+}
+.detail-overlay.active{display:flex;animation:fadeSlideIn .3s ease}
+@keyframes fadeSlideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.detail-topbar{
+  position:sticky;top:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);z-index:10;padding:12px 14px;
+  display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);
+}
+.detail-back{
+  width:36px;height:36px;border-radius:50%;background:var(--bg);border:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--text);flex-shrink:0;transition:background .2s;
+}
+.detail-back:hover{background:var(--border)}.detail-back:active{background:#CBD5E1}
+.detail-title{font-size:var(--font-body);font-weight:700;flex:1}
+.detail-body{padding:14px;padding-bottom:80px}
+.detail-card{
+  background:var(--card);border-radius:var(--radius);padding:18px 16px;
+  box-shadow:var(--shadow-sm);margin-bottom:12px;border:1px solid var(--border-light);
+}
+.detail-card h3{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--text);display:flex;align-items:center;gap:6px}
+.detail-card p{font-size:var(--font-body);color:var(--text-2);line-height:1.8;margin-bottom:6px}
+.detail-card p:last-child{margin-bottom:0}
+.info-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:var(--font-body)}
+.info-row:last-child{border-bottom:none}
+.info-label{font-weight:700;color:var(--text);flex-shrink:0;min-width:85px}
+.info-value{color:var(--text-2);flex:1}
+.highlight-box{
+  background:var(--blue-50);border-radius:var(--radius-sm);border-left:4px solid var(--blue-500);
+  padding:14px 16px;font-size:var(--font-body);color:var(--blue-700);margin:12px 0;
+  font-weight:500;line-height:1.7;
+}
+.warn-box{
+  background:var(--red-light);border-radius:var(--radius-sm);border-left:4px solid var(--red);
+  padding:14px 16px;font-size:var(--font-body);color:#B91C1C;margin:12px 0;line-height:1.7;
+}
+.check-list{display:flex;flex-direction:column;gap:6px}
+.check-row{display:flex;align-items:flex-start;gap:8px;font-size:var(--font-body);line-height:1.6;color:var(--text-2)}
+.check-mark{color:var(--emerald);font-weight:700;flex-shrink:0;margin-top:1px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{background:var(--bg);padding:5px 12px;border-radius:14px;font-size:var(--font-xs);color:var(--text-2);font-weight:500}
+.detail-table{width:100%;border-collapse:collapse;font-size:var(--font-xs);margin:10px 0}
+.detail-table th,.detail-table td{border:1px solid var(--border);padding:9px 6px;text-align:left}
+.detail-table th{background:var(--blue-50);font-weight:700;color:var(--text);font-size:var(--font-xs)}
+.detail-table td{color:var(--text-2)}
+.detail-table tr:nth-child(even) td{background:#FAFBFC}
+.copy-btn{
+  display:inline-flex;align-items:center;gap:3px;background:var(--blue-50);
+  color:var(--blue-600);border:none;padding:5px 12px;border-radius:14px;
+  font-size:var(--font-xs);font-weight:600;cursor:pointer;transition:background .2s;
+}
+.copy-btn:active{background:#D4E3FF}
+.step-list{counter-reset:step;list-style:none;padding:0}
+.step-list li{
+  counter-increment:step;padding:12px 12px 12px 48px;position:relative;
+  font-size:var(--font-body);color:var(--text-2);border-left:2px solid var(--border);
+  margin-left:16px;line-height:1.7;
+}
+.step-list li::before{
+  content:counter(step);position:absolute;left:-16px;top:10px;
+  width:28px;height:28px;border-radius:50%;background:var(--blue-500);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:var(--font-xs);font-weight:700;
+}
+.step-list li:last-child{border-left-color:transparent}
+.img-placeholder{
+  width:100%;height:160px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--blue-50) 0%,var(--bg) 100%);
+  display:flex;align-items:center;justify-content:center;
+  margin:10px 0 6px;color:var(--text-3);font-size:var(--font-xs);
+  border:1px dashed var(--border);
+}
+.img-placeholder svg{width:48px;height:48px;opacity:0.3}
+.map-frame{
+  width:100%;border-radius:var(--radius-sm);overflow:hidden;
+  background:var(--blue-50);margin:10px 0;border:1px solid var(--border);
+}
+
+/* ============ MODAL ============ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:1000;
+  display:flex;align-items:flex-end;justify-content:center;animation:fadeIn .25s ease;
+  backdrop-filter:blur(2px);
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-overlay.hidden{display:none}
+.modal-sheet{
+  background:var(--card);border-radius:22px 22px 0 0;width:100%;max-width:420px;
+  padding:32px 22px 36px;position:relative;animation:sheetUp .4s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-close-btn{
+  position:absolute;right:16px;top:16px;width:34px;height:34px;border-radius:50%;
+  background:var(--bg);border:none;font-size:16px;color:var(--text-2);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.modal-close-btn:active{background:var(--border);transform:scale(0.95)}
+.modal-avatar{
+  width:64px;height:64px;border-radius:18px;margin:0 auto 14px;display:flex;
+  align-items:center;justify-content:center;background:var(--blue-50);
+}
+.modal-avatar svg{width:34px;height:34px;color:var(--blue-500)}
+.modal-heading{text-align:center;font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px}
+.modal-sub{text-align:center;font-size:var(--font-xs);color:var(--text-3);margin-bottom:18px;line-height:1.5}
+.copy-block{
+  background:var(--bg);border:1.5px dashed var(--border);border-radius:12px;
+  padding:12px 16px;text-align:center;font-size:var(--font-body);font-weight:700;
+  color:var(--blue-600);margin-bottom:8px;letter-spacing:1px;
+}
+.copy-block-qq{
+  background:var(--blue-50);border:1.5px dashed #93C5FD;
+  border-radius:12px;padding:10px 16px;text-align:center;
+  font-size:var(--font-sm);font-weight:700;color:#1D4ED8;margin-bottom:16px;letter-spacing:1px;
+}
+.modal-btn{
+  width:100%;height:48px;border-radius:24px;border:none;font-size:var(--font-body);
+  font-weight:700;cursor:pointer;margin-bottom:8px;transition:all .2s;
+}
+.modal-btn.primary{background:var(--blue-500);color:#fff;box-shadow:0 4px 12px rgba(37,99,235,0.25)}
+.modal-btn.primary:active{background:var(--blue-600);transform:scale(0.98)}
+.modal-btn.qq-btn{background:#2B7FFF;color:#fff;box-shadow:0 4px 12px rgba(43,127,255,0.25)}
+.modal-btn.qq-btn:active{background:#1A5FFF;transform:scale(0.98)}
+.modal-btn.ghost{background:transparent;color:var(--text-2);border:1.5px solid var(--border)}
+.modal-btn.ghost:active{background:var(--bg)}
+.modal-legal{text-align:center;font-size:var(--font-xs);color:var(--text-3);margin-top:8px}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:rgba(15,23,42,0.88);color:#fff;padding:14px 28px;
+  border-radius:28px;font-size:var(--font-body);z-index:2000;
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);pointer-events:none;
+  opacity:0;transition:opacity .3s;backdrop-filter:blur(8px);
+}
+.toast.show{opacity:1}
+@keyframes toastPop{from{opacity:0;transform:translate(-50%,-50%) scale(0.85)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.toast.show{animation:toastPop .3s ease}
+
+/* ============ FOOTER ============ */
+.page-footer{
+  text-align:center;padding:24px 16px 80px;font-size:11px;color:var(--text-3);line-height:1.9;
+}
+
+/* ============ DARK MODE ============ */
+@media(prefers-color-scheme:dark){
+  :root{--bg:#0F1322;--card:#1A1D2E;--card-hover:#1F2234;--text:#E8EAF0;--text-2:#9CA3B8;--text-3:#6B7280;--border:#262A3A;--border-light:#1F2234}
+  .grid-item{background:var(--card)}.detail-topbar{background:rgba(15,19,34,0.92)}
+  .timeline-wrap{background:var(--card)}.bottom-nav{background:rgba(15,19,34,0.94)}
+  .detail-card{background:var(--card)}.tag{background:#1A1D2E}
+  .copy-btn{background:rgba(37,99,235,0.12)}.copy-block,.copy-block-qq{background:#1A1D2E}
+  .detail-table tr:nth-child(even) td{background:#1A1D2E}
+  .detail-table th{background:rgba(37,99,235,0.08)}.modal-sheet{background:var(--card)}
+  .stage-header-emoji{background:rgba(37,99,235,0.1)}.stage-header .stage-chip{background:rgba(37,99,235,0.1)}
+}
+</style>
+<noscript>
+<div style="background:#FEF2F2;border:2px solid #EF4444;padding:16px;margin:16px;border-radius:12px;text-align:center;font-size:15px;color:#B91C1C;">⚠️ JavaScript未启用或加载失败。请刷新页面或检查浏览器设置后重试。核心文字内容仍可阅读。</div>
+</noscript>
+</head>
+<body>
+
+<!-- ====== MODAL ====== -->
+<div class="modal-overlay hidden" id="contactModal">
+<div class="modal-sheet">
+<button class="modal-close-btn" id="modalCloseBtn" aria-label="关闭">✕</button>
+<div class="modal-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg></div>
+<div class="modal-heading">新生答疑咨询</div>
+<div class="modal-sub">添加电院学长微信或QQ<br>校园问题直接问，不收费</div>
+<div class="copy-block">📱 微信：XMB2D888</div>
+<div class="copy-block-qq">🐧 QQ：3289094177</div>
+<button class="modal-btn primary" id="copyWechatBtn">📋 复制微信号</button>
+<button class="modal-btn qq-btn" id="copyQQBtn">🐧 复制QQ号</button>
+<button class="modal-btn ghost" id="modalLaterBtn">稍后再说</button>
+<div class="modal-legal">添加时请备注：26级新生</div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ====== HERO ====== -->
+<header class="hero" id="top">
+<div class="particles">
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<div class="hero-badge">⚡ 2026新生指南</div>
+<div class="hero-title">江西电力<span class="accent">职业技术学院</span></div>
+<div class="hero-sub">JIANGXI ELECTRIC VOCATIONAL AND TECHNICAL COLLEGE</div>
+<div class="stats-row">
+<div class="stat-card"><span class="stat-icon">🏫</span><div class="stat-num">1958</div><div class="stat-label">建校年份</div></div>
+<div class="stat-card"><span class="stat-icon">🌳</span><div class="stat-num">553</div><div class="stat-label">校园面积(亩)</div></div>
+<div class="stat-card"><span class="stat-icon">🎓</span><div class="stat-num">公办</div><div class="stat-label">公办专科</div></div>
+<div class="stat-card"><span class="stat-icon">📚</span><div class="stat-num">5</div><div class="stat-label">二级学院</div></div>
+</div>
+</header>
+
+<!-- ====== TIMELINE NAV ====== -->
+<div class="timeline-wrap" id="timelineWrap">
+<div class="timeline-bar" id="timelineBar">
+<button class="timeline-item active" data-stage="departure" aria-label="出发前"><span class="t-icon">📦</span>出发前</button>
+<button class="timeline-item" data-stage="checkin" aria-label="报到日"><span class="t-icon">🏁</span>报到日</button>
+<button class="timeline-item" data-stage="term" aria-label="开学后"><span class="t-icon">📚</span>开学后</button>
+<button class="timeline-item" data-stage="daily" aria-label="校园日常"><span class="t-icon">🎓</span>校园日常</button>
+<button class="timeline-item" data-stage="deals" aria-label="校园特惠"><span class="t-icon">🛒</span>校园特惠</button>
+</div>
+</div>
+
+<!-- ====== MAIN CONTENT ====== -->
+<div id="mainContent">
+<div class="stage-header" id="stageHeader"></div>
+<div class="grid-section"><div class="grid-3" id="cardsGrid"></div></div>
+<div id="stageExtra"></div>
+</div>
+
+<!-- ====== DETAIL PAGE ====== -->
+<div class="detail-overlay" id="detailPage">
+<div class="detail-topbar">
+<button class="detail-back" id="detailBackBtn" aria-label="返回">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<div class="detail-title" id="detailTitle">详情</div>
+<div style="width:36px"></div>
+</div>
+<div class="detail-body" id="detailBody"></div>
+</div>
+
+<!-- ====== BOTTOM NAV ====== -->
+<div class="bottom-nav">
+<button class="nav-item active" id="navHome" aria-label="首页">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<span>首页</span><div class="nav-dot"></div>
+</button>
+<button class="nav-item" id="navSearch" aria-label="搜索">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>搜索</span><div class="nav-dot"></div>
+</button>
+<button class="nav-item" id="navContact" aria-label="联系">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+<span>联系</span><div class="nav-dot"></div>
+</button>
+</div>
+
+<div class="page-footer">
+⚡ 电院校园指南 · 由学长整理维护<br>
+💬 微信：XMB2D888 · QQ：3289094177<br>
+信息仅供参考，以学校官方通知为准
+</div>
+
+<script>
+(function(){
+/* ============ DATA ============ */
+var gridData = {
+  xinbi: [
+    { id:'baodao', color:'bg-blue', accent:'blue', label:'报到须知', tag:'时间与流程', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' },
+    { id:'qingdan', color:'bg-green', accent:'green', label:'必备清单', tag:'带齐不慌张', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' },
+    { id:'jiaotong', color:'bg-orange', accent:'orange', label:'到校交通', tag:'路线全攻略', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>' },
+    { id:'junxun', icon:'icon-green', color:'bg-green', accent:'green', label:'军训贴士', tag:'防晒与作息', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>' },
+    { id:'xuefei', color:'bg-purple', accent:'purple', label:'学费标准', tag:'收费明细', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+    { id:'bilei', color:'bg-red', accent:'red', label:'新生避雷', tag:'防骗指南', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg>' },
+    { id:'lvtong', color:'bg-teal', accent:'teal', label:'绿色通道', tag:'困难生帮扶', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' },
+    { id:'card', color:'bg-blue', accent:'blue', label:'校园卡', tag:'办理与使用', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>' },
+    { id:'app', color:'bg-teal', accent:'teal', label:'常用应用', tag:'必备APP', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' }
+  ],
+  life: [
+    { id:'shitang', color:'bg-orange', accent:'orange', label:'食堂指南', tag:'菜品与价格', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>' },
+    { id:'sushe', color:'bg-blue', accent:'blue', label:'宿舍介绍', tag:'房型与配置', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' },
+    { id:'kuaidi', color:'bg-teal', accent:'teal', label:'快递收发', tag:'取件地址', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>' },
+    { id:'yishi', color:'bg-red', accent:'red', label:'校医室', tag:'位置与医保', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>' },
+    { id:'map', color:'bg-green', accent:'green', label:'校园地图', tag:'楼栋分布', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2"/></svg>' },
+    { id:'chaoshi', color:'bg-purple', accent:'purple', label:'校园超市', tag:'位置与时间', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>' },
+    { id:'yushi', color:'bg-teal', accent:'teal', label:'浴室洗衣', tag:'洗浴指引', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>' },
+    { id:'yundong', color:'bg-green', accent:'green', label:'运动场所', tag:'球场分布', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg>' },
+    { id:'wanle', color:'bg-pink', accent:'pink', label:'周边玩乐', tag:'吃喝逛逛', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' }
+  ],
+  study: [
+    { id:'zhuanye', color:'bg-blue', accent:'blue', label:'专业介绍', tag:'5大学院', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>' },
+    { id:'jidian', color:'bg-purple', accent:'purple', label:'绩点学分', tag:'规则与计算', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
+    { id:'jiangzhu', color:'bg-orange', accent:'orange', label:'奖助学金', tag:'评选与流程', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'lib', color:'bg-teal', accent:'teal', label:'图书馆', tag:'借阅与自习', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>' },
+    { id:'jiaoxue', color:'bg-blue', accent:'blue', label:'教学楼', tag:'分布与找教室', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/></svg>' },
+    { id:'xuanke', color:'bg-teal', accent:'teal', label:'选课重修', tag:'补考与预警', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' },
+    { id:'zhuanben', color:'bg-green', accent:'green', label:'专升本', tag:'政策与备考', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>' },
+    { id:'zhengshu', color:'bg-blue', accent:'blue', label:'技能证书', tag:'必考清单', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'jiaowu', color:'bg-purple', accent:'purple', label:'教务入口', tag:'系统跳转', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>' }
+  ],
+  growth: [
+    { id:'xueshenghui', color:'bg-blue', accent:'blue', label:'学生会', tag:'8大部门', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' },
+    { id:'shetuan', color:'bg-green', accent:'green', label:'社团组织', tag:'27个社团', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></svg>' },
+    { id:'dierketang', color:'bg-orange', accent:'orange', label:'第二课堂', tag:'活动与志愿', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>' },
+    { id:'jingsai', color:'bg-purple', accent:'purple', label:'科研竞赛', tag:'电力类赛事', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>' },
+    { id:'shixi', color:'bg-teal', accent:'teal', label:'实习就业', tag:'电网与招聘', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>' },
+    { id:'dangtuan', color:'bg-red', accent:'red', label:'党团组织', tag:'关系转接', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6 14.5 11 20 11 15.5 14 17.5 19 12 15.5 6.5 19 8.5 14 4 11 9.5 11"/></svg>' },
+    { id:'pingyou', color:'bg-blue', accent:'blue', label:'评优评先', tag:'奖学金荣誉', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>' },
+    { id:'qingong', color:'bg-teal', accent:'teal', label:'勤工助学', tag:'校内岗位', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>' },
+    { id:'jineng', color:'bg-blue', accent:'blue', label:'技能提升', tag:'学习资源', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>' }
+  ],
+  service: [
+    { id:'xueshengzheng', color:'bg-blue', accent:'blue', label:'学生证补办', tag:'流程与费用', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>' },
+    { id:'dianhua', color:'bg-green', accent:'green', label:'常用电话', tag:'各部门号码', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>' },
+    { id:'qingjia', color:'bg-orange', accent:'orange', label:'请假流程', tag:'事假与病假', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>' },
+    { id:'yibao', color:'bg-red', accent:'red', label:'医保报销', tag:'政策与方式', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' },
+    { id:'baoxiu', color:'bg-teal', accent:'teal', label:'宿舍报修', tag:'物业维修', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
+    { id:'xueji', color:'bg-purple', accent:'purple', label:'学籍异动', tag:'休学与转学', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/></svg>' },
+    { id:'caiwu', color:'bg-blue', accent:'blue', label:'财务缴费', tag:'学费与住宿', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+    { id:'baowei', color:'bg-red', accent:'red', label:'保卫处', tag:'门禁与安全', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' },
+    { id:'zizhu', color:'bg-teal', accent:'teal', label:'学生资助', tag:'助学贷款', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>' }
+  ],
+  deals: [
+    { id:'jiuxiao', color:'bg-orange', accent:'orange', label:'驾校推荐', tag:'底价对比', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>' },
+    { id:'taocan', color:'bg-blue', accent:'blue', label:'电话卡套餐', tag:'校园独家', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' },
+    { id:'zhusheng', color:'bg-purple', accent:'purple', label:'升本辅导', tag:'机构对比', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>' },
+    { id:'guowang', color:'bg-teal', accent:'teal', label:'国网培训', tag:'备考资源', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>' },
+    { id:'jianzhi', color:'bg-green', accent:'green', label:'兼职信息', tag:'靠谱渠道', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>' },
+    { id:'paotui', color:'bg-pink', accent:'pink', label:'校园配送', tag:'外卖跑腿', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>' },
+    { id:'lingshi', color:'bg-red', accent:'red', label:'零食小铺', tag:'寝室直达', svg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>' }
+  ]
+};
+
+/* ============ DETAIL CONTENT (preserved exactly) ============ */
+var detailContent = {"kuaidi":"<div class=\"detail-card\"><h3>📦 快递收发指南</h3><div class=\"img-placeholder\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><line x1=\"16.5\" y1=\"9.4\" x2=\"7.5\" y2=\"4.21\"/><path d=\"M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z\"/></svg></div><p style=\"text-align:center;color:var(--text-3);\">📷 快递驿站位置示意图</p></div><div class=\"detail-card\"><div class=\"info-row\"><span class=\"info-label\">📍 校内驿站</span><span class=\"info-value\">10栋宿舍楼下<button class=\"copy-btn\" data-copy=\"江西省南昌市新建区海棠南路268号江西电力职业技术学院\">📋 复制地址</button></span></div><div class=\"info-row\"><span class=\"info-label\">📮 校内地址</span><span class=\"info-value\">江西省南昌市新建区海棠南路268号江西电力职业技术学院</span></div><div class=\"info-row\"><span class=\"info-label\">📍 校外驿站</span><span class=\"info-value\">学校西北门，靠近1-9栋宿舍<button class=\"copy-btn\" data-copy=\"江西省南昌市新建区蛟龙镇瑞香路900号五栋一楼\">📋 复制地址</button></span></div><div class=\"info-row\"><span class=\"info-label\">📮 校外地址</span><span class=\"info-value\">江西省南昌市新建区蛟龙镇瑞香路900号五栋一楼</span></div></div><div class=\"detail-card\"><h3>📱 大件行李代收代寄</h3><p>校内移动营业厅提供快递代收、代寄服务（营业厅直营），大件行李也可以帮忙收发。</p><p>💬 需要帮忙取快递或寄东西？联系学长微信 <strong>XMB2D888</strong></p></div><div class=\"highlight-box\">💡 报到期间快递量较大，建议出发前2-3天寄出，标注好宿舍楼号方便取件。</div>","xuefei":"<div class=\"detail-card\"><h3>💰 学费标准</h3><p><strong>普通电力类专业：</strong>5000元/学年</p><p><strong>中外合作办学专业：</strong>12000元/学年</p><p><strong>住宿费：</strong>800~1000元/学年</p><p><strong>书本费：</strong>按实际教材费用收取（约500~800元/学年）</p><p style=\"color:var(--blue-600);font-weight:700;\">预计合计：约6300~6800元/学年</p></div><div class=\"detail-card\"><h3>四大专业二级学院收费表</h3><p style=\"color:var(--text-3);margin-bottom:10px;\">马克思主义学院负责全校思政课，不单独招收专业学生</p><table class=\"detail-table\"><thead><tr><th>二级学院</th><th>代表专业</th><th>学费(元/年)</th></tr></thead><tbody><tr><td>电力工程学院</td><td>电力系统自动化技术、电气自动化技术等</td><td>5000</td></tr><tr><td>供用电工程学院</td><td>供用电技术、发电厂及电力系统等</td><td>5000</td></tr><tr><td>动力工程学院</td><td>热能动力工程技术、发电运行技术等</td><td>5000</td></tr><tr><td>新能源工程学院</td><td>风力发电工程技术、分布式发电等</td><td>5000</td></tr></tbody></table><p style=\"font-size:11px;color:var(--text-3);margin-top:8px;\">* 中外合作办学专业12000元/学年，具体以录取通知书为准</p></div>","sushe":"<div class=\"detail-card\"><h3>🏠 宿舍介绍</h3><div class=\"img-placeholder\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/></svg></div><p style=\"text-align:center;color:var(--text-3);\">📷 宿舍内部实拍参考</p></div><div class=\"detail-card\"><h3>宿舍分配</h3><div class=\"info-row\"><span class=\"info-label\">👨 男生</span><span class=\"info-value\">一律6人寝，部分为老宿舍；上床下桌，带衣柜、书桌、椅子</span></div><div class=\"info-row\"><span class=\"info-label\">👩 女生</span><span class=\"info-value\">9栋、10栋为4人寝；7栋为6人寝；上床下桌，带衣柜、书桌、椅子</span></div></div><div class=\"detail-card\"><h3>配置设施</h3><div class=\"check-list\"><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>全天候空调</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>独立卫浴（部分楼栋）</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>上床下桌，带衣柜、书桌、椅子</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>宽带网络覆盖</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>直饮水供应</span></div></div></div><div class=\"detail-card\"><h3>🌐 宽带上网</h3><p>宿舍宽带需办理校园电话卡后连接校园网使用。校内仅<strong>中国移动营业厅</strong>可办理。联通/电信用户无法连接校园网。</p><p>💬 办宽带咨询：学长微信 <strong>XMB2D888</strong></p></div><div class=\"detail-card\"><h3>🚿 热水</h3><p>宿舍热水使用<strong>完美校园</strong>App扫码消费，入学后下载注册绑定即可。</p></div><div class=\"detail-card\"><h3>💧 直饮水</h3><p>宿舍楼内配备直饮水机，使用<strong>惠生活</strong>App/小程序扫码接水。</p></div><div class=\"detail-card\"><h3>⚡ 电费</h3><p>绑定校园卡（移动卡）后可通过完美校园App充值宿舍电费。</p></div><div class=\"highlight-box\">💡 床尺寸约0.9m×1.9m，报到当天凭录取通知书到宿舍楼管理处领取钥匙。</div>","shitang":"<div class=\"detail-card\"><h3>🍽️ 食堂指南</h3><div class=\"img-placeholder\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M18 8h1a4 4 0 010 8h-1\"/><path d=\"M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z\"/></svg></div><p style=\"text-align:center;color:var(--text-3);\">📷 食堂环境实拍</p></div><div class=\"detail-card\"><p>学校共有三个食堂，均配有空调、环境整洁卫生</p></div><div class=\"detail-card\"><h3>🍚 第一食堂（基础快餐）</h3><p>一荤一素约<strong>9元</strong> | 两荤一素<strong>12-14元</strong></p><p>晚8点后两荤一素约<strong>10元</strong>（特价时段）</p><p>米饭免费续，吃饱为止 · 🌟 每天供应<strong>一元特价菜</strong></p></div><div class=\"detail-card\"><h3>🍜 第二食堂（风味档口）</h3><div class=\"tag-row\"><span class=\"tag\">南昌拌粉+瓦罐汤</span><span class=\"tag\">江西小炒</span><span class=\"tag\">羊杂面</span><span class=\"tag\">兰州拉面</span><span class=\"tag\">麻辣烫</span><span class=\"tag\">汉堡炸鸡</span></div></div><div class=\"detail-card\"><h3>🍲 第三食堂（综合餐厅）</h3><div class=\"tag-row\"><span class=\"tag\">小碗菜</span><span class=\"tag\">煲仔饭</span><span class=\"tag\">铁板饭</span><span class=\"tag\">水饺馄饨</span><span class=\"tag\">各类小吃</span></div></div><div class=\"detail-card\"><h3>✨ 亮点</h3><p>🎁 <strong>节日福利</strong>：端午/中秋/冬至赠送水果/汤圆/水饺</p><p>❄️ <strong>全食堂空调开放</strong>，整洁卫生</p><p>⏰ 早餐约6:30-9:00 | 午餐约11:00-13:00 | 晚餐约17:00-19:30</p><p>📍 三个食堂集中在校园中部，靠近宿舍区</p><p>💰 月均伙食费参考：<strong>600-900元</strong>（正常吃）</p></div>","jiaotong":"<div class=\"detail-card\"><h3>🚗 到校交通指南</h3><div class=\"img-placeholder\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg></div><p style=\"text-align:center;color:var(--text-3);\">📷 学校校门/交通示意图</p></div><div class=\"detail-card\"><h3>🚂 三大火车站路线</h3><div class=\"info-row\"><span class=\"info-label\">① 南昌站</span><span class=\"info-value\">高铁巴士9线直达西北门，5元约45分钟<br><span style=\"color:var(--text-3);font-size:12px;\">或地铁换乘229路到达</span></span></div><div class=\"info-row\"><span class=\"info-label\">② 南昌西站 ⭐</span><span class=\"info-value\">北广场高铁巴士9线直达西北门，5元约30分钟<br><span style=\"color:var(--emerald);font-size:12px;\">最方便的到达方式！</span></span></div><div class=\"info-row\"><span class=\"info-label\">③ 南昌东站</span><span class=\"info-value\">地铁2号线转1号线，再转229路北门下车<br><span style=\"color:var(--text-3);font-size:12px;\">全程约1小时</span></span></div></div><div class=\"detail-card\"><h3>✈️ 昌北机场</h3><p>机场公交1线转214路，全程约1.2小时</p></div><div class=\"highlight-box\">🎉 开学报到期间，南昌站、南昌西站均设有学校免费迎新大巴，有志愿者引导！</div>","bilei":"<div class=\"detail-card\"><h3>⚠️ 新生避雷指南</h3></div><div class=\"detail-card\"><h3>🚫 三大高频骗局</h3><p style=\"font-weight:700;color:var(--red);font-size:16px;\">① 上门推销电话卡（最常见！）</p><p>开学期间会有大量人员上门推销手机卡，谎称\"学校强制办理\"\"不办这个卡用不了校园网\"\"现在不办以后就没优惠了\"。</p><p><strong>真相：</strong>校园网和手机卡不是绑定的，手机卡完全可以到校内官方营业厅自愿办理。校内<strong>只有中国移动营业厅</strong>（院内商场、官方直营），联通和电信在校内无营业厅，出了问题只能远程联系推销的\"学长学姐\"。</p><p>✅ <strong>建议：</strong>不要在上门推销时匆忙办理。可到校内移动营业厅慢慢对比选择，完全自愿！</p><p style=\"font-weight:700;color:var(--red);font-size:16px;\">② 专升本/考国网培训推销</p><p>开学后会有各种培训机构的人混进宿舍或新生群，打着\"学长学姐推荐\"\"内部资料\"\"不报班考不上\"的旗号推销培训课程。</p><p><strong>真相：</strong>专升本靠自学+正规网课完全够用，大一时完全不用着急报班。考国网需要的是大一大二打好专业基础，不是靠某个\"保过班\"。</p><p style=\"font-weight:700;color:var(--red);font-size:16px;\">③ 冒充学长推销驾校/兼职</p><p>宿舍敲门说\"学长推荐\"\"最低价\"\"最后几个名额\"。\"最低价\"通常意味着练车时间少、隐形收费多。</p><p><strong>真相：</strong>正规驾校不会上门推销。报名前自己实地考察训练场，问清楚总费用。</p></div><div class=\"detail-card\"><h3>🛡️ 通用原则</h3><p>🔴 陌生人上门<strong>一律不信</strong></p><p>🔴 正规业务不会进宿舍推销</p><p>🔴 \"现在不办就亏了\"= 制造焦虑</p><p>🟢 有需求找官方渠道或认识的学长学姐</p></div><div class=\"highlight-box\">💬 拿不准的事，加学长微信 <strong>XMB2D888</strong> 或 QQ <strong>3289094177</strong>，先问一嘴不亏。</div>","xueshenghui":"<div class=\"detail-card\"><h3>🏛️ 校学生会 · 8大部门</h3></div><div class=\"detail-card\"><div class=\"info-row\"><span class=\"info-label\">办公室</span><span class=\"info-value\">统筹协调学生会日常事务，档案管理与会议组织</span></div><div class=\"info-row\"><span class=\"info-label\">学习部</span><span class=\"info-value\">组织学术活动、学习经验分享、学风建设</span></div><div class=\"info-row\"><span class=\"info-label\">宣传部</span><span class=\"info-value\">负责校园活动宣传、新媒体运营与视觉设计</span></div><div class=\"info-row\"><span class=\"info-label\">文艺部</span><span class=\"info-value\">策划校园文艺活动、晚会演出、才艺比赛</span></div><div class=\"info-row\"><span class=\"info-label\">体育部</span><span class=\"info-value\">组织体育赛事、运动会、阳光体育活动</span></div><div class=\"info-row\"><span class=\"info-label\">纪检部</span><span class=\"info-value\">负责校园纪律检查、晚自习巡查、文明督导</span></div><div class=\"info-row\"><span class=\"info-label\">权益生活部</span><span class=\"info-value\">维护学生权益、收集反馈生活问题、食堂监督</span></div><div class=\"info-row\"><span class=\"info-label\">社会实践部</span><span class=\"info-value\">组织志愿服务、社会实践、勤工助学对接</span></div></div><div class=\"highlight-box\">💡 军训期间各部门会在操场设摊招新，建议先了解再选择1-2个感兴趣的。</div>","shetuan":"<div class=\"detail-card\"><h3>🎭 全校社团名录</h3></div><div class=\"detail-card\"><div class=\"tag-row\"><span class=\"tag\">足球协会</span><span class=\"tag\">主持朗诵社</span><span class=\"tag\">羽毛球协会</span><span class=\"tag\">音乐社</span><span class=\"tag\">星原文学院</span><span class=\"tag\">舞蹈社</span><span class=\"tag\">礼仪模特社</span><span class=\"tag\">书画协会</span><span class=\"tag\">棋类协会</span><span class=\"tag\">乒乓球协会</span><span class=\"tag\">篮球协会</span><span class=\"tag\">健美操协会</span><span class=\"tag\">广播站</span><span class=\"tag\">英语协会</span><span class=\"tag\">电子协会</span><span class=\"tag\">电力技术协会</span><span class=\"tag\">裁判协会</span><span class=\"tag\">数学建模协会</span><span class=\"tag\">青年志愿者协会</span><span class=\"tag\">青年马克思主义研修班</span><span class=\"tag\">绿源协会</span><span class=\"tag\">就业协会</span><span class=\"tag\">计算机协会</span><span class=\"tag\">动漫社</span><span class=\"tag\">武术协会</span><span class=\"tag\">摄影协会</span><span class=\"tag\">中长跑协会</span></div></div><div class=\"highlight-box\">💡 共27个社团，开学后会在操场集中招新（百团大战），可现场了解报名。</div>","yishi":"<div class=\"detail-card\"><h3>🏥 校医室</h3><p><strong>📍 位置：</strong>校园东侧区域</p><div class=\"img-placeholder\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2\"/></svg></div><p style=\"text-align:center;color:var(--text-3);\">📷 校园地图中校医室位置标注</p><p>⏰ 日常门诊覆盖常见病诊治</p><p>🏥 重大疾病建议前往附近大型医院</p><div class=\"highlight-box\">💡 期末期间可用医保报销部分费用，就诊时携带学生证和医保卡即可。</div></div>","xueshengzheng":"<div class=\"detail-card\"><h3>📇 学生证补办流程</h3></div><div class=\"detail-card\"><ol class=\"step-list\"><li><strong>领表填表：</strong>找辅导员领取补办申请表，填写个人信息，辅导员签字 → 学院办公室盖公章</li><li><strong>提交审核：</strong>携带材料前往行政楼学工处学籍管理窗口提交审核</li><li><strong>缴费领证：</strong>工本费<strong>5元</strong>；火车优惠磁条<strong>10元</strong>（仅丢失时需补办）。每月集中制证，<strong>7-15个工作日</strong>领证</li></ol></div><div class=\"highlight-box\">💡 学生证请妥善保管，火车优惠磁条每年只能充磁4次。</div>","dianhua":"<div class=\"detail-card\"><h3>📞 常用电话</h3></div><div class=\"detail-card\"><h3>行政招生类</h3><div class=\"info-row\"><span class=\"info-label\">招生就业处</span><span class=\"info-value\">0791-83899638</span></div><div class=\"info-row\"><span class=\"info-label\">学院总机</span><span class=\"info-value\">0791-83880170</span></div><div class=\"info-row\"><span class=\"info-label\">学生工作处</span><span class=\"info-value\">0791-83895221</span></div><div class=\"info-row\"><span class=\"info-label\">保卫处</span><span class=\"info-value\">0791-83895162</span></div><div class=\"info-row\"><span class=\"info-label\">后勤服务中心</span><span class=\"info-value\">0791-83831083</span></div></div><div class=\"detail-card\"><h3>二级学院</h3><div class=\"info-row\"><span class=\"info-label\">电力工程学院</span><span class=\"info-value\">0791-83972565</span></div><div class=\"info-row\"><span class=\"info-label\">供用电工程学院</span><span class=\"info-value\">0791-83972160</span></div><div class=\"info-row\"><span class=\"info-label\">动力工程学院</span><span class=\"info-value\">0791-83880042</span></div><div class=\"info-row\"><span class=\"info-label\">信息工程学院</span><span class=\"info-value\">0791-83880045</span></div></div><div class=\"detail-card\"><p><strong>📍 校园地址：</strong>南昌市经开区海棠南路268号</p></div>","map":"<div class=\"detail-card\"><h3>🗺️ 校园地图</h3><div class=\"map-frame\" style=\"padding:16px;\"><svg viewBox=\"0 0 400 310\" style=\"width:100%;max-width:380px;\"><rect width=\"400\" height=\"310\" fill=\"var(--blue-50)\" rx=\"8\"/><rect x=\"80\" y=\"10\" width=\"240\" height=\"6\" fill=\"var(--blue-500)\" rx=\"2\"/><rect x=\"80\" y=\"292\" width=\"240\" height=\"6\" fill=\"var(--blue-500)\" rx=\"2\"/><rect x=\"10\" y=\"55\" width=\"6\" height=\"200\" fill=\"var(--blue-500)\" rx=\"2\"/><rect x=\"382\" y=\"55\" width=\"6\" height=\"200\" fill=\"var(--blue-500)\" rx=\"2\"/><rect x=\"30\" y=\"28\" width=\"340\" height=\"28\" fill=\"#fff\" stroke=\"var(--blue-500)\" stroke-width=\"1.2\" rx=\"4\"/><text x=\"200\" y=\"47\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--blue-600)\" font-weight=\"bold\">江西电力职院 · 昌北校区平面图</text><rect x=\"170\" y=\"62\" width=\"60\" height=\"14\" fill=\"var(--emerald)\" rx=\"3\"/><text x=\"200\" y=\"72\" text-anchor=\"middle\" font-size=\"8\" fill=\"#fff\" font-weight=\"bold\">西北门(主校门)</text><rect x=\"20\" y=\"84\" width=\"82\" height=\"16\" fill=\"#FFF7ED\" stroke=\"var(--orange)\" stroke-width=\"1\" rx=\"3\"/><text x=\"61\" y=\"96\" text-anchor=\"middle\" font-size=\"7.5\" fill=\"var(--orange)\">1-6栋宿舍(男)</text><rect x=\"20\" y=\"104\" width=\"82\" height=\"16\" fill=\"#FFF7ED\" stroke=\"var(--orange)\" stroke-width=\"1\" rx=\"3\"/><text x=\"61\" y=\"116\" text-anchor=\"middle\" font-size=\"7.5\" fill=\"var(--orange)\">7-9栋宿舍</text><rect x=\"20\" y=\"124\" width=\"82\" height=\"16\" fill=\"#FFF7ED\" stroke=\"var(--orange)\" stroke-width=\"1\" rx=\"3\"/><text x=\"61\" y=\"136\" text-anchor=\"middle\" font-size=\"7.5\" fill=\"var(--orange)\">10-11栋宿舍(女)</text><rect x=\"118\" y=\"84\" width=\"120\" height=\"20\" fill=\"var(--blue-50)\" stroke=\"var(--blue-500)\" stroke-width=\"1\" rx=\"3\"/><text x=\"178\" y=\"98\" text-anchor=\"middle\" font-size=\"8\" fill=\"var(--blue-600)\">1-4号教学楼</text><rect x=\"118\" y=\"108\" width=\"120\" height=\"20\" fill=\"var(--blue-50)\" stroke=\"var(--blue-500)\" stroke-width=\"1\" rx=\"3\"/><text x=\"178\" y=\"122\" text-anchor=\"middle\" font-size=\"8\" fill=\"var(--blue-600)\">5-6号教学楼(实训)</text><rect x=\"252\" y=\"84\" width=\"122\" height=\"28\" fill=\"var(--purple-light)\" stroke=\"var(--purple)\" stroke-width=\"1\" rx=\"3\"/><text x=\"313\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"var(--purple)\" font-weight=\"bold\">📚 图书馆</text><rect x=\"118\" y=\"138\" width=\"78\" height=\"18\" fill=\"#FFF7ED\" stroke=\"var(--orange)\" stroke-width=\"1\" rx=\"3\"/><text x=\"157\" y=\"151\" text-anchor=\"middle\" font-size=\"8\" fill=\"var(--orange)\">🍽 食堂</text><rect x=\"206\" y=\"138\" width=\"78\" height=\"18\" fill=\"var(--blue-50)\" stroke=\"var(--blue-500)\" stroke-width=\"1\" rx=\"3\"/><text x=\"245\" y=\"151\" text-anchor=\"middle\" font-size=\"8\" fill=\"var(--blue-600)\">🏢 行政楼</text><rect x=\"294\" y=\"138\" width=\"80\" height=\"18\" fill=\"var(--emerald-light)\" stroke=\"var(--emerald)\" stroke-width=\"1\" rx=\"3\"/><text x=\"334\" y=\"151\" text-anchor=\"middle\" font-size=\"8\" fill=\"var(--emerald)\">🏟 操场</text><rect x=\"118\" y=\"164\" width=\"58\" height=\"14\" fill=\"var(--red-light)\" stroke=\"var(--red)\" stroke-width=\"1\" rx=\"3\"/><text x=\"147\" y=\"174\" text-anchor=\"middle\" font-size=\"7\" fill=\"var(--red)\">🏥 校医室</text><rect x=\"188\" y=\"164\" width=\"62\" height=\"14\" fill=\"var(--teal-light)\" stroke=\"var(--teal)\" stroke-width=\"1\" rx=\"3\"/><text x=\"219\" y=\"174\" text-anchor=\"middle\" font-size=\"7\" fill=\"var(--teal)\">📦 快递驿站</text><rect x=\"118\" y=\"196\" width=\"260\" height=\"38\" fill=\"#ECFDF5\" rx=\"4\" stroke=\"var(--emerald)\" stroke-width=\"1\"/><text x=\"248\" y=\"219\" text-anchor=\"middle\" font-size=\"10\" fill=\"var(--emerald)\">🌳 校园绿化区 / 中心广场</text><rect x=\"170\" y=\"248\" width=\"60\" height=\"14\" fill=\"var(--emerald)\" rx=\"3\"/><text x=\"200\" y=\"258\" text-anchor=\"middle\" font-size=\"8\" fill=\"#fff\" font-weight=\"bold\">西南门</text></svg><p style=\"text-align:center;font-size:11px;color:var(--text-3);margin-top:8px;\">⚠ 示意图，具体楼栋位置以开学实际指引为准</p></div></div><div class=\"detail-card\"><h3>主要地标速查</h3><div class=\"tag-row\"><span class=\"tag\">1-6栋 男生宿舍</span><span class=\"tag\">7-9栋 宿舍</span><span class=\"tag\">10-11栋 女生宿舍</span><span class=\"tag\">1-4号教学楼</span><span class=\"tag\">5-6号教学楼</span><span class=\"tag\">图书馆</span><span class=\"tag\">食堂</span><span class=\"tag\">行政楼</span><span class=\"tag\">操场</span><span class=\"tag\">校医务室</span><span class=\"tag\">快递驿站</span><span class=\"tag\">西北门</span><span class=\"tag\">西南门</span></div></div>","baodao":"<div class=\"detail-card\"><h3>📋 报到须知</h3><p>📅 <strong>报到时间：</strong>以录取通知书为准（一般为9月上旬）</p><p>📍 <strong>报到地点：</strong>南昌市昌北经开区海棠南路268号（昌北校区）</p><p>📝 <strong>报到流程：</strong>校门身份核验 → 各学院迎新点报到 → 宿舍办理入住 → 领取军训服装</p></div><div class=\"detail-card\"><h3>📄 报到必需材料</h3><div class=\"check-list\"><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>录取通知书</strong>（原件，报到现场核验）</span></div><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>身份证原件 + 复印件 ×5份</strong>（正反面复印在同一张A4纸上）</span></div><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>高中档案</strong>（密封完好，切勿自行拆封）</span></div><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>团员/党员关系转接材料</strong>（团员证、入团申请书、组织关系介绍信）</span></div><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>一寸免冠照片 ×10张</strong>（蓝底或红底均可，建议保留电子版）</span></div><div class=\"check-row\"><span class=\"check-mark\">☑</span><span><strong>银行卡</strong>（可自己办理，进校后学校会统一组织办理发放）</span></div></div></div><div class=\"highlight-box\">💡 报到当天南昌站和南昌西站有免费迎新大巴。自驾导航至「江西电力职业技术学院昌北校区西北门」。</div>","qingdan":"<div class=\"detail-card\"><h3>🎒 新生必备清单</h3></div><div class=\"detail-card\"><h3>📋 证件类（随身携带，切勿托运）</h3><p>录取通知书、身份证原件+复印件×5份、高中档案（密封完好）、团员/党员关系转接材料、一寸免冠照片×10张（蓝底或红底，保留电子版）、银行卡</p></div><div class=\"detail-card\"><h3>🛏️ 床上用品（可提前寄到学校）</h3><p>床垫(0.9m×1.9m)、被子(冬被+夏被)、枕头、床单被套三件套×2套、蚊帐/床帘</p><p style=\"color:var(--blue-600);font-size:13px;margin-top:6px;\">💬 不知道怎么选？加学长微信 <strong>XMB2D888</strong> 或 QQ <strong>3289094177</strong>，帮你一站式配齐送到宿舍</p></div><div class=\"detail-card\"><h3>🧴 生活用品</h3><p>洗漱用品、衣架×10、拖鞋、水杯、雨伞、充电器、排插（线长1.5m以上）、小台灯、收纳盒</p><p style=\"color:var(--blue-600);font-size:13px;margin-top:6px;\">💬 懒得带？联系学长微信 <strong>XMB2D888</strong>，帮你提前配好</p></div><div class=\"detail-card\"><h3>💊 医疗用品</h3><p>感冒药、退烧药、创可贴、肠胃药、防蚊液、风油精、棉签碘伏</p></div><div class=\"detail-card\"><h3>🪖 军训必备</h3><p>SPF50+防晒霜、大容量水杯(1L以上)、软鞋垫/卫生巾（垫军鞋用）、润喉糖、小风扇</p></div><div class=\"highlight-box\">💡 大件物品可提前2-3天寄到学校快递驿站，轻装报到更省力。</div>","junxun":"<div class=\"detail-card\"><h3>🪖 军训贴士</h3><p>⏰ <strong>时间：</strong>开学报到后即开始，为期约两周</p><p>☀️ <strong>防晒：</strong>南昌9月太阳较烈，务必准备SPF50+防晒霜，休息时间及时补涂</p><p>👟 <strong>鞋子：</strong>发放的军训鞋底较硬，建议备软鞋垫或卫生巾垫底</p><p>💧 <strong>饮水：</strong>带大容量水杯（1L以上），训练间隙及时补水</p><p>😷 <strong>身体不适：</strong>及时报告教官，不要硬撑。有医院证明的特殊情况可申请观训</p><p>🍬 <strong>低血糖：</strong>口袋备几颗糖或巧克力，早上一定吃早饭</p><div class=\"warn-box\">⚠️ 如因身体原因需免训或请假，请提前联系辅导员和带训教官，提供医院证明即可办理观训手续。</div></div><div class=\"highlight-box\">💡 军训是大学第一课，也是交朋友的好机会。别太紧张，大部分同学都能坚持下来。</div>","lvtong":"<div class=\"detail-card\"><h3>🟢 绿色通道</h3><p>家庭经济困难的新生可通过<strong>绿色通道</strong>先行办理入学手续，暂缓缴纳学费。<span style=\"color:var(--emerald);\">（学校官方已明确开通）</span></p><p><strong>申请条件：</strong>建档立卡家庭、低保家庭、残疾学生、孤儿、遭受重大自然灾害家庭等</p><p><strong>办理流程：</strong>报到当天到各学院迎新点 → 出示相关证明材料 → 填写绿色通道申请表 → 完成入学注册</p><p><strong>后续资助：</strong>入学后还可申请国家助学金（平均3300元/年）、国家助学贷款（最高12000元/年）等</p><p>💡 建议入学前到生源地教育行政管理部门申请办理生源地信用助学贷款。</p><div class=\"highlight-box\">💡 不要因为经济原因放弃入学。学校有多渠道资助体系，入学后也可申请勤工助学岗位。</div></div>","card":"<div class=\"detail-card\"><h3>💳 校园卡 + 手机卡</h3></div><div class=\"detail-card\"><h3>💳 校园卡（一卡通）</h3><p>入学后学校统一采集信息发放：</p><p>🍽️ <strong>食堂消费</strong> · 📚 <strong>图书馆借阅</strong> · 🚪 <strong>人脸识别门禁</strong> · 📇 <strong>校内身份识别</strong></p><p>充值：校内充值点或<strong>完美校园</strong>App线上充值</p></div><div class=\"detail-card\"><h3>📱 绑定移动卡后解锁</h3><p>💧 交水费 · 🌐 连校园网 · ⚡ 充宿舍电费</p><div class=\"warn-box\">⚠️ 图书馆借阅和人脸识别门禁由学校统一采集信息录取，不需要绑定任何手机卡！</div></div><div class=\"detail-card\"><h3>📱 手机卡</h3><div class=\"info-row\"><span class=\"info-label\">🏪 唯一运营商</span><span class=\"info-value\" style=\"font-weight:700;color:var(--red);\">中国移动</span></div><p>学校校园内<strong>只有中国移动营业厅</strong>（位于院内商场，官方直营），联通和电信在校内无营业厅。开学报到后到校内移动营业厅<strong>自愿办理</strong>。</p><p style=\"color:var(--blue-600);\">💬 想提前了解套餐？联系学长微信 <strong>XMB2D888</strong></p></div>","app":"<div class=\"detail-card\"><h3>📱 常用应用</h3></div><div class=\"detail-card\"><h3>📖 学习类</h3><p><strong>学习通</strong>——网课和课程学习必备，开学前提前下载注册</p></div><div class=\"detail-card\"><h3>🏠 生活类</h3><p><strong>完美校园</strong>——校园卡充值、热水扫码、宿舍电费充值</p><p><strong>惠生活</strong>——饮水机扫码接水</p></div><div class=\"detail-card\"><h3>🏫 校内系统</h3><p>🔗 学校官网：www.jxdlzy.com</p><p>📋 教务系统：选课、查成绩、查课表</p><p>💬 <strong>企业微信</strong>：校内通知、班群沟通</p></div><div class=\"detail-card\"><h3>👥 社交类</h3><p>各二级学院新生QQ群后续会由辅导员创建并通知。</p><div class=\"warn-box\">⚠️ 在官方群未建立之前，不要加入来路不明的所谓\"XX学院新生群\"！</div></div><div class=\"highlight-box\">💡 学习通到校前先下载注册好。完美校园和惠生活到校后再下载即可。</div>","chaoshi":"<div class=\"detail-card\"><h3>🏪 校园超市</h3><p>📍 校内设有超市，位于食堂附近</p><p>🛒 日常用品、零食饮料、学习文具一应俱全</p><p>⏰ 营业时间覆盖早中晚，方便随时购买</p></div>","yushi":"<div class=\"detail-card\"><h3>🚿 浴室与洗衣房</h3><p>🚿 <strong>公共浴室：</strong>部分宿舍楼配有楼层公共浴室，使用热水卡淋浴</p><p>👕 <strong>洗衣房：</strong>宿舍楼内配有自助洗衣机，扫码支付即可使用</p><p>💧 宿舍楼直饮水机使用<strong>惠生活</strong>App/小程序扫码接水</p><p>💡 建议准备洗澡篮、拖鞋等个人洗浴用品</p></div>","yundong":"<div class=\"detail-card\"><h3>⚽ 运动场所</h3><p>🏟 <strong>田径场：</strong>标准400米塑胶跑道，配有足球场</p><p>🏀 <strong>篮球场：</strong>多个室外篮球场地，全天免费使用</p><p>🏸 <strong>其他：</strong>羽毛球场、乒乓球台等散布校园各处</p><p>⏰ 所有户外运动场所全天开放</p></div>","wanle":"<div class=\"detail-card\"><h3>🎉 周边玩乐</h3><p>学校位于昌北经开区，周边有商业街区和小吃街</p><p>🚇 乘坐地铁可快捷到达南昌市中心（八一广场、滕王阁、秋水广场等）</p><p>🍢 校门口小吃街：南昌拌粉、烧烤、奶茶等应有尽有</p><p>🛍 附近商圈：经开区万达广场（公交约15分钟）</p><p>🌉 周末推荐：滕王阁夜游、南昌之星摩天轮、八一起义纪念馆</p></div>","zhuanye":"<div class=\"detail-card\"><h3>📖 5大二级学院专业一览</h3></div><div class=\"detail-card\"><h3>电力工程学院</h3><div class=\"tag-row\"><span class=\"tag\">电力系统自动化技术</span><span class=\"tag\">电气自动化技术</span><span class=\"tag\">电力系统继电保护技术</span><span class=\"tag\">分布式发电与智能微电网技术</span><span class=\"tag\">城市轨道交通供配电技术</span></div></div><div class=\"detail-card\"><h3>供用电工程学院</h3><div class=\"tag-row\"><span class=\"tag\">供用电技术</span><span class=\"tag\">发电厂及电力系统</span><span class=\"tag\">工程造价</span><span class=\"tag\">无人机应用技术</span><span class=\"tag\">输配电工程技术</span></div></div><div class=\"detail-card\"><h3>动力工程学院</h3><div class=\"tag-row\"><span class=\"tag\">热能动力工程技术</span><span class=\"tag\">发电运行技术</span><span class=\"tag\">热工自动化技术</span><span class=\"tag\">电厂化学与环保技术</span><span class=\"tag\">水电站设备安装与管理</span><span class=\"tag\">机电一体化技术</span><span class=\"tag\">工业节能技术</span><span class=\"tag\">风力发电工程技术</span></div></div><div class=\"detail-card\"><h3>新能源工程学院</h3><div class=\"tag-row\"><span class=\"tag\">风力发电工程技术</span><span class=\"tag\">分布式发电</span></div></div><div class=\"detail-card\"><h3>马克思主义学院</h3><p style=\"color:var(--text-2);\">负责全校思想政治理论课教学</p></div>","jidian":"<div class=\"detail-card\"><h3>📊 绩点学分</h3><p><strong>课程成绩：</strong>一般采用百分制，60分及格。绩点按成绩分段换算：90-100对应4.0，80-89对应3.0</p><p><strong>学分修读：</strong>每学期修读学分有上限和下限要求，具体以各专业培养方案为准</p><p><strong>毕业要求：</strong>修满培养方案规定的最低学分方可毕业</p><div class=\"warn-box\">⚠️ 不及格课程需参加补考，补考不过则需重修。挂科过多会触发学业预警。</div><div class=\"highlight-box\">💡 大一上学期最容易挂科，前几周就要进入学习状态。</div></div>","jiangzhu":"<div class=\"detail-card\"><h3>🏆 奖助学金</h3><p><strong>国家奖学金：</strong>8000元/年</p><p><strong>国家励志奖学金：</strong>5000元/年</p><p><strong>国家助学金：</strong>平均3300元/年</p><p><strong>学院奖学金：</strong>一等、二等、三等奖学金</p><p>📝 评选一般在大二开始，大一学年成绩和综合表现是评选依据</p></div>","lib":"<div class=\"detail-card\"><h3>📚 图书馆</h3><p>📖 馆藏丰富，涵盖电力、工程、信息技术、人文社科等多领域</p><p>🪑 设有自习座位，<strong>直接进馆即可（不强制刷校园卡）</strong></p><p>💻 有电子阅览室和无线网络覆盖</p><p>📚 借阅方式：使用校园内<strong>自助借还书机器</strong>（最方便）或联系图书馆工作人员</p></div>","jiaoxue":"<div class=\"detail-card\"><h3>🏫 教学楼分布</h3><p>1-4号教学楼：主要理论课程教学区</p><p>5-6号教学楼：实训与实验课程区</p><p>💡 每个教室门口贴有课程表 · 📱 建议保存课表截图或设置手机提醒</p></div>","xuanke":"<div class=\"detail-card\"><h3>📝 选课与重修</h3><p><strong>选课：</strong>每学期末开放下一学期选课，通过教务系统操作。热门选修课名额有限。</p><p><strong>补考：</strong>期末考试不及格可在下学期初参加补考，补考通过按60分计</p><p><strong>重修：</strong>补考仍未通过则需重修，跟随下一年级重新上课和考试</p><div class=\"warn-box\">⚠️ 累计挂科学分达到一定数量会收到学业预警，严重者可能面临留级或退学。</div></div>","zhuanben":"<div class=\"detail-card\"><h3>📈 专升本</h3><p><strong>专升本考试：</strong>大三下学期参加江西省专升本统一考试</p><p><strong>考试科目：</strong>公共基础课+专业基础课</p><p><strong>可报院校：</strong>江西省内本科院校的对口专业</p><p>💡 建议大一就开始关注目标院校的招生简章。大一大二打好基础比大三突击更有效。</p></div>","zhengshu":"<div class=\"detail-card\"><h3>📜 必考证书指南</h3><p>⚡ <strong>电工证（特种作业操作证）：</strong>电力类学生就业必备</p><p>💻 <strong>计算机等级证书：</strong>一级或二级，建议大一大二考完</p><p>🗣 <strong>英语等级证书：</strong>英语AB级或四六级</p><p>📐 <strong>CAD/CAM证书：</strong>工科类专业推荐</p><p>🔧 <strong>相关专业技能证书：</strong>根据专业方向选择</p></div>","jiaowu":"<div class=\"detail-card\"><h3>💻 教务入口</h3><p>🔗 <strong>学校官网：</strong>www.jxdlzy.com</p><p>📋 教务系统可在线进行：选课、查课表、查成绩、考试安排、学籍查询等</p><p>🔑 账号为学号，初始密码入学后由教务处统一告知</p></div>","dierketang":"<div class=\"detail-card\"><h3>🎯 第二课堂</h3><p><strong>第二课堂学分：</strong>在校期间需修满一定数量方可毕业</p><p><strong>获取方式：</strong>参加社团活动、志愿服务、讲座、社会实践、竞赛等</p><p>💡 大一多参加活动，越往后越没时间。志愿服务是最稳定好拿的学分来源</p></div>","jingsai":"<div class=\"detail-card\"><h3>🏆 科研竞赛</h3><p>⚡ 电力类专业赛事丰富：全国职业院校技能大赛（电力类赛项）、江西省职业院校技能大赛、电力行业各类技能比武/创新创业大赛</p><p>💡 参加竞赛对评奖评优和就业都有帮助，建议大二开始关注学校通知</p></div>","shixi":"<div class=\"detail-card\"><h3>💼 实习与就业</h3><p>🏢 <strong>就业方向：</strong>国家电网、南方电网、五大发电集团、电力建设企业、新能源公司等</p><p>🎓 <strong>校企合作：</strong>学校与国网江西省电力公司等电力企业有深度合作</p><p>📋 <strong>实习安排：</strong>大三安排集中实习，学院统一对接实习单位</p><p>💡 除了电网，光伏、风电、储能等新能源方向需求也很大</p></div>","dangtuan":"<div class=\"detail-card\"><h3>🔴 党团组织</h3><p><strong>团员关系转接：</strong>入学后在「智慧团建」系统完成线上转接，纸质团员档案交至学院团委</p><p><strong>入党流程：</strong>提交入党申请书 → 推优 → 入党积极分子 → 发展对象 → 预备党员 → 正式党员</p><p>💡 入党流程较长（一般2-3年），大一就可以递交入党申请书</p></div>","pingyou":"<div class=\"detail-card\"><h3>⭐ 评优评先</h3><p><strong>三好学生：</strong>成绩优异+综合表现突出</p><p><strong>优秀学生干部：</strong>在学生组织工作中表现突出</p><p><strong>优秀毕业生：</strong>毕业时综合评选</p><p>📝 评优一般以学年为单位，学习成绩和综合测评各占一定比例</p></div>","qingong":"<div class=\"detail-card\"><h3>💪 勤工助学</h3><p>🏫 校内岗位：图书馆助理、行政办公室助理、实验室助理、食堂帮厨等</p><p>💰 薪资标准：按学校勤工助学管理办法执行，一般按月发放</p><p>📝 申请方式：入学后关注学生工作处通知，填写申请表并提交</p><p>💡 勤工助学不仅赚生活费，也是接触老师和积累经验的好渠道</p></div>","jineng":"<div class=\"detail-card\"><h3>📚 技能提升资源</h3><p>📱 <strong>在线学习平台：</strong>中国大学MOOC、B站、学习通</p><p>⚡ <strong>电力专业资源：</strong>中国电力出版社教材、电力行业标准文档</p><p>💻 <strong>编程技能：</strong>Python基础（自动化方向）、CAD制图</p><p>🗣 <strong>沟通表达：</strong>多参加社团活动、课堂展示</p><p>💡 大学最值钱的能力不是考试分数，是自学能力和信息搜索能力</p></div>","qingjia":"<div class=\"detail-card\"><h3>📝 请假流程</h3><p><strong>事假：</strong>提前向辅导员提交书面申请 → 辅导员审批 → 学院备案</p><p><strong>病假：</strong>向辅导员报告 → 提供医院证明 → 补办请假手续</p><p><strong>紧急请假：</strong>先电话/微信告知辅导员，事后补办手续</p><div class=\"warn-box\">⚠️ 未经批准擅自离校视为旷课，累计旷课一定课时会触发纪律处分。</div></div>","yibao":"<div class=\"detail-card\"><h3>🏥 医保报销</h3><p>📋 <strong>大学生医保：</strong>入学后统一办理城镇居民基本医疗保险</p><p>🏥 <strong>校医室就诊：</strong>携带学生证和医保卡，期末可报销部分费用</p><div class=\"highlight-box\" style=\"background:var(--amber-light);border-left-color:var(--amber);color:#92400E;\"><p style=\"margin:0;\"><strong>💡 报销不强制带学生证：</strong>记牢<strong>学号 + 班级 + 姓名</strong>即可办理；电子医保卡也可使用。</p></div><p>🏨 <strong>校外就医：</strong>需在校医室开具转诊单，保留好发票和病历等材料</p><div class=\"warn-box\" style=\"background:var(--red-light);\"><p style=\"margin:0;\"><strong>⚠️ 报销地点会变动：</strong>学校每年报销活动地点都可能换，<strong>务必关注辅导员通知 / 班级群消息</strong>。</p></div></div>","baoxiu":"<div class=\"detail-card\"><h3>🔧 宿舍报修</h3><p>🛠 <strong>报修渠道：</strong>联系宿管登记 → 物业维修人员上门处理</p><p>⚡ 常见报修项目：水管漏水、电路故障、门锁损坏、空调故障等</p><p>📞 如宿管处理不及时，可联系后勤服务中心：0791-83831083</p></div>","xueji":"<div class=\"detail-card\"><h3>📄 学籍异动</h3><p><strong>休学：</strong>因身体原因或其他正当理由可申请休学，需提交书面申请+相关证明材料</p><p><strong>复学：</strong>休学期满后，提交复学申请+医院康复证明等材料</p><p><strong>转专业：</strong>一般在第一学期末或第二学期初开放申请，需满足成绩要求和目标专业容量</p><p>📝 所有学籍异动请第一时间联系辅导员和学工处学籍管理窗口</p></div>","caiwu":"<div class=\"detail-card\"><h3>💰 财务缴费</h3><p>📋 <strong>缴费项目：</strong>学费 + 住宿费 + 书本费 ≈ 6300~6800元/学年</p><p>💳 <strong>缴费方式：</strong>学校指定银行账户转账 / 线上缴费平台 / 报到现场刷卡或现金</p><p>📅 <strong>缴费时间：</strong>每学年开学前完成缴费，具体时间以学校通知为准</p><div class=\"warn-box\">⚠️ 逾期未缴费可能影响学籍注册和选课。</div></div>","baowei":"<div class=\"detail-card\"><h3>🛡️ 保卫处</h3><p>📞 <strong>值班电话：</strong>0791-83895162</p><p>🔑 <strong>主要职能：</strong>校园出入管理、夜间巡逻、安防监控、失物招领、突发事件处理</p><p>🚪 <strong>门禁时间：</strong>宿舍楼一般23:00锁门，晚归需登记</p><p>💡 校园安全求助直接拨打保卫处电话，比110出警更快</p></div>","zizhu":"<div class=\"detail-card\"><h3>🎓 学生资助</h3><p><strong>国家助学金：</strong>平均3300元/年</p><p><strong>国家助学贷款：</strong>最高12000元/年</p><p><strong>校内资助：</strong>勤工助学岗位、临时困难补助、学费减免等</p><p><strong>社会资助：</strong>部分企业和社会团体设立的专项助学金</p><p>📝 申请时间：一般在每学年开学初集中办理，关注学生资助管理中心通知</p></div>","jiuxiao":"<div class=\"detail-card\"><h3>🚗 驾校推荐</h3></div><div class=\"detail-card\"><p>学校周边有多家驾校，价格从<strong>2500~3500元</strong>不等。但新生最容易被坑的就是驾校——低价吸引报名、后续收费不断、练车排不上队。</p><div class=\"warn-box\">⚠️ <strong>三大避坑要点：</strong><br>① 问清楚总费用：学费+考试费+补考费+模拟费，是不是全包？<br>② 实地看训练场：宣传图再好看不如亲自去场地看看<br>③ 问清楚练车频率：多少人一辆车？一周能练几次？</div></div><div class=\"detail-card\"><h3>🏆 学长实地考察推荐</h3><p>学长已实地考察过周边几家驾校，对比价格、场地、教练口碑后选出了性价比最高的1-2家。不用自己跑，不用被推销忽悠——直接给你底价。</p></div><div class=\"highlight-box\">💬 想拿驾校底价？加学长微信 <strong>XMB2D888</strong>，帮你对接最靠谱的教练，避免被坑。</div>","taocan":"<div class=\"detail-card\"><h3>📱 校园电话卡套餐</h3></div><div class=\"detail-card\"><p>校内<strong>只有中国移动营业厅</strong>（院内商场，官方直营），联通和电信在校内无营业厅。</p><p>移动电话卡绑定后可以：💧 交水费 · 🌐 连校园网 · ⚡ 充宿舍电费</p><div class=\"info-row\"><span class=\"info-label\">🏪 官方位置</span><span class=\"info-value\">校内移动营业厅（院内商场）</span></div></div><div class=\"detail-card\"><h3>🎁 学长渠道专属福利</h3><p>通过学长渠道办理，可享受<strong>独家套餐优惠</strong>，包括：流量更多、通话时长更长、宽带免费升级。开学报到当天可以帮忙办理，不用自己排队。</p></div><div class=\"highlight-box\">💬 想提前了解套餐详情和校内独家优惠？加学长微信 <strong>XMB2D888</strong>，报到前帮你预约好。</div>","zhusheng":"<div class=\"detail-card\"><h3>📈 专升本辅导机构对比</h3></div><div class=\"detail-card\"><p>江西省专升本考试<strong>大三下学期</strong>参加，科目为公共基础课+专业基础课。</p><p>市面上专升本培训机构价格从<strong>5000~20000元</strong>不等，质量参差不齐。很多机构开学第一周就开始疯狂推销，制造焦虑。</p><div class=\"warn-box\">⚠️ <strong>大一完全不用着急报班！</strong>专升本靠的是大一大二打好专业基础。大三再开始系统复习完全来得及。</div></div><div class=\"detail-card\"><h3>📋 各机构对比表</h3><table class=\"detail-table\"><thead><tr><th>对比维度</th><th>关键问题</th></tr></thead><tbody><tr><td>通过率</td><td>宣称的“高通过率”有数据支撑吗？真实上岸率多少？</td></tr><tr><td>师资</td><td>授课老师是专职还是兼职？有没有试听课？</td></tr><tr><td>价格</td><td>一次性收费还是分期？退费条款怎么写的？</td></tr><tr><td>服务</td><td>包含哪些服务？答疑辅导、模拟考试、志愿填报指导？</td></tr></tbody></table></div><div class=\"highlight-box\">💬 想要各机构详细对比报告和学长内部优惠价？加微信 <strong>XMB2D888</strong>，帮你做选择。</div>","guowang":"<div class=\"detail-card\"><h3>⚡ 国网考试培训</h3></div><div class=\"detail-card\"><p>国家电网招聘考试是电力类学生最看重的就业出路之一。考试分为<strong>笔试（专业知识+行测）</strong>和<strong>面试</strong>两部分。</p><p>市面上的国网培训机构众多，价格普遍在<strong>8000~30000元</strong>。和专升本一样，开学后会有各种人上门推销“保过班”。</p><div class=\"warn-box\">⚠️ <strong>没有任何班能“保过”国网！</strong>国网考试看的是大一大二扎实的专业课基础，不是大三突击几个月能解决的。大一先把电路、电机、电力系统这些核心课程学好，比报任何班都管用。</div></div><div class=\"detail-card\"><h3>📚 备考时间线</h3><ol class=\"step-list\"><li><strong>大一~大二：打基础</strong>——学好专业课，保持高绩点，关注国网招聘动态</li><li><strong>大三上学期：系统复习</strong>——整理考试大纲，刷历年真题，针对性补弱</li><li><strong>大三下学期：冲刺</strong>——报名考试，模拟面试，准备网申材料</li></ol></div><div class=\"highlight-box\">💬 需要国网备考资料包或机构对比推荐？加微信 <strong>XMB2D888</strong>，学长帮你少走弯路。</div>","jianzhi":"<div class=\"detail-card\"><h3>💼 兼职信息</h3></div><div class=\"detail-card\"><h3>🏫 校内兼职（最靠谱）</h3><div class=\"check-list\"><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>图书馆助理、行政办公室助理、实验室助理——关注学工处通知</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>食堂帮厨/打饭——直接去食堂窗口问</span></div><div class=\"check-row\"><span class=\"check-mark\">✅</span><span>勤工助学岗位——入学后提交申请，按月发放工资</span></div></div></div><div class=\"detail-card\"><h3>校外兼职</h3><p>学校周边有很多兼职机会：家教、促销员、发传单、服务员等。</p><div class=\"warn-box\">⚠️ <strong>校外兼职避坑：</strong><br>① 先交钱的都是骗子（押金/培训费/服装费）<br>② 警惕“高薪轻松”的诱惑（日结几百的往往有问题）<br>③ 不影响上课的前提下去做兼职</div></div><div class=\"detail-card\"><h3>📱 线上兼职</h3><p>随着互联网发展，线上兼职也越来越普遍：文案代写、PPT制作、短视频剪辑、问卷填写等。时间灵活，在宿舍就能做。</p></div><div class=\"highlight-box\">💬 想找靠谱兼职渠道？加微信 <strong>XMB2D888</strong>，学长不定期分享真实兼职信息。</div>","paotui":"<div class=\"detail-card\"><h3>🛵 校园配送服务</h3></div><div class=\"detail-card\"><h3>外卖代取</h3><p>学校宿舍区距离校门口有段距离，外卖小哥一般送到校门口或指定取餐点。不想下楼跑一趟？<strong>外卖代取到寝</strong>服务帮你从校门口直接送到宿舍门口。</p></div><div class=\"detail-card\"><h3>🏃 跑腿代办</h3><div class=\"check-list\"><div class=\"check-row\"><span class=\"check-mark\">📦</span><span>快递代取代寄——人在上课不方便取？帮你代拿送到寝室</span></div><div class=\"check-row\"><span class=\"check-mark\">📄</span><span>文件打印盖章——行政楼排队太烦？帮你跑流程</span></div><div class=\"check-row\"><span class=\"check-mark\">🛒</span><span>超市代购——不想出门？列个清单帮你买好送上门</span></div><div class=\"check-row\"><span class=\"check-mark\">🔑</span><span>钥匙忘带/物品借还——临时有事走不开？帮忙跑一趟</span></div></div></div><div class=\"detail-card\"><h3>🏃‍♂️ 校园跑（代跑步/代体测）</h3><p>学校每学期有校园跑公里数要求（一般为阳光长跑），期末还有体测。时间不够或者想轻松过关？提供代跑和体测陪跑服务。</p></div><div class=\"highlight-box\">💬 需要外卖代取、跑腿服务或校园跑？加微信 <strong>XMB2D888</strong> 下单，校内快速响应。</div>","lingshi":"<div class=\"detail-card\"><h3>🍫 寝室零食小铺</h3></div><div class=\"detail-card\"><p>晚上饿了食堂关门了？超市太远不想走？寝室零食小铺直接送到你宿舍门口。</p><div class=\"check-list\"><div class=\"check-row\"><span class=\"check-mark\">🍜</span><span>泡面、自热锅、酸辣粉</span></div><div class=\"check-row\"><span class=\"check-mark\">🍪</span><span>薯片、饼干、辣条、坚果</span></div><div class=\"check-row\"><span class=\"check-mark\">🥤</span><span>饮料、矿泉水、牛奶</span></div><div class=\"check-row\"><span class=\"check-mark\">🍬</span><span>糖果、面包、小零食</span></div><div class=\"check-row\"><span class=\"check-mark\">🧴</span><span>纸巾、牙膏、洗衣液等日用品</span></div></div></div><div class=\"detail-card\"><h3>💰 价格对比</h3><p>比校园超市<strong>便宜10%~20%</strong>，薄利多销，主打方便快捷。扫码下单，<strong>10分钟内送到寝室门口</strong>。</p></div><div class=\"highlight-box\">💬 想吃零食不想跑？加微信 <strong>XMB2D888</strong> 进零食群，每晚定时配送，支持提前囤货。</div>","default":"<div class=\"detail-card\"><h3>📄 详情</h3><p>该页面内容正在整理中，敬请期待。如需帮助，请拨打招就处电话：0791-83899638</p></div>"};
+
+/* ============ CORE LOGIC ============ */
+var allItems = [];
+for (var k in gridData) { allItems = allItems.concat(gridData[k]); }
+
+var stages = {
+  departure: { emoji:'📦', title:'出发前准备', desc:'收到录取通知后，这些事情先搞定', items:['qingdan','jiaotong','xuefei','sushe','map','app'], chip:'出发前' },
+  checkin:   { emoji:'🏁', title:'报到当天', desc:'顺利入学，按部就班不慌张', items:['baodao','card','lvtong','bilei','dianhua'], chip:'报到日' },
+  term:      { emoji:'📚', title:'开学适应期', desc:'安顿好之后，了解这些让生活更顺畅', items:['shitang','junxun','kuaidi','chaoshi','yushi','yishi','yundong','sushe'], chip:'开学后' },
+  daily:     { emoji:'🎓', title:'校园日常搜索', desc:'搜索或分类浏览全部校园指南', items:null, chip:'校园日常' },
+  deals:     { emoji:'🛒', title:'校园特惠', desc:'学长精选福利，省钱省心一整年', items:null, chip:'校园特惠' }
+};
+var currentStage = 'departure';
+var currentCatFilter = null;
+
+function findItemById(id) {
+  for (var i = 0; i < allItems.length; i++) { if (allItems[i].id === id) return allItems[i]; }
+  return null;
+}
+
+function renderCard(item) {
+  return '<div class="grid-item" data-id="'+item.id+'" data-accent="'+(item.accent||'blue')+'"><div class="grid-icon '+(item.color||'bg-blue')+'">'+item.svg+'</div><div class="grid-label">'+item.label+'</div><div class="grid-tag">'+(item.tag||item.desc||'')+'</div></div>';
+}
+
+function renderStageGrid() {
+  var grid = document.getElementById('cardsGrid');
+  var items;
+  if (currentStage === 'deals') {
+    items = gridData['deals'] || [];
+  } else if (currentStage === 'daily') {
+    items = currentCatFilter ? (gridData[currentCatFilter] || []) : allItems;
+  } else {
+    var ids = stages[currentStage].items;
+    items = ids.map(function(id){return findItemById(id);}).filter(Boolean);
+  }
+  grid.innerHTML = items.map(renderCard).join('');
+}
+
+function renderDailyExtra() {
+  var extra = document.getElementById('stageExtra');
+  if (currentStage !== 'daily') { extra.innerHTML = ''; return; }
+  var cats = [
+    {id:'xinbi',label:'新生必读'},{id:'life',label:'校园生活'},{id:'study',label:'学业发展'},
+    {id:'growth',label:'成长发展'},{id:'service',label:'办事指南'},{id:'deals',label:'🛒 校园特惠'}
+  ];
+  var chips = cats.map(function(c){
+    return '<button class="cat-chip'+(currentCatFilter===c.id?' active':'')+'" data-cat="'+c.id+'">'+c.label+'</button>';
+  }).join('');
+  extra.innerHTML =
+    '<div class="search-module">'+
+      '<div class="search-module-title">🔍 校园资料搜索</div>'+
+      '<div class="search-module-desc">输入关键词，查找校园指南</div>'+
+      '<div class="search-row">'+
+        '<label for="searchInput" class="sr-only">搜索校园指南</label>'+
+        '<input class="search-input" id="searchInput" type="text" placeholder=“宿舍、食堂、学费、教务处…">'+
+        '<button class="search-btn" id="searchBtn">搜索</button>'+
+      '</div>'+
+      '<div class="search-hints">'+
+        '<span class="search-hint" data-kw=”快递“>快递</span>'+
+        '<span class="search-hint" data-kw=”宿舍“>宿舍</span>'+
+        '<span class="search-hint" data-kw=”学费“>学费</span>'+
+        '<span class="search-hint" data-kw=”教务处“>教务处</span>'+
+      '</div>'+
+    '</div>'+
+    '<div class="cat-bar" id="catChips">'+chips+'</div>';
+}
+
+function updateStageUI() {
+  document.querySelectorAll('.timeline-item').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-stage') === currentStage);
+  });
+  var s = stages[currentStage];
+  document.getElementById('stageHeader').innerHTML =
+    '<span class="stage-emoji" style="display:inline-block;width:44px;height:44px;line-height:44px;text-align:center;background:var(--blue-50);border-radius:14px;font-size:22px;margin-bottom:10px;">'+s.emoji+'</span>'+
+    '<span class="stage-chip">'+s.chip+'</span>'+
+    '<h2>'+s.title+'</h2>';
+  renderStageGrid();
+  renderDailyExtra();
+}
+
+function setStage(stageId) {
+  if (currentStage === stageId) return;
+  currentStage = stageId;
+  currentCatFilter = null;
+  updateStageUI();
+  document.getElementById('mainContent').scrollIntoView({behavior:'smooth',block:'start'});
+  if (stageId === 'daily') bindSearchInline();
+}
+
+/* ============ DETAIL PAGE ============ */
+function openDetail(id) {
+  var page = document.getElementById('detailPage');
+  var item = findItemById(id);
+  document.getElementById('detailTitle').textContent = item ? (item.label || '详情') : '详情';
+  document.getElementById('detailBody').innerHTML = detailContent[id] || detailContent['default'] || '';
+  page.classList.add('active');
+  document.body.classList.add('noscroll');
+  page.scrollTop = 0;
+}
+function closeDetail() {
+  document.getElementById('detailPage').classList.remove('active');
+  document.body.classList.remove('noscroll');
+}
+
+/* ============ MODAL ============ */
+var contactModal = document.getElementById('contactModal');
+function openModal() { contactModal.classList.remove('hidden'); document.body.classList.add('noscroll'); }
+function closeModal() { contactModal.classList.add('hidden'); document.body.classList.remove('noscroll'); }
+
+/* ============ TOAST ============ */
+var toastTimer;
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){t.classList.remove('show');},2000);
+}
+
+/* ============ COPY ============ */
+function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){showToast('✅ 已复制：'+text);}).catch(function(){fallbackCopy(text);});
+  } else { fallbackCopy(text); }
+}
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast('✅ 已复制：'+text);}
+  catch(e){showToast('复制失败，请长按手动复制');}
+  document.body.removeChild(ta);
+}
+
+/* ============ SEARCH ============ */
+function navigateToCard(id) {
+  var foundStage = null;
+  for (var s in stages) {
+    if (stages[s].items && stages[s].items.indexOf(id) >= 0) {foundStage = s; break;}
+  }
+  if (foundStage) {currentStage = foundStage; currentCatFilter = null; updateStageUI();}
+  setTimeout(function(){openDetail(id);},200);
+}
+
+function doSearch(q) {
+  q = (q || (document.getElementById('searchInput')?document.getElementById('searchInput').value:'')).trim();
+  if (!q) return;
+  var map = {
+    '快递':'kuaidi','宿舍':'sushe','学费':'xuefei','食堂':'shitang','交通':'jiaotong','避雷':'bilei',
+    '骗':'bilei','推销':'bilei','学生会':'xueshenghui','社团':'shetuan','校医':'yishi',
+    '学生证':'xueshengzheng','补办':'xueshengzheng','电话':'dianhua','地图':'map','报到':'baodao',
+    '军训':'junxun','清单':'qingdan','绿色通道':'lvtong','困难':'lvtong','校园卡':'card','应用':'app',
+    '超市':'chaoshi','浴室':'yushi','洗衣':'yushi','运动':'yundong','篮球':'yundong','操场':'yundong',
+    '玩乐':'wanle','专业':'zhuanye','绩点':'jidian','学分':'jidian','奖学金':'jiangzhu',
+    '助学金':'jiangzhu','图书馆':'lib','教学楼':'jiaoxue','教室':'jiaoxue','选课':'xuanke',
+    '重修':'xuanke','补考':'xuanke','专升本':'zhuanben','证书':'zhengshu','教务':'jiaowu',
+    '第二课堂':'dierketang','竞赛':'jingsai','科研':'jingsai','实习':'shixi','就业':'shixi',
+    '电网':'shixi','党团':'dangtuan','评优':'pingyou','勤工':'qingong','技能':'jineng',
+    '学习':'jineng','请假':'qingjia','医保':'yibao','报销':'yibao','报修':'baoxiu','学籍':'xueji',
+    '休学':'xueji','转学':'xueji','财务':'caiwu','缴费':'caiwu','保卫':'baowei','门禁':'baowei',
+    '资助':'zizhu','贷款':'zizhu','免训':'junxun','宽带':'sushe','热水':'sushe','接水':'yushi',
+    '国网':'shixi','驾校':'jiuxiao','电话卡':'taocan','手机卡':'taocan','套餐':'taocan','移动':'taocan',
+    '辅导':'zhusheng','升本辅导':'zhusheng','机构':'zhusheng','国网培训':'guowang','电网培训':'guowang',
+    '兼职':'jianzhi','打工':'jianzhi','配送':'paotui','跑腿':'paotui','外卖':'paotui','代取':'paotui',
+    '零食':'lingshi','小卖部':'lingshi','便利店':'lingshi'
+  };
+  var target = map[q];
+  if (!target) {
+    for (var k in map) { if (q.indexOf(k)>=0) {target=map[k];break;} }
+  }
+  if (target) {
+    navigateToCard(target);
+    var si = document.getElementById('searchInput'); if (si) si.value = '';
+  } else {
+    showToast('未找到相关内容，请换关键词试试');
+  }
+}
+
+function liveFilter(query) {
+  query = query.trim();
+  var items = document.querySelectorAll('#cardsGrid .grid-item');
+  items.forEach(function(item) {
+    var label = item.querySelector('.grid-label');
+    var tag = item.querySelector('.grid-tag');
+    var text = ((label?label.textContent:'')+' '+(tag?tag.textContent:'')).toLowerCase();
+    item.style.display = (!query||text.indexOf(query.toLowerCase())>=0) ? '' : 'none';
+  });
+}
+
+function bindSearchInline() {
+  var si = document.getElementById('searchInput');
+  var sb = document.getElementById('searchBtn');
+  if (si) si.addEventListener('input', function(){liveFilter(this.value);});
+  if (sb) sb.addEventListener('click', function(){doSearch();});
+  document.querySelectorAll('#stageExtra .search-hint').forEach(function(h){
+    h.addEventListener('click', function(){doSearch(this.getAttribute('data-kw'));});
+  });
+  document.querySelectorAll('#catChips .cat-chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      var cat = this.getAttribute('data-cat');
+      currentCatFilter = (currentCatFilter===cat) ? null : cat;
+      renderStageGrid();
+      renderDailyExtra();
+      bindSearchInline();
+    });
+  });
+}
+
+/* ============ EVENT BINDINGS ============ */
+document.addEventListener('DOMContentLoaded', function(){
+  updateStageUI();
+  bindSearchInline();
+
+  // Timeline
+  document.querySelectorAll('.timeline-item').forEach(function(el){
+    el.addEventListener('click', function(){
+      var s = this.getAttribute('data-stage');
+      if (s) setStage(s);
+    });
+  });
+
+  // Modal
+  contactModal.addEventListener('click', function(e){if(e.target===this) closeModal();});
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.getElementById('modalLaterBtn').addEventListener('click', closeModal);
+  document.getElementById('copyWechatBtn').addEventListener('click', function(){copyText('XMB2D888');});
+  document.getElementById('copyQQBtn').addEventListener('click', function(){copyText('3289094177');});
+
+  // Detail
+  document.getElementById('detailBackBtn').addEventListener('click', closeDetail);
+  document.getElementById('detailPage').addEventListener('click', function(e){if(e.target===this) closeDetail();});
+
+  // Grid delegation
+  document.getElementById('cardsGrid').addEventListener('click', function(e){
+    var item = e.target.closest('.grid-item');
+    if (item) { var id = item.getAttribute('data-id'); if (id) openDetail(id); }
+  });
+
+  // Bottom nav
+  document.getElementById('navHome').addEventListener('click', function(){
+    closeDetail();setStage('departure');window.scrollTo({top:0,behavior:'smooth'});
+    document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});
+    this.classList.add('active');
+  });
+  document.getElementById('navSearch').addEventListener('click', function(){
+    closeDetail();setStage('daily');document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});this.classList.add('active');
+    setTimeout(function(){var si=document.getElementById('searchInput');if(si)si.focus();},400);
+  });
+  document.getElementById('navContact').addEventListener('click', function(){
+    openModal();document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});
+  });
+
+  // Copy buttons in detail
+  document.getElementById('detailBody').addEventListener('click', function(e){
+    var btn = e.target.closest('[data-copy]');
+    if (btn) copyText(btn.getAttribute('data-copy'));
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', function(e){
+    if (e.key==='Escape' && document.getElementById('detailPage').classList.contains('active')) closeDetail();
+  });
+});
+})();
+</script>
+</body>
+</html>

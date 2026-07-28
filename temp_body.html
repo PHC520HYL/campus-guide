@@ -1,0 +1,91 @@
+﻿<body>
+
+<!-- ====== MODAL ====== -->
+<div class="modal-overlay hidden" id="contactModal">
+<div class="modal-sheet">
+<button class="modal-close-btn" id="modalCloseBtn" aria-label="关闭">✕</button>
+<div class="modal-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg></div>
+<div class="modal-heading">新生答疑咨询</div>
+<div class="modal-sub">添加电院学长微信或QQ<br>校园问题直接问，不收费</div>
+<div class="copy-block">📱 微信：XMB2D888</div>
+<div class="copy-block-qq">🐧 QQ：3289094177</div>
+<button class="modal-btn primary" id="copyWechatBtn">📋 复制微信号</button>
+<button class="modal-btn qq-btn" id="copyQQBtn">🐧 复制QQ号</button>
+<button class="modal-btn ghost" id="modalLaterBtn">稍后再说</button>
+<div class="modal-legal">添加时请备注：26级新生</div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ====== HERO ====== -->
+<header class="hero" id="top">
+<div class="particles">
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<div class="hero-badge">⚡ 2026新生指南</div>
+<div class="hero-title">江西电力<span class="accent">职业技术学院</span></div>
+<div class="hero-sub">JIANGXI ELECTRIC VOCATIONAL AND TECHNICAL COLLEGE</div>
+<div class="stats-row">
+<div class="stat-card"><span class="stat-icon">🏫</span><div class="stat-num">1958</div><div class="stat-label">建校年份</div></div>
+<div class="stat-card"><span class="stat-icon">🌳</span><div class="stat-num">553</div><div class="stat-label">校园面积(亩)</div></div>
+<div class="stat-card"><span class="stat-icon">🎓</span><div class="stat-num">公办</div><div class="stat-label">公办专科</div></div>
+<div class="stat-card"><span class="stat-icon">📚</span><div class="stat-num">5</div><div class="stat-label">二级学院</div></div>
+</div>
+</header>
+
+<!-- ====== TIMELINE NAV ====== -->
+<div class="timeline-wrap" id="timelineWrap">
+<div class="timeline-bar" id="timelineBar">
+<button class="timeline-item active" data-stage="departure" aria-label="出发前"><span class="t-icon">📦</span>出发前</button>
+<button class="timeline-item" data-stage="checkin" aria-label="报到日"><span class="t-icon">🏁</span>报到日</button>
+<button class="timeline-item" data-stage="term" aria-label="开学后"><span class="t-icon">📚</span>开学后</button>
+<button class="timeline-item" data-stage="daily" aria-label="校园日常"><span class="t-icon">🎓</span>校园日常</button>
+<button class="timeline-item" data-stage="deals" aria-label="校园特惠"><span class="t-icon">🛒</span>校园特惠</button>
+</div>
+</div>
+
+<!-- ====== MAIN CONTENT ====== -->
+<div id="mainContent">
+<div class="stage-header" id="stageHeader"></div>
+<div class="grid-section"><div class="grid-3" id="cardsGrid"></div></div>
+<div id="stageExtra"></div>
+</div>
+
+<!-- ====== DETAIL PAGE ====== -->
+<div class="detail-overlay" id="detailPage">
+<div class="detail-topbar">
+<button class="detail-back" id="detailBackBtn" aria-label="返回">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<div class="detail-title" id="detailTitle">详情</div>
+<div style="width:36px"></div>
+</div>
+<div class="detail-body" id="detailBody"></div>
+</div>
+
+<!-- ====== BOTTOM NAV ====== -->
+<div class="bottom-nav">
+<button class="nav-item active" id="navHome" aria-label="首页">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<span>首页</span><div class="nav-dot"></div>
+</button>
+<button class="nav-item" id="navSearch" aria-label="搜索">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>搜索</span><div class="nav-dot"></div>
+</button>
+<button class="nav-item" id="navContact" aria-label="联系">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+<span>联系</span><div class="nav-dot"></div>
+</button>
+</div>
+
+<div class="page-footer">
+⚡ 电院校园指南 · 由学长整理维护<br>
+💬 微信：XMB2D888 · QQ：3289094177<br>
+信息仅供参考，以学校官方通知为准
+</div>
+
+
