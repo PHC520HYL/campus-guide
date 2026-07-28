@@ -267,7 +267,7 @@ body.noscroll{overflow:hidden}
 
 /* ============ DETAIL PAGE ============ */
 .detail-overlay{
-  position:fixed;inset:0;background:var(--bg);z-index:950;overflow-y:auto;
+  position:fixed;inset:0;background:var(--bg);z-index:9990;overflow-y:auto;
   display:none;flex-direction:column;-webkit-overflow-scrolling:touch;
 }
 .detail-overlay.active{display:flex;animation:fadeSlideIn .3s ease}
@@ -349,7 +349,7 @@ body.noscroll{overflow:hidden}
 
 /* ============ MODAL ============ */
 .modal-overlay{
-  position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:1000;
+  position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:10000;
   display:flex;align-items:flex-end;justify-content:center;animation:fadeIn .25s ease;
   backdrop-filter:blur(2px);
 }
@@ -412,37 +412,11 @@ body.noscroll{overflow:hidden}
   text-align:center;padding:24px 16px 80px;font-size:11px;color:var(--text-3);line-height:1.9;
 }
 
-/* ============ DARK MODE ============ */
-@media(prefers-color-scheme:dark){
-  :root{--bg:#0F1322;--card:#1A1D2E;--card-hover:#1F2234;--text:#E8EAF0;--text-2:#9CA3B8;--text-3:#6B7280;--border:#262A3A;--border-light:#1F2234}
-  .grid-item{background:var(--card)}.detail-topbar{background:rgba(15,19,34,0.92)}
-  .timeline-wrap{background:var(--card)}.bottom-nav{background:rgba(15,19,34,0.94)}
-  .detail-card{background:var(--card)}.tag{background:#1A1D2E}
-  .copy-btn{background:rgba(37,99,235,0.12)}.copy-block,.copy-block-qq{background:#1A1D2E}
-  .detail-table tr:nth-child(even) td{background:#1A1D2E}
-  .detail-table th{background:rgba(37,99,235,0.08)}.modal-sheet{background:var(--card)}
-  .stage-header-emoji{background:rgba(37,99,235,0.1)}.stage-header .stage-chip{background:rgba(37,99,235,0.1)}
-}
+/* ============ DARK MODE 已禁用 ============ */
+/* @media(prefers-color-scheme:dark){ ... } */
 
-  /* 暗黑模式 */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0F172A;
-      --card: #1E293B;
-      --card-hover: #334155;
-      --text: #F1F5F9;
-      --text-2: #CBD5E1;
-      --text-3: #94A3B8;
-      --border: #334155;
-      --border-light: #1E293B;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-      --shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-    .hero { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%) !important; }
-    .card { background: var(--card) !important; border-color: var(--border) !important; }
-    .detail-content { background: var(--bg) !important; }
-    .detail-header { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%) !important; }
-  }
+  /* 暗黑模式已禁用（校园指南保持亮色主题，确保新生可读性） */
+  /* @media (prefers-color-scheme: dark) { ... } */
 
   /* 卡片悬浮增强 */
   .card {
@@ -585,22 +559,6 @@ body.noscroll{overflow:hidden}
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  /* 防伪水印 */
-  
-  .watermark::before {
-    content: '小宸学长\n微信: xiaochen2026';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    
-    font-size: 48px;
-    font-weight: bold;
-    color: #000;
-    white-space: pre;
-    text-align: center;
-    line-height: 1.5;
   }
 
   /* FAQ样式 */
@@ -1798,7 +1756,7 @@ body.noscroll{overflow:hidden}
     opacity: 1;
   }
   
-  .modal-content {
+  .dyn-modal-content {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -1918,7 +1876,7 @@ body.noscroll{overflow:hidden}
     .nav-item svg { width: 22px !important; height: 22px !important; }
 
     .modal-sheet { max-width: 100% !important; padding: 28px 18px 32px !important; border-radius: 22px 22px 0 0 !important; }
-    .modal-content { max-width: 100% !important; border-radius: 20px 20px 0 0 !important; }
+    .dyn-modal-content { max-width: 100% !important; border-radius: 20px 20px 0 0 !important; }
     .modal-heading { font-size: 17px !important; }
     .modal-btn { padding: 12px !important; font-size: 14px !important; }
 
@@ -1946,6 +1904,15 @@ body.noscroll{overflow:hidden}
     .faq-a { font-size: 13px !important; padding: 10px 14px !important; line-height: 1.7 !important; }
 
     .reading-progress { height: 2px !important; }
+
+    /* 触摸优化 */
+    .grid-item, .nav-item, .timeline-item, .cat-chip, .faq-q { -webkit-tap-highlight-color: transparent !important; touch-action: manipulation !important; }
+    .grid-item { min-height: 44px !important; }
+    .nav-item { min-width: 44px !important; min-height: 44px !important; }
+    .modal-close-btn, .modal-close, .detail-back { min-width: 44px !important; min-height: 44px !important; }
+    .checkin-btn, .modal-btn { min-height: 48px !important; }
+
+    .page-footer { padding: 16px 12px 80px !important; font-size: 10px !important; line-height: 1.8 !important; }
 
     .search-box { padding: 10px 14px !important; }
     .search-input { font-size: 14px !important; }
@@ -1979,8 +1946,8 @@ body.noscroll{overflow:hidden}
 </head>
 <body>
 <!-- 个人品牌弹窗 -->
-<div id="brandPopup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:9999;justify-content:center;align-items:center;">
-  <div style="background:white;border-radius:20px;padding:28px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popupIn 0.3s ease-out;">
+<div id="brandPopup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:9999;justify-content:center;align-items:center;" onclick="closePopupTemp()">
+  <div style="background:white;border-radius:20px;padding:28px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popupIn 0.3s ease-out;" onclick="event.stopPropagation()">
     <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:40px;">👨‍🎓</div>
     <h2 style="color:#333;font-size:22px;margin-bottom:8px;">小宸学长</h2>
     <p style="color:#666;font-size:14px;margin-bottom:20px;">江西电力职业技术学院 · 新生向导</p>
@@ -1997,7 +1964,7 @@ body.noscroll{overflow:hidden}
         <span style="width:32px;height:32px;background:#12b7f5;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-right:12px;color:white;font-size:16px;">🐧</span>
         <div>
           <div style="font-size:12px;color:#999;">QQ号</div>
-          <div style="font-size:16px;font-weight:600;color:#333;">1234567890</div>
+          <div style="font-size:16px;font-weight:600;color:#333;">3289094177</div>
         </div>
       </div>
     </div>
@@ -2016,7 +1983,6 @@ body.noscroll{overflow:hidden}
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 </style>
-<div class="watermark"></div>
 
 <!-- ====== MODAL ====== -->
 <div class="modal-overlay hidden" id="contactModal">
@@ -2025,7 +1991,7 @@ body.noscroll{overflow:hidden}
 <div class="modal-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg></div>
 <div class="modal-heading">新生答疑咨询</div>
 <div class="modal-sub">添加电院学长微信或QQ<br>校园问题直接问，不收费</div>
-<div class="copy-block">📱 微信：XMB2D888</div>
+<div class="copy-block">📱 微信：xiaochen2026</div>
 <div class="copy-block-qq">🐧 QQ：3289094177</div>
 <button class="modal-btn primary" id="copyWechatBtn">📋 复制微信号</button>
 <button class="modal-btn qq-btn" id="copyQQBtn">🐧 复制QQ号</button>
@@ -2102,7 +2068,7 @@ body.noscroll{overflow:hidden}
 
 <div class="page-footer">
 ⚡ 电院校园指南 · 由学长整理维护<br>
-💬 微信：XMB2D888 · QQ：3289094177<br>
+💬 微信：xiaochen2026 · QQ：3289094177<br>
 信息仅供参考，以学校官方通知为准
 </div>
 
@@ -2463,7 +2429,7 @@ document.addEventListener('DOMContentLoaded', function(){
   contactModal.addEventListener('click', function(e){if(e.target===this) closeModal();});
   document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
   document.getElementById('modalLaterBtn').addEventListener('click', closeModal);
-  document.getElementById('copyWechatBtn').addEventListener('click', function(){copyText('XMB2D888');});
+  document.getElementById('copyWechatBtn').addEventListener('click', function(){copyText('xiaochen2026');});
   document.getElementById('copyQQBtn').addEventListener('click', function(){copyText('3289094177');});
 
   // Detail
@@ -3309,6 +3275,8 @@ function initReadingProgress() {
 
 // ===== 弹窗系统优化 =====
 function showModal(title, content) {
+  // 先关闭已有弹窗
+  closeDynamicModal();
   // 创建遮罩
   const overlay = document.createElement('div');
   overlay.className = 'dyn-modal-overlay';
@@ -3316,7 +3284,7 @@ function showModal(title, content) {
   
   // 创建内容
   const modal = document.createElement('div');
-  modal.className = 'modal-content';
+  modal.className = 'dyn-modal-content';
   modal.innerHTML = `
     <div class="swipe-area"></div>
     <div class="modal-handle"></div>
@@ -3327,7 +3295,10 @@ function showModal(title, content) {
     <div class="modal-body">` + content + `</div>
   `;
   
-  // 存储引用供closeDynamicModal使用
+  // 阻止点击内容区关闭
+  modal.onclick = function(e) { e.stopPropagation(); };
+  
+  // 存储引用
   overlay._modal = modal;
   modal._overlay = overlay;
   
@@ -3370,7 +3341,7 @@ function showModal(title, content) {
 
 function closeDynamicModal() {
   const overlay = document.querySelector('.dyn-modal-overlay');
-  const modal = document.querySelector('.modal-content');
+  const modal = document.querySelector('.dyn-modal-content');
   
   if (overlay) overlay.classList.remove('active');
   if (modal) modal.classList.remove('active');
@@ -3410,13 +3381,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-  <!-- 版权信息 -->
-  <footer style="text-align:center;padding:20px;color:var(--text-3);font-size:12px;border-top:1px solid var(--border);margin-top:40px;">
-    <p>© 2026 江西电力职业技术学院校园指南 | 官方正版</p>
-    <p style="margin-top:8px;">未经授权禁止转载 | 发现盗版请举报</p>
-    <p style="margin-top:8px;opacity:0.6;">本指南由学长学姐精心整理，仅供新生参考</p>
-  </footer>
-
 <!-- 底部个人品牌水印 -->
 <div class="footer-brand">
   <div class="footer-content">
@@ -3429,9 +3393,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class="footer-contact-icon">💬</span>
         <span>微信：xiaochen2026</span>
       </div>
-      <div class="footer-contact-item" onclick="copyText('1234567890')">
+      <div class="footer-contact-item" onclick="copyText('3289094177')">
         <span class="footer-contact-icon">🐧</span>
-        <span>QQ：1234567890</span>
+        <span>QQ：3289094177</span>
       </div>
     </div>
     
