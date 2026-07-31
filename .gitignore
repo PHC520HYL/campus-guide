@@ -1,9 +1,10 @@
-# 临时检查脚本
+﻿# 临时检查脚本
 check_*.js
 count_*.js
 find_error*.js
 verify_*.js
 extracted.js
+extracted_index.js
 online_fetched.html
 
 # 部署包
