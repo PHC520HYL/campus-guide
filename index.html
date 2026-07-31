@@ -267,6 +267,24 @@ body.noscroll{overflow:hidden}
 .stat-num{font-size:clamp(15px,3.8vw,20px);font-weight:900;line-height:1.2;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,0.2)}
 .stat-label{font-size:clamp(9px,2.2vw,11px);opacity:0.85;margin-top:3px;font-weight:500}
 
+/* Hero trust bar */
+.hero-trust-bar{
+  display:inline-flex;align-items:center;gap:8px;
+  margin:14px auto 18px;padding:8px 14px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:var(--radius-full);
+  color:rgba(255,255,255,0.92);
+  font-size:var(--font-caption);font-weight:500;
+  cursor:pointer;backdrop-filter:blur(6px);
+  transition:all .2s ease;
+}
+.hero-trust-bar:hover{background:rgba(255,255,255,0.18);transform:translateY(-1px)}
+.hero-trust-bar:active{transform:scale(0.97)}
+.hero-trust-avatar{font-size:16px}
+.hero-trust-arrow{font-size:13px;opacity:0.7;transition:transform .2s}
+.hero-trust-bar:hover .hero-trust-arrow{transform:translateX(3px)}
+
 /* 小屏标题适配 */
 @media (max-width:360px){
   .hero-title{font-size:clamp(22px,7vw,30px);letter-spacing:1px}
@@ -496,6 +514,40 @@ body.noscroll{overflow:hidden}
   transition:all .2s;white-space:nowrap;
 }
 .cat-chip.active,.cat-chip:active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);box-shadow:0 4px 12px rgba(37,99,235,0.2)}
+
+/* ============ UPDATE BAR ============ */
+.update-bar{
+  margin:0 16px 10px;padding:8px 12px;
+  background:var(--bg-card);border:1px solid var(--border-light);
+  border-radius:var(--radius);font-size:var(--font-xs);
+  color:var(--text-tertiary);text-align:center;
+  box-shadow:var(--shadow-sm);
+}
+
+/* ============ CTA CARD ============ */
+.cta-card{
+  display:flex;align-items:center;gap:14px;
+  margin:0 16px 16px;padding:16px;
+  background:linear-gradient(135deg, var(--blue-600) 0%, var(--blue-500) 100%);
+  border-radius:var(--radius-lg);color:#fff;
+  cursor:pointer;box-shadow:var(--shadow-md);
+  transition:all .2s ease;
+}
+.cta-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.cta-card:active{transform:scale(0.98)}
+.cta-avatar{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,0.18);display:grid;place-items:center;
+  font-size:22px;flex-shrink:0;
+}
+.cta-body{flex:1;min-width:0}
+.cta-title{font-size:var(--font-h3);font-weight:700;margin-bottom:3px}
+.cta-desc{font-size:var(--font-xs);opacity:0.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cta-action{
+  padding:8px 16px;border-radius:var(--radius-full);
+  background:#fff;color:var(--blue-600);font-size:var(--font-caption);font-weight:700;
+  flex-shrink:0;
+}
 
 /* ============ BOTTOM NAV ============ */
 .bottom-nav{
@@ -2153,6 +2205,24 @@ body.noscroll{overflow:hidden}
     .deals-banner-title { font-size: 15px !important; }
     .deals-banner-desc { font-size: 11px !important; }
 
+    .stage-header { margin: 12px 12px 8px !important; padding: 14px !important; gap: 12px !important; }
+    .stage-header-icon { width: 42px !important; height: 42px !important; font-size: 20px !important; }
+    .stage-header h2 { font-size: 17px !important; }
+    .stage-header p { font-size: 13px !important; }
+    .stage-header-step { font-size: 11px !important; }
+
+    .deals-banner { margin: 0 12px 12px !important; padding: 12px !important; gap: 12px !important; }
+    .deals-banner-icon { width: 40px !important; height: 40px !important; font-size: 18px !important; }
+    .deals-banner-title { font-size: 15px !important; }
+    .deals-banner-desc { font-size: 11px !important; }
+
+    .update-bar { margin: 0 12px 8px !important; font-size: 11px !important; }
+    .cta-card { margin: 0 12px 14px !important; padding: 14px !important; gap: 12px !important; }
+    .cta-avatar { width: 40px !important; height: 40px !important; font-size: 18px !important; }
+    .cta-title { font-size: 15px !important; }
+    .cta-desc { font-size: 11px !important; }
+    .cta-action { padding: 6px 12px !important; font-size: 12px !important; }
+
     .faq-section { margin: 14px 12px 20px !important; }
     .faq-section-title { font-size: 15px !important; margin-bottom: 10px !important; }
     .faq-q { font-size: 14px !important; padding: 12px 14px !important; }
@@ -2282,6 +2352,11 @@ body.noscroll{overflow:hidden}
   <div class="hero-badge">2026新生指南</div>
   <h1 class="hero-title">江西电力<span class="accent">职业技术学院</span></h1>
   <div class="hero-sub">JIANGXI ELECTRIC VOCATIONAL AND TECHNICAL COLLEGE</div>
+  <div class="hero-trust-bar" onclick="openModal()" role="button" tabindex="0">
+    <span class="hero-trust-avatar">👨‍🎓</span>
+    <span class="hero-trust-text">小宸学长 · 电院在校生 · 2026新生向导</span>
+    <span class="hero-trust-arrow">→</span>
+  </div>
   <div class="stats-row">
     <div class="stat-card"><span class="stat-icon">🏫</span><div class="stat-num">1958</div><div class="stat-label">建校年份</div></div>
     <div class="stat-card"><span class="stat-icon">🌳</span><div class="stat-num">553</div><div class="stat-label">校园面积(亩)</div></div>
@@ -2342,6 +2417,7 @@ body.noscroll{overflow:hidden}
 
 <!-- ====== MAIN CONTENT ====== -->
 <div id="mainContent">
+<div class="update-bar">📅 信息更新于 2026年7月 · 请以学校官方通知为准</div>
 <div class="stage-header" id="stageHeader"></div>
 <div class="grid-section"><div class="grid-3" id="cardsGrid"></div></div>
 <div id="stageExtra"></div>
@@ -2375,6 +2451,15 @@ body.noscroll{overflow:hidden}
 <span>联系</span><div class="nav-dot"></div>
 </button>
 </div>
+
+  <div class="cta-card" onclick="openModal()" role="button" tabindex="0">
+    <div class="cta-avatar">👨‍🎓</div>
+    <div class="cta-body">
+      <div class="cta-title">还有疑问？直接问学长</div>
+      <div class="cta-desc">微信 XMB2D888 · QQ 3289094177 · 备注 26级新生</div>
+    </div>
+    <div class="cta-action">联系</div>
+  </div>
 
 <div class="page-footer">
 ⚡ 电院校园指南 · 由学长整理维护<br>
