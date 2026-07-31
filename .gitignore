@@ -1,0 +1,17 @@
+# 临时检查脚本
+check_*.js
+count_*.js
+find_error*.js
+verify_*.js
+extracted.js
+online_fetched.html
+
+# 部署包
+deploy-*.zip
+
+# 备份文件（保留手动备份）
+*.backup*
+*_backup*.html
+
+# 临时拆分文件
+temp_*.html

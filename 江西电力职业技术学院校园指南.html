@@ -1957,7 +1957,7 @@ body.noscroll{overflow:hidden}
         <span style="width:32px;height:32px;background:#07c160;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-right:12px;color:white;font-size:16px;">💬</span>
         <div>
           <div style="font-size:12px;color:#999;">微信号</div>
-          <div style="font-size:16px;font-weight:600;color:#333;">xiaochen2026</div>
+          <div style="font-size:16px;font-weight:600;color:#333;">XMB2D888</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;">
@@ -1991,7 +1991,7 @@ body.noscroll{overflow:hidden}
 <div class="modal-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5.5 21c0-4.5 3-7.5 6.5-7.5s6.5 3 6.5 7.5"/></svg></div>
 <div class="modal-heading">新生答疑咨询</div>
 <div class="modal-sub">添加电院学长微信或QQ<br>校园问题直接问，不收费</div>
-<div class="copy-block">📱 微信：xiaochen2026</div>
+<div class="copy-block">📱 微信：XMB2D888</div>
 <div class="copy-block-qq">🐧 QQ：3289094177</div>
 <button class="modal-btn primary" id="copyWechatBtn">📋 复制微信号</button>
 <button class="modal-btn qq-btn" id="copyQQBtn">🐧 复制QQ号</button>
@@ -2068,7 +2068,7 @@ body.noscroll{overflow:hidden}
 
 <div class="page-footer">
 ⚡ 电院校园指南 · 由学长整理维护<br>
-💬 微信：xiaochen2026 · QQ：3289094177<br>
+💬 微信：XMB2D888 · QQ：3289094177<br>
 信息仅供参考，以学校官方通知为准
 </div>
 
@@ -2429,7 +2429,7 @@ document.addEventListener('DOMContentLoaded', function(){
   contactModal.addEventListener('click', function(e){if(e.target===this) closeModal();});
   document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
   document.getElementById('modalLaterBtn').addEventListener('click', closeModal);
-  document.getElementById('copyWechatBtn').addEventListener('click', function(){copyText('xiaochen2026');});
+  document.getElementById('copyWechatBtn').addEventListener('click', function(){copyText('XMB2D888');});
   document.getElementById('copyQQBtn').addEventListener('click', function(){copyText('3289094177');});
 
   // Detail
@@ -3378,6 +3378,17 @@ document.addEventListener('DOMContentLoaded', function() {
   initReadingProgress();
 });
 
+// 将内联 onclick 需要的函数暴露到全局作用域
+window.closeDynamicModal = closeDynamicModal;
+window.toggleFAQ = toggleFAQ;
+window.doCheckin = doCheckin;
+window.openDetail = openDetail;
+window.showProfile = showProfile;
+window.doSearch = doSearch;
+window.copyText = copyText;
+window.closePopup = closePopup;
+window.closePopupTemp = closePopupTemp;
+
 })();
 </script>
 
@@ -3389,9 +3400,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-title">江西电力职业技术学院 · 新生向导</div>
     
     <div class="footer-contact">
-      <div class="footer-contact-item" onclick="copyText('xiaochen2026')">
+      <div class="footer-contact-item" onclick="copyText('XMB2D888')">
         <span class="footer-contact-icon">💬</span>
-        <span>微信：xiaochen2026</span>
+        <span>微信：XMB2D888</span>
       </div>
       <div class="footer-contact-item" onclick="copyText('3289094177')">
         <span class="footer-contact-icon">🐧</span>
