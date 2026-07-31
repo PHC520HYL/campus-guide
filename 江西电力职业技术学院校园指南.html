@@ -278,12 +278,30 @@ body.noscroll{overflow:hidden}
   font-size:var(--font-caption);font-weight:500;
   cursor:pointer;backdrop-filter:blur(6px);
   transition:all .2s ease;
+  animation:fadeUp 0.6s ease-out both;
 }
 .hero-trust-bar:hover{background:rgba(255,255,255,0.18);transform:translateY(-1px)}
 .hero-trust-bar:active{transform:scale(0.97)}
 .hero-trust-avatar{font-size:16px}
 .hero-trust-arrow{font-size:13px;opacity:0.7;transition:transform .2s}
 .hero-trust-bar:hover .hero-trust-arrow{transform:translateX(3px)}
+
+/* Entrance animations */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes scaleIn{
+  from{opacity:0;transform:scale(0.96)}
+  to{opacity:1;transform:scale(1)}
+}
+.animate-fade-up{animation:fadeUp 0.5s ease-out both}
+.animate-fade-in{animation:fadeIn 0.4s ease-out both}
+.animate-scale-in{animation:scaleIn 0.35s ease-out both}
 
 /* 小屏标题适配 */
 @media (max-width:360px){
@@ -381,6 +399,7 @@ body.noscroll{overflow:hidden}
 }
 .quick-search-btn:hover{background:var(--blue-600)}
 .quick-search-btn:active{background:var(--blue-700);transform:scale(0.97)}
+.quick-search-btn,.search-btn,.grid-item,.cat-chip,.highlight-item,.stat-card,.cta-card,.modal-btn,.timeline-item,.nav-item,.faq-q,.stage-header{position:relative;overflow:hidden}
 .quick-search-hints{display:flex;gap:8px;flex-wrap:wrap}
 .quick-search-hint{
   padding:6px 13px;border-radius:var(--radius-full);background:var(--bg-hover);
@@ -437,9 +456,10 @@ body.noscroll{overflow:hidden}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .grid-item{
   background:var(--bg-card);border-radius:var(--radius-lg);padding:18px 10px 14px;
-  text-align:center;cursor:pointer;box-shadow:var(--shadow-sm);
+  text-align:center;cursor:pointer;box-shadow:var(--shadow-sm);opacity:0;
   transition:transform .2s ease,box-shadow .2s ease;position:relative;overflow:hidden;
   border:1px solid var(--border-light);
+  animation:fadeUp 0.45s ease-out both;
 }
 .grid-item::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
@@ -1328,6 +1348,7 @@ body.noscroll{overflow:hidden}
     transform: scale(0);
     animation: ripple-effect 0.6s ease-out;
     pointer-events: none;
+    overflow:hidden;
   }
   
   @keyframes ripple-effect {
@@ -2815,6 +2836,7 @@ function bindSearchInline() {
   var sb = document.getElementById('searchBtn');
   if (si) si.addEventListener('input', function(){liveFilter(this.value);});
   if (sb) sb.addEventListener('click', function(){doSearch();});
+  if (si) si.addEventListener('keydown', function(e){ if (e.key==='Enter') { doSearch(this.value); this.blur(); }});
   document.querySelectorAll('#stageExtra .search-hint').forEach(function(h){
     h.addEventListener('click', function(){doSearch(this.getAttribute('data-kw'));});
   });
@@ -2874,16 +2896,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Bottom nav
   document.getElementById('navHome').addEventListener('click', function(){
-    closeDetail();setStage('departure');window.scrollTo({top:0,behavior:'smooth'});
+    closeDetail();closeModal();setStage('departure');window.scrollTo({top:0,behavior:'smooth'});
     document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});
     this.classList.add('active');
   });
   document.getElementById('navSearch').addEventListener('click', function(){
-    closeDetail();setStage('daily');document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});this.classList.add('active');
+    closeDetail();closeModal();setStage('daily');document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});this.classList.add('active');
     setTimeout(function(){var si=document.getElementById('searchInput');if(si)si.focus();},400);
   });
   document.getElementById('navContact').addEventListener('click', function(){
-    openModal();document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});
+    closeDetail();openModal();document.querySelectorAll('.nav-item').forEach(function(t){t.classList.remove('active');});
   });
 
   // Copy buttons in detail
@@ -3299,9 +3321,9 @@ function createRipple(event) {
   setTimeout(() => ripple.remove(), 600);
 }
 
-// 为所有按钮添加水波纹
+// 为所有按钮/卡片添加水波纹
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.btn, .nav-btn, .card').forEach(btn => {
+  document.querySelectorAll('.btn, .nav-btn, .card, .grid-item, .quick-search-btn, .search-btn, .cat-chip, .highlight-item, .stat-card, .cta-card, .modal-btn, .timeline-item, .nav-item, .faq-q, .stage-header').forEach(function(btn){
     btn.addEventListener('click', createRipple);
   });
 });
