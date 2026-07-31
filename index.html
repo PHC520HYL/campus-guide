@@ -301,17 +301,46 @@ body.noscroll{overflow:hidden}
 
 /* ============ STAGE HEADER ============ */
 .stage-header{
-  padding:20px 18px 4px;text-align:left;
+  margin:16px 16px 10px;
+  padding:18px 16px;
+  background:var(--bg-card);
+  border-radius:var(--radius-lg);
+  border:1px solid var(--border-light);
+  box-shadow:var(--shadow-sm);
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  text-align:left;
 }
-.stage-header-emoji{
-  display:inline-block;width:44px;height:44px;line-height:44px;text-align:center;
-  background:var(--blue-50);border-radius:14px;font-size:22px;margin-bottom:10px;
+.stage-header-icon{
+  flex-shrink:0;
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  border-radius:var(--radius);
+  font-size:24px;
+  background:var(--blue-50);
 }
-.stage-header h2{font-size:var(--font-h2);font-weight:800;color:var(--text-primary)}
+.stage-header-body{flex:1;min-width:0}
+.stage-header-meta{
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:6px;
+}
 .stage-header .stage-chip{
-  display:inline-block;font-size:var(--font-xs);color:var(--blue-600);
-  background:var(--blue-50);padding:3px 10px;border-radius:12px;margin-bottom:6px;font-weight:600;
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:var(--font-xs);color:var(--blue-600);
+  background:var(--blue-50);padding:3px 10px;border-radius:var(--radius-full);font-weight:600;
 }
+.stage-header-step{
+  font-size:var(--font-xs);color:var(--text-tertiary);
+}
+.stage-header h2{
+  font-size:var(--font-h2);font-weight:800;color:var(--text-primary);line-height:1.2;margin-bottom:4px;
+}
+.stage-header p{
+  font-size:var(--font-body);color:var(--text-secondary);line-height:1.5;margin:0;
+}
+.stage-header.deals-stage .stage-header-icon{background:var(--orange-light)}
+.stage-header.deals-stage .stage-chip{color:var(--orange);background:var(--orange-light)}
 
 /* ============ QUICK SEARCH ============ */
 .quick-search-wrap{padding:0 14px 14px;margin-top:-14px;position:relative;z-index:10}
@@ -358,6 +387,32 @@ body.noscroll{overflow:hidden}
   display:flex;align-items:center;justify-content:center;font-size:22px;
 }
 .highlight-text{font-size:var(--font-caption);font-weight:600;color:var(--text-primary)}
+
+/* ============ DEALS BANNER ============ */
+.deals-banner{
+  margin:0 16px 14px;
+  padding:16px;
+  border-radius:var(--radius-lg);
+  background:linear-gradient(135deg, var(--orange-light) 0%, #fff 100%);
+  border:1px solid rgba(249,115,22,0.18);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  box-shadow:var(--shadow-sm);
+}
+.deals-banner-icon{
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg, var(--orange) 0%, var(--secondary) 100%);
+  color:#fff;display:grid;place-items:center;font-size:22px;
+  flex-shrink:0;box-shadow:0 4px 12px rgba(249,115,22,0.25);
+}
+.deals-banner-body{flex:1}
+.deals-banner-title{font-size:var(--font-h3);font-weight:800;color:var(--text-primary);margin-bottom:3px}
+.deals-banner-desc{font-size:var(--font-xs);color:var(--text-secondary);line-height:1.4}
+.deals-banner-tag{
+  display:inline-block;font-size:10px;font-weight:700;color:#fff;
+  background:var(--orange);padding:2px 7px;border-radius:var(--radius-full);margin-top:6px;
+}
 
 /* ============ CARD GRID ============ */
 .grid-section{padding:0 14px 20px}
@@ -762,20 +817,80 @@ body.noscroll{overflow:hidden}
 
   /* FAQ样式 */
   .faq-section {
-    margin: 24px 16px;
+    margin: 20px 16px 24px;
     animation: fadeInUp 0.5s ease-out;
   }
+  .faq-section-title {
+    font-size: var(--font-h3);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .faq-section-title::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    border-radius: 2px;
+    background: var(--blue-500);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .faq-item {
-    margin-bottom: 8px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .2s;
+  }
+  .faq-item:hover {
+    box-shadow: var(--shadow);
   }
   .faq-q {
+    padding: 14px 16px;
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: var(--font-body);
+    color: var(--text-primary);
+    border: none;
+    width: 100%;
+    text-align: left;
     transition: all 0.3s;
   }
   .faq-q:hover {
-    background: #f0f7ff !important;
-    border-color: #3b82f6 !important;
+    background: var(--blue-50);
+  }
+  .faq-q .faq-num {
+    color: var(--blue-500);
+    font-weight: 800;
+    flex-shrink: 0;
+    min-width: 28px;
+  }
+  .faq-q .faq-text {
+    flex: 1;
+    line-height: 1.4;
+  }
+  .faq-arrow {
+    transition: transform 0.3s;
+    color: var(--text-tertiary);
+    flex-shrink: 0;
   }
   .faq-a {
+    display: none;
+    padding: 0 16px 14px 54px;
+    color: var(--text-secondary);
+    font-size: var(--font-body);
+    line-height: 1.7;
     animation: slideDown 0.3s ease-out;
   }
   @keyframes slideDown {
@@ -2027,9 +2142,21 @@ body.noscroll{overflow:hidden}
     .footer-contact { gap: 10px !important; }
     .footer-contact-item { padding: 8px 14px !important; font-size: 13px !important; }
 
-    .faq-section { margin: 16px 12px !important; }
+    .stage-header { margin: 12px 12px 8px !important; padding: 14px !important; gap: 12px !important; }
+    .stage-header-icon { width: 42px !important; height: 42px !important; font-size: 20px !important; }
+    .stage-header h2 { font-size: 17px !important; }
+    .stage-header p { font-size: 13px !important; }
+    .stage-header-step { font-size: 11px !important; }
+
+    .deals-banner { margin: 0 12px 12px !important; padding: 12px !important; gap: 12px !important; }
+    .deals-banner-icon { width: 40px !important; height: 40px !important; font-size: 18px !important; }
+    .deals-banner-title { font-size: 15px !important; }
+    .deals-banner-desc { font-size: 11px !important; }
+
+    .faq-section { margin: 14px 12px 20px !important; }
+    .faq-section-title { font-size: 15px !important; margin-bottom: 10px !important; }
     .faq-q { font-size: 14px !important; padding: 12px 14px !important; }
-    .faq-a { font-size: 13px !important; padding: 10px 14px !important; line-height: 1.7 !important; }
+    .faq-a { font-size: 13px !important; padding: 0 14px 12px 46px !important; line-height: 1.7 !important; }
 
     .reading-progress { height: 2px !important; }
 
@@ -2218,6 +2345,7 @@ body.noscroll{overflow:hidden}
 <div class="stage-header" id="stageHeader"></div>
 <div class="grid-section"><div class="grid-3" id="cardsGrid"></div></div>
 <div id="stageExtra"></div>
+<div id="faqWrap"></div>
 </div>
 
 <!-- ====== DETAIL PAGE ====== -->
@@ -2421,7 +2549,18 @@ function renderStageGrid() {
     var ids = stages[currentStage].items;
     items = ids.map(function(id){return findItemById(id);}).filter(Boolean);
   }
-  grid.innerHTML = items.map(renderCard).join('');
+  var bannerHTML = '';
+  if (currentStage === 'deals') {
+    bannerHTML = '<div class="deals-banner">'+
+      '<div class="deals-banner-icon">🛒</div>'+
+      '<div class="deals-banner-body">'+
+        '<div class="deals-banner-title">学长精选 · 校园特惠</div>'+
+        '<div class="deals-banner-desc">驾校、电话卡、升本、国网培训、兼职、跑腿、零食小铺等省钱渠道</div>'+
+        '<span class="deals-banner-tag">校内专属</span>'+
+      '</div>'+
+    '</div>';
+  }
+  grid.innerHTML = bannerHTML + items.map(renderCard).join('');
 }
 
 function renderDailyExtra() {
@@ -2458,12 +2597,23 @@ function updateStageUI() {
     el.classList.toggle('active', el.getAttribute('data-stage') === currentStage);
   });
   var s = stages[currentStage];
+  var stageOrder = ['departure','checkin','term','daily','deals'];
+  var stepNum = stageOrder.indexOf(currentStage) + 1;
+  var headerClass = 'stage-header' + (currentStage === 'deals' ? ' deals-stage' : '');
+  document.getElementById('stageHeader').className = headerClass;
   document.getElementById('stageHeader').innerHTML =
-    '<span class="stage-emoji" style="display:inline-block;width:44px;height:44px;line-height:44px;text-align:center;background:var(--blue-50);border-radius:14px;font-size:22px;margin-bottom:10px;">'+s.emoji+'</span>'+
-    '<span class="stage-chip">'+s.chip+'</span>'+
-    '<h2>'+s.title+'</h2>';
+    '<div class="stage-header-icon">'+s.emoji+'</div>'+
+    '<div class="stage-header-body">'+
+      '<div class="stage-header-meta">'+
+        '<span class="stage-chip">'+s.chip+'</span>'+
+        '<span class="stage-header-step">第 '+stepNum+' / 5 步</span>'+
+      '</div>'+
+      '<h2>'+s.title+'</h2>'+
+      '<p>'+s.desc+'</p>'+
+    '</div>';
   renderStageGrid();
   renderDailyExtra();
+  renderFAQSection();
 }
 
 function setStage(stageId) {
@@ -2864,28 +3014,32 @@ document.addEventListener('DOMContentLoaded', function(){
   function renderFAQ(stage) {
     const faqs = faqData[stage] || [];
     if (faqs.length === 0) return '';
-    
-    let html = '<div class="faq-section" style="margin-top:24px;padding:16px;background:rgba(59,130,246,0.05);border-radius:16px;border:1px solid rgba(59,130,246,0.1);">';
-    html += '<h3 style="font-size:16px;color:#3b82f6;margin-bottom:12px;display:flex;align-items:center;gap:8px;">❓ 常见问题</h3>';
+
+    let html = '<div class="faq-section">';
+    html += '<div class="faq-section-title">❓ 常见问题</div>';
     html += '<div class="faq-list">';
-    
+
     faqs.forEach((faq, i) => {
-      html += '<div class="faq-item" style="margin-bottom:8px;border-radius:12px;overflow:hidden;">';
-      html += '<div class="faq-q" onclick="toggleFAQ(this)" style="padding:12px 16px;background:white;cursor:pointer;display:flex;align-items:center;gap:8px;font-weight:500;border:1px solid var(--border);border-radius:12px;">';
-      html += '<span style="color:#3b82f6;font-weight:bold;">Q' + (i+1) + '</span>';
-      html += '<span style="flex:1;">' + faq.q + '</span>';
-      html += '<span class="faq-arrow" style="transition:transform 0.3s;">▼</span>';
-      html += '</div>';
-      html += '<div class="faq-a" style="display:none;padding:12px 16px;padding-left:40px;color:var(--text-secondary);font-size:14px;line-height:1.6;background:#f8fafc;border-radius:0 0 12px 12px;margin-top:-4px;">';
-      html += faq.a;
-      html += '</div>';
+      html += '<div class="faq-item">';
+      html += '<button class="faq-q" onclick="toggleFAQ(this)">';
+      html += '<span class="faq-num">Q' + (i+1) + '</span>';
+      html += '<span class="faq-text">' + faq.q + '</span>';
+      html += '<span class="faq-arrow">▼</span>';
+      html += '</button>';
+      html += '<div class="faq-a">' + faq.a + '</div>';
       html += '</div>';
     });
-    
+
     html += '</div></div>';
     return html;
   }
-  
+
+  function renderFAQSection() {
+    var wrap = document.getElementById('faqWrap');
+    if (!wrap) return;
+    wrap.innerHTML = renderFAQ(currentStage);
+  }
+
   function toggleFAQ(el) {
     const item = el.parentElement;
     const answer = item.querySelector('.faq-a');
