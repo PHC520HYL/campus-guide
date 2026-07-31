@@ -27,10 +27,10 @@
     --bg-hover: #F8FAFC;
     
     /* 文字色 */
-    --text-primary-primary: #1A202C;
-    --text-primary-secondary: #4A5568;
-    --text-primary-tertiary: #A0AEC0;
-    --text-primary-inverse: #FFFFFF;
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-tertiary: #A0AEC0;
+    --text-inverse: #FFFFFF;
     
     /* 边框 */
     --border: #E2E8F0;
@@ -92,6 +92,20 @@
     --error-light: #FEE2E2;
     --info: #3B82F6;
     --info-light: #DBEAFE;
+    
+    /* 图标色板 */
+    --emerald: #10B981;
+    --emerald-light: #D1FAE5;
+    --orange: #F97316;
+    --orange-light: #FFEDD5;
+    --purple: #8B5CF6;
+    --purple-light: #EDE9FE;
+    --red: #EF4444;
+    --red-light: #FEE2E2;
+    --teal: #14B8A6;
+    --teal-light: #CCFBF1;
+    --pink: #EC4899;
+    --pink-light: #FCE7F3;
     
     /* 间距系统（8pt 栅格） */
     --space-xs: 4px;
@@ -296,6 +310,52 @@ body.noscroll{overflow:hidden}
   display:inline-block;font-size:var(--font-xs);color:var(--blue-600);
   background:var(--blue-50);padding:3px 10px;border-radius:12px;margin-bottom:6px;font-weight:600;
 }
+
+/* ============ QUICK SEARCH ============ */
+.quick-search-wrap{padding:0 14px 14px;margin-top:-14px;position:relative;z-index:10}
+.quick-search-card{
+  background:var(--bg-card);border-radius:var(--radius-lg);padding:18px 16px;
+  box-shadow:var(--shadow-md);border:1px solid var(--border-light);
+}
+.quick-search-title{font-size:var(--font-h3);font-weight:700;color:var(--text-primary);margin-bottom:12px}
+.quick-search-row{display:flex;gap:10px;margin-bottom:12px}
+.quick-search-input{
+  flex:1;height:46px;border-radius:23px;border:1.5px solid var(--border);
+  padding:0 18px;font-size:var(--font-body);outline:none;background:var(--bg);
+  color:var(--text-primary);transition:border-color .2s,box-shadow .2s;
+}
+.quick-search-input:focus{border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(59,130,246,0.12)}
+.quick-search-btn{
+  height:46px;padding:0 22px;border-radius:23px;border:none;background:var(--blue-500);
+  color:#fff;font-size:var(--font-body);font-weight:700;cursor:pointer;flex-shrink:0;
+  box-shadow:0 4px 12px rgba(37,99,235,0.25);transition:all .2s;
+}
+.quick-search-btn:hover{background:var(--blue-600)}
+.quick-search-btn:active{background:var(--blue-700);transform:scale(0.97)}
+.quick-search-hints{display:flex;gap:8px;flex-wrap:wrap}
+.quick-search-hint{
+  padding:6px 13px;border-radius:var(--radius-full);background:var(--bg-hover);
+  color:var(--text-secondary);font-size:var(--font-caption);cursor:pointer;transition:all .2s;
+}
+.quick-search-hint:hover{background:var(--blue-50);color:var(--blue-600)}
+.quick-search-hint:active{background:var(--blue-100);transform:scale(0.97)}
+
+/* ============ HIGHLIGHT ENTRANCE ============ */
+.highlight-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 14px 16px;
+}
+.highlight-item{
+  background:var(--bg-card);border-radius:var(--radius-lg);padding:14px 8px;
+  text-align:center;cursor:pointer;box-shadow:var(--shadow-sm);
+  border:1px solid var(--border-light);transition:all .2s;
+}
+.highlight-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.highlight-item:active{transform:translateY(-1px) scale(0.98)}
+.highlight-icon{
+  width:42px;height:42px;border-radius:14px;margin:0 auto 8px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.highlight-text{font-size:var(--font-caption);font-weight:600;color:var(--text-primary)}
 
 /* ============ CARD GRID ============ */
 .grid-section{padding:0 14px 20px}
@@ -1008,14 +1068,14 @@ body.noscroll{overflow:hidden}
   .card-title {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-primary-primary);
+    color: var(--text-primary);
     margin-bottom: 6px;
   }
   
   /* 卡片描述 */
   .card-desc {
     font-size: 13px;
-    color: var(--text-primary-secondary);
+    color: var(--text-secondary);
     line-height: 1.5;
   }
   
@@ -1517,7 +1577,7 @@ body.noscroll{overflow:hidden}
   .user-name {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-primary-primary);
+    color: var(--text-primary);
     margin-bottom: 4px;
   }
   
@@ -1549,7 +1609,7 @@ body.noscroll{overflow:hidden}
   
   .points-label {
     font-size: 12px;
-    color: var(--text-primary-tertiary);
+    color: var(--text-tertiary);
   }
   
   .progress-bar {
@@ -1676,18 +1736,18 @@ body.noscroll{overflow:hidden}
   .profile-name {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-primary-primary);
+    color: var(--text-primary);
   }
   
   .profile-meta {
     font-size: 13px;
-    color: var(--text-primary-secondary);
+    color: var(--text-secondary);
     margin-top: 2px;
   }
   
   .profile-arrow {
     font-size: 20px;
-    color: var(--text-primary-tertiary);
+    color: var(--text-tertiary);
   }
 
   /* ===== 搜索增强 ===== */
@@ -1713,12 +1773,12 @@ body.noscroll{overflow:hidden}
     border: none;
     outline: none;
     font-size: 15px;
-    color: var(--text-primary-primary);
+    color: var(--text-primary);
     background: transparent;
   }
   
   .search-input::placeholder {
-    color: var(--text-primary-tertiary);
+    color: var(--text-tertiary);
   }
   
   .search-history {
@@ -1733,7 +1793,7 @@ body.noscroll{overflow:hidden}
     background: var(--bg);
     border-radius: var(--radius-full);
     font-size: 13px;
-    color: var(--text-primary-secondary);
+    color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-fast);
     border: 1px solid var(--border-light);
@@ -1784,7 +1844,7 @@ body.noscroll{overflow:hidden}
     transition: all var(--transition-fast);
     border: 1px solid var(--border);
     background: var(--bg-card);
-    color: var(--text-primary-secondary);
+    color: var(--text-secondary);
   }
   
   .action-btn:hover {
@@ -1983,6 +2043,20 @@ body.noscroll{overflow:hidden}
     .search-box { padding: 10px 14px !important; }
     .search-input { font-size: 14px !important; }
     .search-history-tag { padding: 5px 12px !important; font-size: 12px !important; }
+
+    /* 首页快捷搜索与高频入口 */
+    .quick-search-wrap { padding: 0 12px 12px !important; margin-top: -12px !important; }
+    .quick-search-card { padding: 14px 12px !important; border-radius: var(--radius) !important; }
+    .quick-search-title { font-size: 15px !important; margin-bottom: 10px !important; }
+    .quick-search-row { gap: 8px !important; margin-bottom: 10px !important; }
+    .quick-search-input { height: 42px !important; padding: 0 14px !important; font-size: 14px !important; }
+    .quick-search-btn { height: 42px !important; padding: 0 16px !important; font-size: 14px !important; }
+    .quick-search-hints { gap: 6px !important; }
+    .quick-search-hint { padding: 5px 11px !important; font-size: 12px !important; }
+    .highlight-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; padding: 0 12px 14px !important; }
+    .highlight-item { padding: 12px 4px 10px !important; border-radius: var(--radius) !important; }
+    .highlight-icon { width: 38px !important; height: 38px !important; border-radius: 12px !important; font-size: 20px !important; margin-bottom: 6px !important; }
+    .highlight-text { font-size: 12px !important; }
   }
 
   /* --- 小屏手机 (< 380px) 进一步压缩 --- */
@@ -2087,6 +2161,44 @@ body.noscroll{overflow:hidden}
   </div>
 </div>
 </header>
+
+<!-- ====== QUICK SEARCH ====== -->
+<div class="quick-search-wrap">
+  <div class="quick-search-card">
+    <div class="quick-search-title">🔍 有问题？先搜一搜</div>
+    <div class="quick-search-row">
+      <input type="text" class="quick-search-input" id="quickSearchInput" placeholder="搜：报到、宿舍、食堂、快递..." autocomplete="off">
+      <button class="quick-search-btn" id="quickSearchBtn" type="button">搜索</button>
+    </div>
+    <div class="quick-search-hints">
+      <span class="quick-search-hint" data-keyword="报到">报到</span>
+      <span class="quick-search-hint" data-keyword="宿舍">宿舍</span>
+      <span class="quick-search-hint" data-keyword="食堂">食堂</span>
+      <span class="quick-search-hint" data-keyword="军训">军训</span>
+      <span class="quick-search-hint" data-keyword="快递">快递</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====== HIGHLIGHT ENTRANCE ====== -->
+<div class="highlight-grid">
+  <div class="highlight-item" onclick="openDetail('baodao')">
+    <div class="highlight-icon bg-orange">📝</div>
+    <div class="highlight-text">报到须知</div>
+  </div>
+  <div class="highlight-item" onclick="openDetail('sushe')">
+    <div class="highlight-icon bg-blue">🏠</div>
+    <div class="highlight-text">宿舍介绍</div>
+  </div>
+  <div class="highlight-item" onclick="openDetail('shitang')">
+    <div class="highlight-icon bg-green">🍜</div>
+    <div class="highlight-text">食堂指南</div>
+  </div>
+  <div class="highlight-item" onclick="openDetail('jiaotong')">
+    <div class="highlight-icon bg-purple">🚄</div>
+    <div class="highlight-text">交通攻略</div>
+  </div>
+</div>
 
 <!-- ====== TIMELINE NAV ====== -->
 <div class="timeline-wrap" id="timelineWrap">
@@ -2477,6 +2589,19 @@ function bindSearchInline() {
       renderDailyExtra();
       bindSearchInline();
     });
+  });
+  
+  // 首页快捷搜索
+  var qsi = document.getElementById('quickSearchInput');
+  var qsb = document.getElementById('quickSearchBtn');
+  if (qsi) {
+    qsi.addEventListener('keydown', function(e){ if (e.key==='Enter') doSearch(this.value); });
+  }
+  if (qsb) {
+    qsb.addEventListener('click', function(){ var v = document.getElementById('quickSearchInput').value; doSearch(v); });
+  }
+  document.querySelectorAll('.quick-search-hint').forEach(function(h){
+    h.addEventListener('click', function(){ doSearch(this.getAttribute('data-keyword')); });
   });
 }
 
@@ -3260,9 +3385,9 @@ function showProfile() {
   html += '</div>';
   
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">';
-  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--primary);">' + points + '</div><div style="font-size:12px;color:var(--text-primary-secondary);margin-top:4px;">积分</div></div>';
-  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--accent-warm);">' + favs.length + '</div><div style="font-size:12px;color:var(--text-primary-secondary);margin-top:4px;">收藏</div></div>';
-  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--accent-success);">' + history.length + '</div><div style="font-size:12px;color:var(--text-primary-secondary);margin-top:4px;">浏览</div></div>';
+  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--primary);">' + points + '</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">积分</div></div>';
+  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--accent-warm);">' + favs.length + '</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">收藏</div></div>';
+  html += '<div style="text-align:center;padding:16px;background:var(--bg);border-radius:var(--radius);"><div style="font-size:24px;font-weight:700;color:var(--accent-success);">' + history.length + '</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">浏览</div></div>';
   html += '</div>';
   
   if (history.length > 0) {
@@ -3319,7 +3444,7 @@ function renderSearchHistory() {
   if (history.length === 0) return '';
   
   let html = '<div class="search-history">';
-  html += '<div style="font-size:12px;color:var(--text-primary-tertiary);margin-bottom:8px;">历史搜索</div>';
+  html += '<div style="font-size:12px;color:var(--text-tertiary);margin-bottom:8px;">历史搜索</div>';
   history.forEach(h => {
     html += '<div class="search-history-tag" onclick="doSearch(\'' + h + '\')">' + h + '</div>';
   });

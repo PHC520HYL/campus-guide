@@ -1,10 +1,9 @@
-﻿# 临时检查脚本
+# 临时检查脚本
 check_*.js
 count_*.js
 find_error*.js
 verify_*.js
-extracted.js
-extracted_index.js
+extracted*.js
 online_fetched.html
 
 # 部署包
@@ -16,3 +15,10 @@ deploy-*.zip
 
 # 临时拆分文件
 temp_*.html
+
+# 历史调试报告
+fix_plan_*.md
+popup_mobile_fix_*.md
+repair_log_*.md
+v*_final_report_*.md
+body_preview.txt
