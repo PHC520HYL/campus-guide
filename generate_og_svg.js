@@ -1,0 +1,44 @@
+const fs = require('fs');
+const path = require('path');
+
+const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1A3F"/>
+      <stop offset="50%" stop-color="#1A439E"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(59,130,246,0.45)"/>
+      <stop offset="100%" stop-color="rgba(59,130,246,0)"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="rgba(0,0,0,0.35)"/>
+    </filter>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1050" cy="150" r="220" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <circle cx="150" cy="520" r="160" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <rect x="0" y="0" width="1200" height="560" fill="url(#glow)"/>
+  <rect x="50" y="50" width="120" height="44" rx="22" fill="rgba(255,255,255,0.15)"/>
+  <text x="110" y="79" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="bold" fill="rgba(255,255,255,0.9)" text-anchor="middle">2026</text>
+  <text x="600" y="200" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="52" font-weight="bold" fill="#fff" text-anchor="middle">校园指南</text>
+  <text x="600" y="300" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="76" font-weight="900" fill="#fff" text-anchor="middle" filter="url(#shadow)">江西电力职业技术学院</text>
+  <line x1="200" y1="325" x2="1000" y2="325" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="600" y="375" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" fill="rgba(255,255,255,0.8)" text-anchor="middle">场景化时间线引导式 · 从出发到报到 · 校园全攻略</text>
+  <rect x="100" y="430" width="400" height="150" rx="20" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <text x="135" y="475" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="30" font-weight="bold" fill="#fff">👨‍🎓 小宸学长</text>
+  <text x="135" y="510" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)">电院在校生 · 2026新生向导</text>
+  <text x="135" y="555" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#fff">💬 微信：XMB2D888</text>
+  <text x="135" y="590" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#fff">🐧 QQ：3289094177</text>
+  <text x="1100" y="475" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="rgba(255,255,255,0.6)" text-anchor="end">📦 出发前 · 🏁 报到日 · 📚 开学后 · ⚡ 校园日常</text>
+  <text x="1100" y="590" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)" text-anchor="end">phc520hyl.github.io/campus-guide/</text>
+</svg>`;
+
+fs.writeFileSync(path.join(__dirname, 'og-image.svg'), svg);
+console.log('og-image.svg written:', svg.length, 'bytes');
