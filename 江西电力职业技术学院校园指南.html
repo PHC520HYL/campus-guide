@@ -3863,6 +3863,7 @@ function switchStage(stageId) {
 // 初始化
 document.addEventListener('DOMContentLoaded', function() {
   initReadingProgress();
+  bindDetailSwipe();
 });
 
 // 将内联 onclick 需要的函数暴露到全局作用域
@@ -3874,6 +3875,7 @@ window.showProfile = showProfile;
 window.doSearch = doSearch;
 window.copyText = copyText;
 window.closePopup = closePopup;
+window.closeDetail = closeDetail;
 window.closePopupTemp = closePopupTemp;
 
 })();
