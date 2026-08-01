@@ -544,6 +544,15 @@ body.noscroll{overflow:hidden}
   box-shadow:var(--shadow-sm);
 }
 
+/* ============ EMPTY STATE ============ */
+.empty-state{
+  text-align:center;padding:40px 20px;color:var(--text-tertiary);
+  grid-column:1 / -1;
+}
+.empty-icon{font-size:40px;margin-bottom:10px;opacity:0.7}
+.empty-title{font-size:var(--font-h3);font-weight:700;color:var(--text-secondary);margin-bottom:6px}
+.empty-desc{font-size:var(--font-body);line-height:1.6}
+
 /* ============ CTA CARD ============ */
 .cta-card{
   display:flex;align-items:center;gap:14px;
@@ -593,8 +602,8 @@ body.noscroll{overflow:hidden}
   position:fixed;inset:0;background:var(--bg);z-index:9990;overflow-y:auto;
   display:none;flex-direction:column;-webkit-overflow-scrolling:touch;
 }
-.detail-overlay.active{display:flex;animation:fadeSlideIn .3s ease}
-@keyframes fadeSlideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.detail-overlay.active{display:flex;animation:scaleIn .3s ease}
+.detail-overlay{position:fixed;inset:0;background:var(--bg);z-index:9990;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .detail-topbar{
   position:sticky;top:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);z-index:10;padding:12px 14px;
@@ -2666,7 +2675,11 @@ function renderStageGrid() {
       '</div>'+
     '</div>';
   }
-  grid.innerHTML = bannerHTML + items.map(renderCard).join('');
+  grid.innerHTML = bannerHTML + items.map(renderCard).join('') +
+    '<div id="gridEmptyState" class="empty-state" style="display:none">'+
+    '<div class="empty-icon">🔍</div><div class="empty-title">未找到相关结果</div>'+
+    '<div class="empty-desc">换个关键词试试，或联系学长咨询</div>'+
+    '</div>';
 }
 
 function renderDailyExtra() {
@@ -2744,6 +2757,18 @@ function openDetail(id) {
 function closeDetail() {
   document.getElementById('detailPage').classList.remove('active');
   document.body.classList.remove('noscroll');
+}
+var detailStartY = 0;
+var detailSwipeThreshold = 70;
+function bindDetailSwipe() {
+  var page = document.getElementById('detailPage');
+  if (!page) return;
+  page.addEventListener('touchstart', function(e) { detailStartY = e.touches[0].clientY; }, {passive:true});
+  page.addEventListener('touchend', function(e) {
+    var endY = e.changedTouches[0].clientY;
+    var diff = endY - detailStartY;
+    if (diff > detailSwipeThreshold && page.scrollTop <= 0) closeDetail();
+  }, {passive:true});
 }
 
 /* ============ MODAL ============ */
@@ -2823,12 +2848,17 @@ function doSearch(q) {
 function liveFilter(query) {
   query = query.trim();
   var items = document.querySelectorAll('#cardsGrid .grid-item');
+  var visibleCount = 0;
   items.forEach(function(item) {
     var label = item.querySelector('.grid-label');
     var tag = item.querySelector('.grid-tag');
     var text = ((label?label.textContent:'')+' '+(tag?tag.textContent:'')).toLowerCase();
-    item.style.display = (!query||text.indexOf(query.toLowerCase())>=0) ? '' : 'none';
+    var visible = (!query||text.indexOf(query.toLowerCase())>=0);
+    item.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
   });
+  var emptyState = document.getElementById('gridEmptyState');
+  if (emptyState) emptyState.style.display = visibleCount === 0 && query ? 'block' : 'none';
 }
 
 function bindSearchInline() {
@@ -2887,6 +2917,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // Detail
   document.getElementById('detailBackBtn').addEventListener('click', closeDetail);
   document.getElementById('detailPage').addEventListener('click', function(e){if(e.target===this) closeDetail();});
+  bindDetailSwipe();
 
   // Grid delegation
   document.getElementById('cardsGrid').addEventListener('click', function(e){
