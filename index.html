@@ -967,16 +967,21 @@ body.noscroll{overflow:hidden}
     flex-shrink: 0;
   }
   .faq-a {
-    display: none;
-    padding: 0 16px 14px 54px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px 0 54px;
     color: var(--text-secondary);
     font-size: var(--font-body);
     line-height: 1.7;
-    animation: slideDown 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
   }
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  .faq-item.open .faq-a {
+    max-height: 800px;
+    padding: 0 16px 14px 54px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* 全新视觉设计 - 电力蓝主题 */
@@ -3180,17 +3185,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function toggleFAQ(el) {
     const item = el.parentElement;
-    const answer = item.querySelector('.faq-a');
-    const arrow = el.querySelector('.faq-arrow');
-    const isOpen = answer.style.display === 'block';
+    const isOpen = item.classList.contains('open');
     
     // 关闭其他
-    document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = 'rotate(0deg)');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    document.querySelectorAll('.faq-arrow').forEach(function(a){ a.style.transform = 'rotate(0deg)'; });
     
     if (!isOpen) {
-      answer.style.display = 'block';
-      arrow.style.transform = 'rotate(90deg)';
+      item.classList.add('open');
+      el.querySelector('.faq-arrow').style.transform = 'rotate(90deg)';
     }
   }
 
