@@ -321,19 +321,21 @@ body.noscroll{overflow:hidden}
 }
 .timeline-bar::-webkit-scrollbar{display:none}
 .timeline-item{
-  flex:1 0 auto;min-width:70px;padding:10px 12px 8px;text-align:center;
+  flex:1 0 auto;min-width:70px;padding:12px 12px 10px;text-align:center;
   cursor:pointer;font-size:var(--font-xs);font-weight:600;color:var(--text-tertiary);
-  border:none;background:transparent;position:relative;transition:all .25s ease;
-  border-radius:var(--radius-xs) var(--radius-xs) 0 0;
+  border:none;background:transparent;position:relative;transition:all .25s cubic-bezier(.4,0,.2,1);
+  border-radius:var(--radius);
+  margin-bottom:10px;
 }
-.timeline-item .t-icon{display:block;font-size:20px;margin-bottom:3px;transition:transform .25s}
-.timeline-item.active{color:var(--blue-600);background:var(--blue-50)}
+.timeline-item .t-icon{display:block;font-size:22px;margin-bottom:4px;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+.timeline-item:hover{color:var(--blue-600);background:rgba(37,99,235,0.06)}
+.timeline-item.active{color:var(--blue-600);background:var(--blue-50);font-weight:700}
 .timeline-item.active .t-icon{transform:scale(1.15)}
 .timeline-item::after{
-  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:0;height:3px;border-radius:3px 3px 0 0;background:var(--blue-500);transition:width .3s ease;
+  content:'';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  width:0;height:3px;border-radius:var(--radius-full);background:var(--blue-500);transition:width .3s cubic-bezier(.4,0,.2,1);
 }
-.timeline-item.active::after{width:70%}
+.timeline-item.active::after{width:50%}
 
 /* ============ STAGE HEADER ============ */
 .stage-header{
@@ -2748,8 +2750,14 @@ function setStage(stageId) {
   currentStage = stageId;
   currentCatFilter = null;
   updateStageUI();
+  updateActiveTimeline();
   document.getElementById('mainContent').scrollIntoView({behavior:'smooth',block:'start'});
   if (stageId === 'daily') bindSearchInline();
+}
+function updateActiveTimeline() {
+  document.querySelectorAll('.timeline-item').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-stage') === currentStage);
+  });
 }
 
 /* ============ DETAIL PAGE ============ */
