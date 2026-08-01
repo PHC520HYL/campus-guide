@@ -748,8 +748,20 @@ body.noscroll{overflow:hidden}
 
 /* ============ FOOTER ============ */
 .page-footer{
-  text-align:center;padding:24px 16px 80px;font-size:11px;color:var(--text-tertiary);line-height:1.9;
+  text-align:center;padding:26px 16px 86px;font-size:var(--font-xs);color:var(--text-tertiary);line-height:1.9;
+  background:linear-gradient(180deg, transparent 0%, rgba(37,99,235,0.04) 100%);
+  border-top:1px solid var(--border-light);
 }
+.page-footer-brand{
+  display:inline-flex;align-items:center;gap:6px;font-size:var(--font-body);font-weight:700;
+  color:var(--text-primary);margin-bottom:6px;
+}
+.page-footer-brand .bolt{
+  width:18px;height:18px;border-radius:50%;background:var(--primary-gradient);
+  display:grid;place-items:center;color:#fff;font-size:11px;
+}
+.page-footer-contact{color:var(--text-secondary);font-weight:600}
+.page-footer-disclaimer{display:block;margin-top:8px;font-size:11px;color:var(--text-tertiary)}
 
 /* ============ DARK MODE 已禁用 ============ */
 /* @media(prefers-color-scheme:dark){ ... } */
@@ -2503,9 +2515,9 @@ body.noscroll{overflow:hidden}
   </div>
 
 <div class="page-footer">
-⚡ 电院校园指南 · 由学长整理维护<br>
-💬 微信：XMB2D888 · QQ：3289094177<br>
-信息仅供参考，以学校官方通知为准
+  <div class="page-footer-brand"><span class="bolt">⚡</span> 电院校园指南 · 由学长整理维护</div>
+  <div class="page-footer-contact">💬 微信：XMB2D888 · QQ：3289094177</div>
+  <span class="page-footer-disclaimer">信息仅供参考，以学校官方通知为准</span>
 </div>
 
 <script>
