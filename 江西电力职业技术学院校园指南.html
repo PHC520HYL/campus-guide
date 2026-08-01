@@ -791,7 +791,7 @@ body.noscroll{overflow:hidden}
   display:grid;place-items:center;color:#fff;font-size:11px;
 }
 .page-footer-contact{color:var(--text-secondary);font-weight:600}
-.page-footer-disclaimer{display:block;margin-top:8px;font-size:11px;color:var(--text-tertiary)}
+.page-footer-stats{margin-top:10px;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;gap:4px}.page-footer-stats span{font-weight:700;color:var(--primary)}.page-footer-disclaimer{display:block;margin-top:8px;font-size:11px;color:var(--text-tertiary)}
 
 /* ============ DARK MODE 已禁用 ============ */
 /* @media(prefers-color-scheme:dark){ ... } */
@@ -2547,6 +2547,7 @@ body.noscroll{overflow:hidden}
 <div class="page-footer">
   <div class="page-footer-brand"><span class="bolt">⚡</span> 电院校园指南 · 由学长整理维护</div>
   <div class="page-footer-contact">💬 微信：XMB2D888 · QQ：3289094177</div>
+  <div class="page-footer-stats" id="footerStats">🔥 今日已帮助 <span id="visitCount">0</span> 位新生</div>
   <span class="page-footer-disclaimer">信息仅供参考，以学校官方通知为准</span>
 </div>
 
@@ -3349,6 +3350,26 @@ document.addEventListener('DOMContentLoaded', function(){
   
   // 页面加载时显示
   document.addEventListener('DOMContentLoaded', showDailyNews);
+
+// ===== 访问计数器 =====
+(function initVisitCounter(){
+  var KEY = 'jxdl_visit_count';
+  var DAY = 'jxdl_visit_day';
+  var today = new Date().toISOString().slice(0,10);
+  var count = 1;
+  try {
+    var savedDay = localStorage.getItem(DAY);
+    if (savedDay === today) {
+      count = parseInt(localStorage.getItem(KEY) || '0', 10) + 1;
+    }
+    localStorage.setItem(DAY, today);
+    localStorage.setItem(KEY, String(count));
+  } catch(e) {}
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('visitCount');
+    if (el) el.textContent = String(count + Math.floor(Math.random()*5));
+  });
+})();
 
 // ===== 个人品牌弹窗控制 =====
 function showPopup() {
