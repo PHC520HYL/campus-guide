@@ -2367,6 +2367,28 @@ body.noscroll{overflow:hidden}
 </noscript>
 </head>
 <body>
+<div id="dataLoadError" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(11,26,63,0.92);z-index:100000;justify-content:center;align-items:center;padding:24px;flex-direction:column;text-align:center;">
+  <div style="font-size:48px;margin-bottom:16px;">⚠️</div>
+  <div style="color:#fff;font-size:20px;font-weight:600;margin-bottom:12px;">数据加载失败</div>
+  <div style="color:rgba(255,255,255,0.8);font-size:14px;line-height:1.6;margin-bottom:24px;max-width:320px;">校园指南数据未能正常加载，可能是网络不稳定或缓存问题。</div>
+  <button onclick="location.reload()" style="background:linear-gradient(135deg,#0066FF,#00C6FF);color:#fff;border:none;padding:12px 32px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,102,255,0.35);">刷新重试</button>
+  <div style="color:rgba(255,255,255,0.55);font-size:12px;margin-top:16px;">如仍无法打开，请联系微信 XMB2D888</div>
+</div>
+<script>
+(function(){
+  function showOffline(){
+    var err = document.getElementById('dataLoadError');
+    if(err){
+      var divs = err.getElementsByTagName('div');
+      if(divs[1]) divs[1].textContent = '网络已断开';
+      if(divs[2]) divs[2].textContent = '请检查网络连接后刷新页面，或使用移动数据重试。';
+      err.style.display = 'flex';
+    }
+  }
+  window.addEventListener('offline', showOffline);
+  if(typeof navigator !== 'undefined' && !navigator.onLine) showOffline();
+})();
+</script>
 <!-- 个人品牌弹窗 -->
 <div id="brandPopup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:9999;justify-content:center;align-items:center;" onclick="closePopupTemp()">
   <div style="background:white;border-radius:20px;padding:28px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popupIn 0.3s ease-out;" onclick="event.stopPropagation()">
