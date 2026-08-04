@@ -2553,18 +2553,23 @@ body.noscroll{overflow:hidden}
 
 <script src="data.js"></script>
 <script>
-if (typeof gridData === 'undefined') {
-  var gridData = { departure:[], checkin:[], term:[], daily:[], deals:[] };
-  var detailContent = {};
-  var stages = {
-    departure:{emoji:'📦',title:'出发前准备',desc:'收到录取通知后，这些事情先搞定',chip:'出发前'},
-    checkin:{emoji:'🏁',title:'报到当天',desc:'顺利入学，按部就班不慌张',chip:'报到日'},
-    term:{emoji:'📚',title:'开学适应期',desc:'安顿好之后，了解这些让生活更顺畅',chip:'开学后'},
-    daily:{emoji:'🎓',title:'校园日常搜索',desc:'搜索或分类浏览全部校园指南',chip:'校园日常'},
-    deals:{emoji:'🛒',title:'校园特惠',desc:'学长精选福利，省钱省心一整年',chip:'校园特惠'}
-  };
-  var faqData = {};
-}
+(function(){
+  var dataLoaded = (typeof gridData !== 'undefined' && gridData && gridData.departure && gridData.departure.length > 0);
+  if (!dataLoaded) {
+    var err = document.getElementById('dataLoadError');
+    if (err) err.style.display = 'flex';
+    var gridData = { departure:[], checkin:[], term:[], daily:[], deals:[] };
+    var detailContent = {};
+    var stages = {
+      departure:{emoji:'📦',title:'出发前准备',desc:'收到录取通知后，这些事情先搞定',chip:'出发前'},
+      checkin:{emoji:'🏁',title:'报到当天',desc:'顺利入学，按部就班不慌张',chip:'报到日'},
+      term:{emoji:'📚',title:'开学适应期',desc:'安顿好之后，了解这些让生活更顺畅',chip:'开学后'},
+      daily:{emoji:'🎓',title:'校园日常搜索',desc:'搜索或分类浏览全部校园指南',chip:'校园日常'},
+      deals:{emoji:'🛒',title:'校园特惠',desc:'学长精选福利，省钱省心一整年',chip:'校园特惠'}
+    };
+    var faqData = {};
+  }
+})();
 </script>
 <script>
 (function(){
