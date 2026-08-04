@@ -21,3 +21,7 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(input);
   }
+
+// 暴露全局调用
+window.copyText = copyText;
+window.copyToClipboard = copyToClipboard;

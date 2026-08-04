@@ -10,7 +10,8 @@ const files = {
   guide: path.join(dir, '江西电力职业技术学院校园指南.html'),
   data: path.join(dir, 'data.js'),
   share: path.join(dir, 'share.js'),
-  utils: path.join(dir, 'utils.js')
+  utils: path.join(dir, 'utils.js'),
+  engagement: path.join(dir, 'engagement.js')
 };
 
 function sha256(p) {
@@ -59,7 +60,11 @@ console.log('📦 share.js version:', shareHash);
 const utilsHash = md5(files.utils).slice(0, 8);
 console.log('📦 utils.js version:', utilsHash);
 
-// 6. Update JS versions in HTML
+// 6. Compute engagement.js version
+const engagementHash = md5(files.engagement).slice(0, 8);
+console.log('📦 engagement.js version:', engagementHash);
+
+// 7. Update JS versions in HTML
 for (const p of [files.index, files.guide]) {
   let html = fs.readFileSync(p, 'utf8');
   const oldData = html.match(/<script src="data\.js(\?v=[^"]*)?"><\/script>/);
@@ -83,8 +88,15 @@ for (const p of [files.index, files.guide]) {
     console.error('❌ 找不到 utils.js 引用');
     process.exit(1);
   }
+  const oldEngagement = html.match(/<script src="engagement\.js(\?v=[^"]*)?"><\/script>/);
+  if (oldEngagement) {
+    html = html.replace(oldEngagement[0], `<script src="engagement.js?v=${engagementHash}"></script>`);
+  } else {
+    console.error('❌ 找不到 engagement.js 引用');
+    process.exit(1);
+  }
   fs.writeFileSync(p, html);
-  console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash, 'share.js?v=', shareHash, 'utils.js?v=', utilsHash);
+  console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash, 'share.js?v=', shareHash, 'utils.js?v=', utilsHash, 'engagement.js?v=', engagementHash);
 }
 
 // JS syntax check via check_js.js
@@ -101,6 +113,8 @@ try {
 // 7. Write version files
 fs.writeFileSync(path.join(dir, 'data-version.txt'), dataHash + '\n');
 fs.writeFileSync(path.join(dir, 'share-version.txt'), shareHash + '\n');
+fs.writeFileSync(path.join(dir, 'utils-version.txt'), utilsHash + '\n');
+fs.writeFileSync(path.join(dir, 'engagement-version.txt'), engagementHash + '\n');
 fs.writeFileSync(path.join(dir, 'utils-version.txt'), utilsHash + '\n');
 
 // 8. Git status check

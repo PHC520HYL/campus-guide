@@ -22,6 +22,30 @@ popup_mobile_fix_*.md
 repair_log_*.md
 v*_final_report_*.md
 body_preview.txt
+homepage_info_architecture_*.md
+design_audit_and_plan_*.md
+hero_redesign_*.md
+
+# 模块拆分中间产物
+*_raw.js
+*_v2.js
+*_v3.js
+build_*.js
+remove_*.js
+extract_*.js
+clean_*.js
+copy_*.js
+fix_*.js
+debug_*.js
+scan_*.js
+read_main_*.js
+find_*.js
+check_*.js
+compare_files.js
+fetch_online.js
+online_fetched.html
+git_status.js
+*version.txt
 
 # 其他学校页面（单独仓库管理）
 台州科技职业学院-校园指南.html
