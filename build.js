@@ -8,7 +8,8 @@ const workspace = 'C:\\Users\\32890\\.qclaw\\workspace-agent-8819a796';
 const files = {
   index: path.join(dir, 'index.html'),
   guide: path.join(dir, '江西电力职业技术学院校园指南.html'),
-  data: path.join(dir, 'data.js')
+  data: path.join(dir, 'data.js'),
+  share: path.join(dir, 'share.js')
 };
 
 function sha256(p) {
@@ -49,21 +50,32 @@ console.log('✅ 双 HTML 文件一致');
 const dataHash = md5(files.data).slice(0, 8);
 console.log('📦 data.js version:', dataHash);
 
-// 4. Update data.js?v= in HTML
+// 4. Compute share.js version
+const shareHash = md5(files.share).slice(0, 8);
+console.log('📦 share.js version:', shareHash);
+
+// 5. Update data.js?v= and share.js?v= in HTML
 for (const p of [files.index, files.guide]) {
   let html = fs.readFileSync(p, 'utf8');
-  const old = html.match(/<script src="data\.js(\?v=[^"]*)?"><\/script>/);
-  if (old) {
-    html = html.replace(old[0], `<script src="data.js?v=${dataHash}"></script>`);
-    fs.writeFileSync(p, html);
-    console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash);
+  const oldData = html.match(/<script src="data\.js(\?v=[^"]*)?"><\/script>/);
+  if (oldData) {
+    html = html.replace(oldData[0], `<script src="data.js?v=${dataHash}"></script>`);
   } else {
     console.error('❌ 找不到 data.js 引用');
     process.exit(1);
   }
+  const oldShare = html.match(/<script src="share\.js(\?v=[^"]*)?"><\/script>/);
+  if (oldShare) {
+    html = html.replace(oldShare[0], `<script src="share.js?v=${shareHash}"></script>`);
+  } else {
+    console.error('❌ 找不到 share.js 引用');
+    process.exit(1);
+  }
+  fs.writeFileSync(p, html);
+  console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash, 'share.js?v=', shareHash);
 }
 
-// 5. JS syntax check via check_js.js
+// 6. JS syntax check via check_js.js
 console.log('\n🔍 JS 语法检查...');
 try {
   const out = execSync(`"${process.execPath}" "${path.join(workspace, 'check_js.js')}" "${files.index}"`, { encoding: 'utf8' });
@@ -74,10 +86,11 @@ try {
   process.exit(1);
 }
 
-// 6. Write version file
+// 7. Write version file
 fs.writeFileSync(path.join(dir, 'data-version.txt'), dataHash + '\n');
+fs.writeFileSync(path.join(dir, 'share-version.txt'), shareHash + '\n');
 
-// 7. Git status check
+// 8. Git status check
 console.log('\n🔍 Git 状态检查...');
 try {
   const gitStatus = execSync('git status --short', { encoding: 'utf8', cwd: dir }).trim();
@@ -91,10 +104,12 @@ try {
   console.log('⚠️ 无法获取 git 状态');
 }
 
-// 8. Final report
+// 9. Final report
 console.log('\n===== 构建报告 =====');
 console.log('index.html:', size(files.index), 'bytes');
 console.log('guide.html:', size(files.guide), 'bytes');
 console.log('data.js   :', size(files.data), 'bytes');
+console.log('share.js  :', size(files.share), 'bytes');
 console.log('data hash :', dataHash);
+console.log('share hash:', shareHash);
 console.log('✅ 构建完成，可执行 git 提交');
