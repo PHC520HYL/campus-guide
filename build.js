@@ -77,7 +77,21 @@ try {
 // 6. Write version file
 fs.writeFileSync(path.join(dir, 'data-version.txt'), dataHash + '\n');
 
-// 7. Final report
+// 7. Git status check
+console.log('\n🔍 Git 状态检查...');
+try {
+  const gitStatus = execSync('git status --short', { encoding: 'utf8', cwd: dir }).trim();
+  if (gitStatus) {
+    console.log('⚠️ 存在未提交变更：');
+    console.log(gitStatus);
+  } else {
+    console.log('✅ 工作目录干净');
+  }
+} catch (e) {
+  console.log('⚠️ 无法获取 git 状态');
+}
+
+// 8. Final report
 console.log('\n===== 构建报告 =====');
 console.log('index.html:', size(files.index), 'bytes');
 console.log('guide.html:', size(files.guide), 'bytes');
