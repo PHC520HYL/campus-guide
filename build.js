@@ -9,7 +9,8 @@ const files = {
   index: path.join(dir, 'index.html'),
   guide: path.join(dir, '江西电力职业技术学院校园指南.html'),
   data: path.join(dir, 'data.js'),
-  share: path.join(dir, 'share.js')
+  share: path.join(dir, 'share.js'),
+  utils: path.join(dir, 'utils.js')
 };
 
 function sha256(p) {
@@ -54,7 +55,11 @@ console.log('📦 data.js version:', dataHash);
 const shareHash = md5(files.share).slice(0, 8);
 console.log('📦 share.js version:', shareHash);
 
-// 5. Update data.js?v= and share.js?v= in HTML
+// 5. Compute utils.js version
+const utilsHash = md5(files.utils).slice(0, 8);
+console.log('📦 utils.js version:', utilsHash);
+
+// 6. Update JS versions in HTML
 for (const p of [files.index, files.guide]) {
   let html = fs.readFileSync(p, 'utf8');
   const oldData = html.match(/<script src="data\.js(\?v=[^"]*)?"><\/script>/);
@@ -71,11 +76,18 @@ for (const p of [files.index, files.guide]) {
     console.error('❌ 找不到 share.js 引用');
     process.exit(1);
   }
+  const oldUtils = html.match(/<script src="utils\.js(\?v=[^"]*)?"><\/script>/);
+  if (oldUtils) {
+    html = html.replace(oldUtils[0], `<script src="utils.js?v=${utilsHash}"></script>`);
+  } else {
+    console.error('❌ 找不到 utils.js 引用');
+    process.exit(1);
+  }
   fs.writeFileSync(p, html);
-  console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash, 'share.js?v=', shareHash);
+  console.log('✅ 更新', path.basename(p), 'data.js?v=', dataHash, 'share.js?v=', shareHash, 'utils.js?v=', utilsHash);
 }
 
-// 6. JS syntax check via check_js.js
+// JS syntax check via check_js.js
 console.log('\n🔍 JS 语法检查...');
 try {
   const out = execSync(`"${process.execPath}" "${path.join(workspace, 'check_js.js')}" "${files.index}"`, { encoding: 'utf8' });
@@ -86,9 +98,10 @@ try {
   process.exit(1);
 }
 
-// 7. Write version file
+// 7. Write version files
 fs.writeFileSync(path.join(dir, 'data-version.txt'), dataHash + '\n');
 fs.writeFileSync(path.join(dir, 'share-version.txt'), shareHash + '\n');
+fs.writeFileSync(path.join(dir, 'utils-version.txt'), utilsHash + '\n');
 
 // 8. Git status check
 console.log('\n🔍 Git 状态检查...');
@@ -110,6 +123,8 @@ console.log('index.html:', size(files.index), 'bytes');
 console.log('guide.html:', size(files.guide), 'bytes');
 console.log('data.js   :', size(files.data), 'bytes');
 console.log('share.js  :', size(files.share), 'bytes');
+console.log('utils.js  :', size(files.utils), 'bytes');
 console.log('data hash :', dataHash);
 console.log('share hash:', shareHash);
+console.log('utils hash:', utilsHash);
 console.log('✅ 构建完成，可执行 git 提交');

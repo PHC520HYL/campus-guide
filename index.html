@@ -2574,6 +2574,7 @@ body.noscroll{overflow:hidden}
 </div>
 
 <script src="data.js?v=9706e6b5"></script>
+<script src="utils.js?v=1d561414"></script>
 <script src="share.js?v=5fcc7ef1"></script>
 <script>
 (function(){
@@ -2750,20 +2751,7 @@ function showToast(msg) {
   toastTimer = setTimeout(function(){t.classList.remove('show');},2000);
 }
 
-/* ============ COPY ============ */
-function copyText(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function(){showToast('✅ 已复制：'+text);}).catch(function(){fallbackCopy(text);});
-  } else { fallbackCopy(text); }
-}
-function fallbackCopy(text) {
-  var ta = document.createElement('textarea');
-  ta.value = text; ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');showToast('✅ 已复制：'+text);}
-  catch(e){showToast('复制失败，请长按手动复制');}
-  document.body.removeChild(ta);
-}
+/* ============ COPY ============ */
 
 /* ============ SEARCH ============ */
 function navigateToCard(id) {
@@ -3013,14 +3001,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
   
-  function copyToClipboard(text) {
-    const input = document.createElement('input');
-    input.value = text;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand('copy');
-    document.body.removeChild(input);
-  }
+  
   
   function shareDetail(id, title) {
     const text = '我在看【' + title + '】，超实用！';
